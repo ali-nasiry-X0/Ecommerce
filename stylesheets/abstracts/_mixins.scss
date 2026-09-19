@@ -16,3 +16,23 @@
     gap: $gap;
   }
 }
+// responsive
+@mixin respond($breakpoint) {
+  @if $breakpoint == "phone" {
+    @media only screen and (max-width: 37.5rem) {
+      @content;
+    }
+  } @else if $breakpoint == "port-tab" {
+    @media only screen and (max-width: 56.25rem) {
+      @content;
+    }
+  } @else if $breakpoint == "land-tab" {
+    @media only screen and (max-width: 75rem) {
+      @content;
+    }
+  } @else if $breakpoint == "big-desktop" {
+    @media only screen and (min-width: 112.5rem) {
+      @content;
+    }
+  }
+}
