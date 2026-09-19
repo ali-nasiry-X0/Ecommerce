@@ -1,0 +1,12 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.get-offer {
+  background: v.$neutral-b900;
+  color: v.$neutral-white;
+  font-size: 1.2rem;
+  word-spacing: 0.2rem;
+  .container {
+    @include m.flex(row, center, center, nowrap, 0.6rem);
+  }
+}

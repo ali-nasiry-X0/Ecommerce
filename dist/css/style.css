@@ -1,0 +1,162 @@
+body.overflow-hidden {
+  overflow: hidden;
+  height: 100vh;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  background-color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 150%;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: auto;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: auto;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.125rem;
+  line-height: auto;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1rem;
+  line-height: auto;
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 0.875rem;
+  line-height: auto;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.text-regular {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+
+.text-medium {
+  font-size: 0.875rem;
+  line-height: 175%;
+  font-weight: 500;
+}
+
+label {
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+}
+
+.container {
+  width: 90%;
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+}
+
+.get-offer {
+  background: #0e1422;
+  color: #ffffff;
+  font-size: 1.2rem;
+  word-spacing: 0.2rem;
+}
+.get-offer .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.6rem;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,73 @@
+// colors
+$blue-900: #306cef;
+$blue-800: #477cf1;
+$blue-700: #5e8cf3;
+$blue-600: #759df4;
+$blue-500: #8cadf6;
+$blue-400: #a3bef8;
+$blue-300: #bacefa;
+$blue-200: #d1defb;
+$blue-100: #e8effd;
+
+$green-900: #057234;
+$green-800: #2c7f45;
+$green-700: #458b56;
+$green-600: #5a9868;
+$green-500: #6fa479;
+$green-400: #83b18b;
+$green-300: #98be9e;
+$green-200: #c1d8c4;
+$green-100: #d5e5d7;
+
+$red-900: #be1313;
+$red-800: #c83727;
+$red-700: #d14f3a;
+$red-600: #d9644e;
+$red-500: #e17862;
+$red-400: #e88c77;
+$red-300: #ee9f8d;
+$red-200: #f8c5b9;
+$red-100: #fbd9d0;
+
+$yellow-900: #f3b40a;
+$yellow-800: #f6bb33;
+$yellow-700: #f9c14c;
+$yellow-600: #fbc862;
+$yellow-500: #fdcf76;
+$yellow-400: #ffd58a;
+$yellow-300: #ffdc9e;
+$yellow-200: #ffeac4;
+$yellow-100: #fff1d8;
+
+// neutral color
+$neutral-b900: #0e1422;
+$neutral-b800: #202533;
+$neutral-b700: #333845;
+$neutral-b600: #474b57;
+$neutral-b500: #5c5f6a;
+$neutral-b400: #71747e;
+$neutral-b300: #878a92;
+$neutral-b200: #b6b7bc;
+$neutral-b100: #e6e7e8;
+
+$neutral-black: #000000;
+$neutral-white: #ffffff;
+$neutral-w200: #e9e9eb;
+$neutral-w100: #f6f6f6;
+
+// semantic
+$color-primary: $neutral-b900;
+$color-secondary: $neutral-w100;
+$semantic-successs: $green-100;
+$semantic-error: $red-100;
+$semantic-warning: $yellow-100;
+$semantic-info: $neutral-b900;
+
+// font weight
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;

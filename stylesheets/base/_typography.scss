@@ -1,0 +1,51 @@
+@use "../abstracts/variables" as v;
+// hedding
+h1 {
+  font-size: 2.5rem;
+  line-height: 150%;
+  font-weight: v.$font-weight-bold;
+}
+h2 {
+  font-size: 2rem;
+  line-height: auto;
+  font-weight: v.$font-weight-bold;
+}
+h3 {
+  font-size: 1.5rem;
+  line-height: auto;
+  font-weight: v.$font-weight-semibold;
+}
+h4 {
+  font-size: 1.125rem;
+  line-height: auto;
+  font-weight: v.$font-weight-semibold;
+}
+h5 {
+  font-size: 1rem;
+  line-height: auto;
+  font-weight: v.$font-weight-medium;
+}
+h6 {
+  font-size: 0.875rem;
+  line-height: auto;
+  font-weight: v.$font-weight-medium;
+}
+a {
+  text-decoration: none;
+  color: v.$neutral-black;
+}
+.text-regular {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  font-weight: v.$font-weight-regular;
+}
+.text-medium {
+  font-size: 0.875rem;
+  line-height: 175%;
+  font-weight: v.$font-weight-medium;
+}
+label {
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  font-weight: v.$font-weight-medium;
+}
