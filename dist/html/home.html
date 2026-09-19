@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="../css/style.css" />
     <script src="../js/script.js" defer></script>
   </head>
-  <body>
+  <body style="background-color: aqua">
     <section class="get-offer">
       <div class="container">
-        <p class="get-offer text-regular">Get 25% OFF on your first order.</p>
-        <a class="get-offer text-medium" href="#">Order Now</a>
+        <p class="get-offer-text text-regular">
+          Get 25% OFF on your first order.
+        </p>
+        <a class="get-offer-cta text-medium" href="#">Order Now</a>
       </div>
     </section>
     <section class="navbar">
@@ -42,10 +44,33 @@
               placeholder="Search products"
             />
           </div>
-          <a href="#"><img src="../icons/ui/Cart.svg" alt="" /></a>
-          <a href="#"><img src="../icons/ui/User-1.svg" alt="" /></a>
+          <a class="navbar__action__user" ahref="#"
+            ><img src="../icons/ui/Cart.svg" alt=""
+          /></a>
+          <a class="navbar__action__card" href="#"
+            ><img src="../icons/ui/User-1.svg" alt=""
+          /></a>
+        </div>
+        <div class="navbar__popup__btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="navbar__popup__menu">
+          <a class="menu-link" href="#">Home</a>
+          <button class="menu-categories">
+            <p class="menu-categories__title">Categories</p>
+            <img
+              class="menu-categories__chevron"
+              src="../icons/ui/Chevron Down.svg"
+              alt=""
+            />
+          </button>
+          <a class="menu-link" href="#">About</a>
+          <a class="menu-link" href="#">contact</a>
         </div>
       </div>
     </section>
+    <div style="height: 800rem"></div>
   </body>
 </html>

@@ -1,6 +1,8 @@
 @use "../abstracts/mixins" as m;
 @use "../abstracts/variables" as v;
 .navbar {
+  height: 4.75rem;
+  background-color: v.$neutral-white;
   .container {
     @include m.flex(row, space-between, center);
   }
@@ -28,6 +30,104 @@
       border-radius: 0.4rem;
       &__input {
         border: none;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+  &__popup__menu {
+    display: none;
+  }
+  &__popup__btn {
+    display: none;
+    width: 2rem;
+    height: 2rem;
+    & > span {
+      background-color: black;
+      width: 100%;
+      height: 5px;
+      border-radius: 1rem;
+      transition:
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+}
+
+@include m.respond("land-tab") {
+  .navbar {
+    width: 100vw;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    &__menu {
+      display: none;
+    }
+    &__popup__menu {
+      @include m.flex(column, stretch, center, nowrap);
+      position: absolute;
+      right: 0rem;
+      transform: translateX(15rem);
+      top: 4.75rem;
+      width: 15rem;
+      height: 100vh;
+      background-color: v.$neutral-white;
+      transition: all 0.3s ease;
+      & > * {
+        width: 100%;
+        padding: 1.5rem;
+        text-align: center;
+      }
+      .menu-categories {
+        @include m.flex(row, center, center, nowrap);
+        background-color: inherit;
+        border: none;
+      }
+    }
+    .is-open {
+      @include m.flex(column, stretch, center, nowrap);
+      transform: translateX(0rem);
+    }
+    .active {
+      span:nth-child(1) {
+        transform: rotate(-45deg) translateY(9px);
+      }
+      span:nth-child(2) {
+        transform: rotate(45deg) translateY(-9px);
+      }
+      span:nth-child(3) {
+        opacity: 0;
+      }
+    }
+    &__popup__btn {
+      @include m.flex(column, center, center, nowrap, 0.5rem);
+    }
+  }
+}
+@include m.respond("port-tab") {
+  .navbar {
+    &__logo {
+      .brand {
+        display: none;
+      }
+    }
+  }
+}
+
+@include m.respond("phone") {
+  .navbar {
+    &__action {
+      &__user {
+        display: none;
+      }
+      &__card {
+        display: none;
+      }
+      .search {
+        input {
+          width: 9rem;
+        }
       }
     }
   }
