@@ -159,4 +159,64 @@ label {
   gap: 0.6rem;
 }
 
+.navbar .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.navbar__logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+.navbar__logo img {
+  width: 3rem;
+  height: 3rem;
+}
+.navbar__menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 4rem;
+}
+.navbar__menu .menu-categories {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.2rem;
+  background-color: inherit;
+  border: none;
+}
+.navbar__action {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+.navbar__action .search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.6rem;
+  padding: 0.4rem;
+  border: 1px solid #e6e7e8;
+  border-radius: 0.4rem;
+}
+.navbar__action .search__input {
+  border: none;
+}
+
 /*# sourceMappingURL=style.css.map */
