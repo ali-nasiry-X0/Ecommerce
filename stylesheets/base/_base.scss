@@ -1,6 +1,6 @@
 html,
 body {
   background-color: #fff;
-  min-height: 100vh;
-  // overflow-x: hidden;
+  min-height: 100%;
+  min-height: -webkit-fill-available;
 }

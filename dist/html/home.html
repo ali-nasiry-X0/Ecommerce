@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ecommerce</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+    <script>
+      eruda.init();
+    </script>
     <script src="../js/script.js" defer></script>
   </head>
-  <body style="background-color: aqua">
+  <body>
     <section class="get-offer">
       <div class="container">
         <p class="get-offer-text text-regular">
@@ -57,17 +61,27 @@
           <span></span>
         </div>
         <div class="navbar__popup__menu">
-          <a class="menu-link" href="#">Home</a>
-          <button class="menu-categories">
-            <p class="menu-categories__title">Categories</p>
-            <img
-              class="menu-categories__chevron"
-              src="../icons/ui/Chevron Down.svg"
-              alt=""
-            />
-          </button>
-          <a class="menu-link" href="#">About</a>
-          <a class="menu-link" href="#">contact</a>
+          <div class="navbar__popup__actions-general">
+            <a class="menu-link" href="#">Home</a>
+            <button class="menu-categories">
+              <p class="menu-categories__title">Categories</p>
+              <img
+                class="menu-categories__chevron"
+                src="../icons/ui/Chevron Down.svg"
+                alt=""
+              />
+            </button>
+            <a class="menu-link" href="#">About</a>
+            <a class="menu-link" href="#">contact</a>
+          </div>
+          <div class="navbar__popup__actions-user">
+            <a class="navbar__action__user" ahref="#"
+              ><img src="../icons/ui/Cart.svg" alt=""
+            /></a>
+            <a class="navbar__action__card" href="#"
+              ><img src="../icons/ui/User-1.svg" alt=""
+            /></a>
+          </div>
         </div>
       </div>
     </section>

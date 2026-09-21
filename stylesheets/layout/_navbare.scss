@@ -65,25 +65,42 @@
     &__menu {
       display: none;
     }
-    &__popup__menu {
-      @include m.flex(column, stretch, center, nowrap);
-      position: absolute;
-      right: 0rem;
-      overflow: hidden;
-      top: 4.75rem;
-      height: calc(100vh - 4.75rem);
-      width: 0px;
-      background-color: v.$neutral-white;
-      transition: width 0.3s ease;
-      & > * {
-        width: 100%;
-        padding: 1.5rem;
-        text-align: center;
+    &__popup {
+      &__menu {
+        @include m.flex(column, space-between, center, nowrap);
+        position: absolute;
+        right: 0rem;
+        overflow: hidden;
+        top: 4.75rem;
+        height: calc(100dvh - 4.75rem);
+        width: 0px;
+        background-color: v.$neutral-white;
+        transition: width 0.3s ease;
       }
-      .menu-categories {
-        @include m.flex(row, center, center, nowrap);
-        background-color: inherit;
-        border: none;
+      &__actions-general {
+        width: 100%;
+        @include m.flex(column, stretch, center, nowrap);
+        & > * {
+          width: 100%;
+          padding: 1.5rem;
+          text-align: center;
+        }
+        .menu-categories {
+          @include m.flex(row, center, center, nowrap);
+          background-color: inherit;
+          border: none;
+        }
+      }
+      &__actions-user {
+        width: 100%;
+        @include m.flex(row, space-between, center, nowrap);
+        & > * {
+          img {
+            height: 2rem;
+            width: 2rem;
+          }
+          padding: 1rem;
+        }
       }
     }
     .is-open {
@@ -103,6 +120,14 @@
     &__popup__btn {
       @include m.flex(column, center, center, nowrap, 0.5rem);
     }
+    &__action {
+      & > &__user {
+        display: none;
+      }
+      & > &__card {
+        display: none;
+      }
+    }
   }
 }
 @include m.respond("port-tab") {
@@ -117,17 +142,9 @@
 
 @include m.respond("phone") {
   .navbar {
-    &__action {
-      &__user {
-        display: none;
-      }
-      &__card {
-        display: none;
-      }
-      .search {
-        input {
-          width: 9rem;
-        }
+    .search {
+      input {
+        width: 9rem;
       }
     }
   }
