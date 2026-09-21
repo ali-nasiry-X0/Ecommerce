@@ -1,6 +1,7 @@
 @use "../abstracts/mixins" as m;
 @use "../abstracts/variables" as v;
 .navbar {
+  @include m.flex(row, center, center);
   height: 4.75rem;
   background-color: v.$neutral-white;
   .container {
@@ -57,7 +58,7 @@
 
 @include m.respond("land-tab") {
   .navbar {
-    width: 100vw;
+    width: 100%;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -68,12 +69,12 @@
       @include m.flex(column, stretch, center, nowrap);
       position: absolute;
       right: 0rem;
-      transform: translateX(15rem);
+      overflow: hidden;
       top: 4.75rem;
-      width: 15rem;
-      height: 100vh;
+      height: calc(100vh - 4.75rem);
+      width: 0px;
       background-color: v.$neutral-white;
-      transition: all 0.3s ease;
+      transition: width 0.3s ease;
       & > * {
         width: 100%;
         padding: 1.5rem;
@@ -86,8 +87,7 @@
       }
     }
     .is-open {
-      @include m.flex(column, stretch, center, nowrap);
-      transform: translateX(0rem);
+      width: 15rem;
     }
     .active {
       span:nth-child(1) {

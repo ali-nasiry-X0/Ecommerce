@@ -2,6 +2,7 @@
 @use "../abstracts/variables" as v;
 
 .get-offer {
+  height: 2.5rem;
   background: v.$neutral-b900;
   font-size: 1.2rem;
   word-spacing: 0.2rem;
@@ -9,6 +10,17 @@
     @include m.flex(row, center, center, nowrap, 0.6rem);
     & > * {
       color: v.$neutral-white;
+    }
+  }
+  transition: height 0.3s ease;
+}
+.popup-open {
+  height: 0px;
+}
+@include m.respond("phone") {
+  .get-offer {
+    &-cta {
+      display: none;
     }
   }
 }

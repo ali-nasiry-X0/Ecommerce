@@ -72,10 +72,10 @@ html {
     scroll-behavior: auto !important;
   }
 }
+html,
 body {
   background-color: #fff;
   min-height: 100vh;
-  overflow-x: hidden;
 }
 
 h1 {
@@ -142,10 +142,10 @@ label {
   max-width: 100rem;
   margin: 0 auto;
   padding: 0.5rem 1rem;
-  overflow: hidden;
 }
 
 .get-offer {
+  height: 2.5rem;
   background: #0e1422;
   font-size: 1.2rem;
   word-spacing: 0.2rem;
@@ -161,8 +161,25 @@ label {
 .get-offer .container > * {
   color: #ffffff;
 }
+.get-offer {
+  transition: height 0.3s ease;
+}
 
+.popup-open {
+  height: 0px;
+}
+
+@media only screen and (max-width: 37.5rem) {
+  .get-offer-cta {
+    display: none;
+  }
+}
 .navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
   height: 4.75rem;
   background-color: #ffffff;
 }
@@ -246,7 +263,7 @@ label {
 
 @media only screen and (max-width: 75rem) {
   .navbar {
-    width: 100vw;
+    width: 100%;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -262,12 +279,12 @@ label {
     flex-wrap: nowrap;
     position: absolute;
     right: 0rem;
-    transform: translateX(15rem);
+    overflow: hidden;
     top: 4.75rem;
-    width: 15rem;
-    height: 100vh;
+    height: calc(100vh - 4.75rem);
+    width: 0px;
     background-color: #ffffff;
-    transition: all 0.3s ease;
+    transition: width 0.3s ease;
   }
   .navbar__popup__menu > * {
     width: 100%;
@@ -284,12 +301,7 @@ label {
     border: none;
   }
   .navbar .is-open {
-    display: flex;
-    flex-direction: column;
-    justify-content: stretch;
-    align-items: center;
-    flex-wrap: nowrap;
-    transform: translateX(0rem);
+    width: 15rem;
   }
   .navbar .active span:nth-child(1) {
     transform: rotate(-45deg) translateY(9px);
