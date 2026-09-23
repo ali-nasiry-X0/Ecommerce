@@ -3,6 +3,16 @@ const app = express();
 const cors = require("cors");
 const PORT = 3000;
 
+// لیست جداگانه کتگوری‌ها
+const categories = [
+  { id: 1, name: "Trousers", slug: "trousers" },
+  { id: 2, name: "Shoe", slug: "shoe" },
+  { id: 3, name: "Handbag", slug: "handbag" },
+  { id: 4, name: "Hat", slug: "hat" },
+  { id: 5, name: "Perfume", slug: "perfume" },
+  { id: 6, name: "Thermos", slug: "thermos" },
+];
+
 const products = [
   // ========== Trousers ==========
   {
@@ -516,16 +526,25 @@ const products = [
     category: "thermos",
   },
 ];
+
 app.use(cors());
+
+// all products
 app.get("/", (req, res) => {
   res.json(products);
 });
 
+// filter products by categories
 app.get("/category/:cat", (req, res) => {
   const filtered = products.filter(
     (p) => p.category.toLowerCase() === req.params.cat.toLowerCase(),
   );
   res.json(filtered);
+});
+
+// categories list
+app.get("/categories", (req, res) => {
+  res.json(categories);
 });
 
 app.listen(PORT, () => {

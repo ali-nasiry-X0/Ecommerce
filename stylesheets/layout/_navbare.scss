@@ -1,8 +1,11 @@
 @use "../abstracts/mixins" as m;
 @use "../abstracts/variables" as v;
 .navbar {
-  @include m.flex(row, center, center);
-  height: 4.75rem;
+  @include m.flex(column, stretch, center);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // height: 4.75rem;
   background-color: v.$neutral-white;
   .container {
     @include m.flex(row, space-between, center);
@@ -20,6 +23,7 @@
       @include m.flex(row, center, center, nowrap, 0.2rem);
       background-color: inherit;
       border: none;
+      cursor: pointer;
     }
   }
   &__action {
@@ -50,18 +54,108 @@
       height: 5px;
       border-radius: 1rem;
       transition:
-        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-        opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transform 0.3s ease,
+        opacity 0.3s ease;
     }
   }
 }
+@include m.respond("desktop") {
+  .navbar {
+    position: relative;
 
+    &__popup__categories {
+      position: absolute;
+
+      top: 100%;
+      left: 50%;
+
+      width: 0;
+      height: 0;
+
+      padding: 0;
+
+      background-color: v.$neutral-white;
+
+      border-radius: 0 0 1rem 1rem;
+
+      box-shadow: 0 0.5rem 0 rgba(0, 0, 0, 0.08);
+
+      overflow: hidden;
+
+      transform: translateX(-50%);
+
+      transition:
+        width 0.4s ease,
+        height 0.4s ease,
+        padding 0.4s ease;
+
+      &.drop {
+        width: min(90%, 70rem);
+        height: 13rem;
+        padding: 1.5rem;
+      }
+    }
+
+    .categories__items {
+      position: relative;
+
+      width: 100%;
+      min-height: 10rem;
+
+      display: grid;
+
+      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+
+      gap: 1rem;
+
+      align-content: center;
+    }
+
+    .category-btn {
+      width: 100%;
+      min-height: 7rem;
+
+      border: 1px solid v.$neutral-b100;
+      border-radius: 1rem;
+
+      background-color: v.$neutral-white;
+
+      cursor: pointer;
+      transition:
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+      &:hover {
+        background-color: v.$neutral-b100;
+
+        box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.1);
+      }
+    }
+    .categories__items.is-stacked {
+      .category-btn {
+        position: absolute;
+
+        left: 50%;
+        top: 50%;
+
+        width: 10rem;
+        height: 7rem;
+        min-height: 0;
+
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
 @include m.respond("land-tab") {
   .navbar {
     width: 100%;
     position: sticky;
     top: 0;
     z-index: 100;
+    &__popup__categories {
+      display: none;
+    }
     &__menu {
       display: none;
     }
