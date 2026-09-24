@@ -336,11 +336,13 @@ label {
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
+    gap: 2rem;
     position: absolute;
     right: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     top: 4.75rem;
-    height: calc(100dvh - 4.75rem);
+    max-height: calc(100dvh - 4rem);
     width: 0px;
     background-color: #ffffff;
     transition: width 0.3s ease;
@@ -374,7 +376,7 @@ label {
   }
   .navbar__popup__actions-general .menu-categories.is-open,
   .navbar__popup__actions-general .menu-categories__popup.is-open {
-    background-color: #e6e7e8;
+    background-color: #878a92;
   }
   .navbar__popup__actions-general .menu-categories-items,
   .navbar__popup__actions-general .menu-categories__popup-items {
@@ -384,19 +386,21 @@ label {
     align-items: center;
     flex-wrap: nowrap;
     height: 0;
-    overflow: hidden;
+    overflow-y: hidden;
     padding: 0;
     transition: height 0.3s ease;
+    background-color: #e6e7e8;
   }
   .navbar__popup__actions-general .menu-categories-items.is-open,
   .navbar__popup__actions-general .menu-categories__popup-items.is-open {
     height: 20rem;
+    overflow-y: auto;
   }
   .navbar__popup__actions-general .menu-categories-items button,
   .navbar__popup__actions-general .menu-categories__popup-items button {
     padding: 0.5rem;
     width: 100%;
-    background-color: #ffffff;
+    background-color: #e6e7e8;
     border: 1px solid #e6e7e8;
   }
   .navbar__popup__actions-user {
@@ -444,7 +448,6 @@ label {
   }
   .navbar__popup__menu {
     top: 4rem;
-    height: calc(100dvh - 4rem);
   }
 }
 @media only screen and (max-width: 37.5rem) {

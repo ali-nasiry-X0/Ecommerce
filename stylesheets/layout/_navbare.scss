@@ -157,12 +157,13 @@
     }
     &__popup {
       &__menu {
-        @include m.flex(column, space-between, center, nowrap);
+        @include m.flex(column, space-between, center, nowrap, 2rem);
         position: absolute;
         right: 0;
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: auto;
         top: 4.75rem;
-        height: calc(100dvh - 4.75rem);
+        max-height: calc(100dvh - 4rem);
         width: 0px;
         background-color: v.$neutral-white;
         transition: width 0.3s ease;
@@ -185,21 +186,23 @@
           border: none;
           transition: background-color 0.3s ease;
           &.is-open {
-            background-color: v.$neutral-b100;
+            background-color: v.$neutral-b300;
           }
           &-items {
             @include m.flex(column, space-between, center, nowrap);
             height: 0;
-            overflow: hidden;
+            overflow-y: hidden;
             padding: 0;
             transition: height 0.3s ease;
+            background-color: v.$neutral-b100;
             &.is-open {
               height: 20rem;
+              overflow-y: auto;
             }
             button {
               padding: 0.5rem;
               width: 100%;
-              background-color: v.$neutral-white;
+              background-color: v.$neutral-b100;
               border: 1px solid v.$neutral-b100;
             }
           }
@@ -250,7 +253,6 @@
     }
     &__popup__menu {
       top: 4rem;
-      height: calc(100dvh - 4rem);
     }
   }
 }
