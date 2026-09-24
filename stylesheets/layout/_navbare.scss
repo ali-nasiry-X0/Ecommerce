@@ -2,10 +2,6 @@
 @use "../abstracts/variables" as v;
 .navbar {
   @include m.flex(column, stretch, center);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  // height: 4.75rem;
   background-color: v.$neutral-white;
   .container {
     @include m.flex(row, space-between, center);
@@ -163,13 +159,16 @@
       &__menu {
         @include m.flex(column, space-between, center, nowrap);
         position: absolute;
-        right: 0rem;
+        right: 0;
         overflow: hidden;
         top: 4.75rem;
         height: calc(100dvh - 4.75rem);
         width: 0px;
         background-color: v.$neutral-white;
         transition: width 0.3s ease;
+        &.is-open {
+          width: 15rem;
+        }
       }
       &__actions-general {
         width: 100%;
@@ -217,19 +216,16 @@
           padding: 1rem;
         }
       }
-    }
-    .is-open {
-      width: 15rem;
-    }
-    .active {
-      span:nth-child(1) {
-        transform: rotate(-45deg) translateY(9px);
-      }
-      span:nth-child(2) {
-        transform: rotate(45deg) translateY(-9px);
-      }
-      span:nth-child(3) {
-        opacity: 0;
+      &__btn.active {
+        span:nth-child(1) {
+          transform: rotate(-45deg) translateY(9px);
+        }
+        span:nth-child(2) {
+          transform: rotate(45deg) translateY(-9px);
+        }
+        span:nth-child(3) {
+          opacity: 0;
+        }
       }
     }
     &__popup__btn {

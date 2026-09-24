@@ -181,9 +181,6 @@ label {
   justify-content: stretch;
   align-items: center;
   flex-wrap: nowrap;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   background-color: #ffffff;
 }
 .navbar .container {
@@ -340,13 +337,16 @@ label {
     align-items: center;
     flex-wrap: nowrap;
     position: absolute;
-    right: 0rem;
+    right: 0;
     overflow: hidden;
     top: 4.75rem;
     height: calc(100dvh - 4.75rem);
     width: 0px;
     background-color: #ffffff;
     transition: width 0.3s ease;
+  }
+  .navbar__popup__menu.is-open {
+    width: 15rem;
   }
   .navbar__popup__actions-general {
     width: 100%;
@@ -414,16 +414,13 @@ label {
   .navbar__popup__actions-user > * {
     padding: 1rem;
   }
-  .navbar .is-open {
-    width: 15rem;
-  }
-  .navbar .active span:nth-child(1) {
+  .navbar__popup__btn.active span:nth-child(1) {
     transform: rotate(-45deg) translateY(9px);
   }
-  .navbar .active span:nth-child(2) {
+  .navbar__popup__btn.active span:nth-child(2) {
     transform: rotate(45deg) translateY(-9px);
   }
-  .navbar .active span:nth-child(3) {
+  .navbar__popup__btn.active span:nth-child(3) {
     opacity: 0;
   }
   .navbar__popup__btn {
