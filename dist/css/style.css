@@ -370,6 +370,11 @@ label {
     flex-wrap: nowrap;
     background-color: inherit;
     border: none;
+    transition: background-color 0.3s ease;
+  }
+  .navbar__popup__actions-general .menu-categories.is-open,
+  .navbar__popup__actions-general .menu-categories__popup.is-open {
+    background-color: #e6e7e8;
   }
   .navbar__popup__actions-general .menu-categories-items,
   .navbar__popup__actions-general .menu-categories__popup-items {
@@ -448,6 +453,9 @@ label {
 @media only screen and (max-width: 37.5rem) {
   .navbar .search input {
     width: 9rem;
+  }
+  .navbar__popup__actions-general > * {
+    padding: 1rem;
   }
 }
 

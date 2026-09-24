@@ -184,6 +184,10 @@
           @include m.flex(row, center, center, nowrap);
           background-color: inherit;
           border: none;
+          transition: background-color 0.3s ease;
+          &.is-open {
+            background-color: v.$neutral-b100;
+          }
           &-items {
             @include m.flex(column, space-between, center, nowrap);
             height: 0;
@@ -260,6 +264,11 @@
     .search {
       input {
         width: 9rem;
+      }
+    }
+    &__popup__actions-general {
+      & > * {
+        padding: 1rem;
       }
     }
   }

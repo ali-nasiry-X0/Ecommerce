@@ -18,6 +18,10 @@ popupBtn.addEventListener("click", () => {
   popupBtn.classList.toggle("active");
   offer.classList.toggle("popup-open");
   body.classList.toggle("overflow-hidden");
+  if (btnCategoriesPopup.classList.contains("is-open")) {
+    btnCategoriesPopup.classList.remove("is-open");
+    itemsCategoriesPopup.classList.remove("is-open");
+  }
 });
 async function initCategory() {
   const products = await getProducts();
@@ -101,7 +105,6 @@ async function openCategories() {
 
 function closeCategories() {
   categoriesContainer.classList.remove("drop");
-
   setTimeout(() => {
     categoriesItems.innerHTML = "";
     categoriesItems.classList.remove("is-stacked");
@@ -114,7 +117,6 @@ async function openCategoriesPopup() {
     const button = document.createElement("button");
     button.classList.add("category-btn");
     button.textContent = category.name;
-    console.log(button);
     itemsCategoriesPopup.append(button);
   });
 }
@@ -123,4 +125,5 @@ if (screen.width < 1200) {
 }
 btnCategoriesPopup.addEventListener("click", () => {
   itemsCategoriesPopup.classList.toggle("is-open");
+  btnCategoriesPopup.classList.toggle("is-open");
 });

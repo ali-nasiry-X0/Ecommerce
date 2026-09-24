@@ -3,6 +3,5 @@ export async function getCategories() {
   const res = await fetch(`${API_URL}/categories`);
 
   const categories = await res.json();
-  console.log(API_URL);
   return categories;
 }
