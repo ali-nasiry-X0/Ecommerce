@@ -6,12 +6,12 @@ const offer = document.querySelector(".get-offer");
 const body = document.querySelector("body");
 const btnCategories = document.querySelector(".menu-categories");
 let productList;
-
 const categoriesContainer = document.querySelector(
   ".navbar__popup__categories",
 );
-
 const categoriesItems = document.querySelector(".categories__items");
+const btnCategoriesPopup = document.querySelector(".menu-categories__popup");
+const itemsCategoriesPopup = document.querySelector(".menu-categories-items");
 
 popupBtn.addEventListener("click", () => {
   popupMenu.classList.toggle("is-open");
@@ -38,14 +38,6 @@ function animateCategories(buttons) {
   buttons.forEach((button, index) => {
     button.style.zIndex = index === middleIndex ? 10 : 1;
   });
-
-  /*
-   * =====================================
-   * STEP 2
-   * کل stack پایین می‌آید
-   * =====================================
-   */
-
   requestAnimationFrame(() => {
     categoriesContainer.classList.add("drop");
     setTimeout(() => {
@@ -117,3 +109,18 @@ function closeCategories() {
 
   isCategoriesOpen = false;
 }
+async function openCategoriesPopup() {
+  productList.forEach((category) => {
+    const button = document.createElement("button");
+    button.classList.add("category-btn");
+    button.textContent = category.name;
+    console.log(button);
+    itemsCategoriesPopup.append(button);
+  });
+}
+if (screen.width < 1200) {
+  openCategoriesPopup();
+}
+btnCategoriesPopup.addEventListener("click", () => {
+  itemsCategoriesPopup.classList.toggle("is-open");
+});

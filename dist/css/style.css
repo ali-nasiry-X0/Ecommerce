@@ -361,7 +361,8 @@ label {
     padding: 1.5rem;
     text-align: center;
   }
-  .navbar__popup__actions-general .menu-categories {
+  .navbar__popup__actions-general .menu-categories,
+  .navbar__popup__actions-general .menu-categories__popup {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -369,6 +370,29 @@ label {
     flex-wrap: nowrap;
     background-color: inherit;
     border: none;
+  }
+  .navbar__popup__actions-general .menu-categories-items,
+  .navbar__popup__actions-general .menu-categories__popup-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    transition: height 0.3s ease;
+  }
+  .navbar__popup__actions-general .menu-categories-items.is-open,
+  .navbar__popup__actions-general .menu-categories__popup-items.is-open {
+    height: 20rem;
+  }
+  .navbar__popup__actions-general .menu-categories-items button,
+  .navbar__popup__actions-general .menu-categories__popup-items button {
+    padding: 0.5rem;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #e6e7e8;
   }
   .navbar__popup__actions-user {
     width: 100%;
@@ -415,6 +439,10 @@ label {
 @media only screen and (max-width: 56.25rem) {
   .navbar__logo .brand {
     display: none;
+  }
+  .navbar__popup__menu {
+    top: 4rem;
+    height: calc(100dvh - 4rem);
   }
 }
 @media only screen and (max-width: 37.5rem) {

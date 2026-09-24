@@ -1,5 +1,8 @@
+const API_URL = `http://${window.location.hostname}:3000`;
 export async function getCategories() {
-  const res = await fetch("http://localhost:3000/categories");
+  const res = await fetch(`${API_URL}/categories`);
+
   const categories = await res.json();
+  console.log(API_URL);
   return categories;
 }

@@ -179,10 +179,27 @@
           padding: 1.5rem;
           text-align: center;
         }
-        .menu-categories {
+        .menu-categories,
+        .menu-categories__popup {
           @include m.flex(row, center, center, nowrap);
           background-color: inherit;
           border: none;
+          &-items {
+            @include m.flex(column, space-between, center, nowrap);
+            height: 0;
+            overflow: hidden;
+            padding: 0;
+            transition: height 0.3s ease;
+            &.is-open {
+              height: 20rem;
+            }
+            button {
+              padding: 0.5rem;
+              width: 100%;
+              background-color: v.$neutral-white;
+              border: 1px solid v.$neutral-b100;
+            }
+          }
         }
       }
       &__actions-user {
@@ -230,6 +247,10 @@
       .brand {
         display: none;
       }
+    }
+    &__popup__menu {
+      top: 4rem;
+      height: calc(100dvh - 4rem);
     }
   }
 }
