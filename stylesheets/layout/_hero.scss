@@ -13,7 +13,7 @@
   }
   &__content {
     @include m.flex(column, center, end, nowrap, 3rem);
-    min-width: 22rem;
+    min-width: 25rem;
     &__text {
       @include m.flex(column, center, start);
     }
@@ -21,5 +21,39 @@
 
   &__cta {
     align-self: start;
+  }
+}
+@include m.respond("port-tab") {
+  .hero {
+    height: auto;
+    position: relative;
+    background-image: url(../../dist/img/hero-pic.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: bottom;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      opacity: 0.6;
+    }
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+    .container {
+      @include m.flex(column-reverse, center, center, nowrap);
+      & > * {
+        align-self: auto;
+      }
+    }
+    &__content {
+      min-width: auto;
+      min-height: 23rem;
+    }
+    &__picture {
+      display: none;
+    }
   }
 }

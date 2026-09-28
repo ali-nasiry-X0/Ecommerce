@@ -226,7 +226,7 @@ label {
   align-items: end;
   flex-wrap: nowrap;
   gap: 3rem;
-  min-width: 22rem;
+  min-width: 25rem;
 }
 .hero__content__text {
   display: flex;
@@ -239,6 +239,44 @@ label {
   align-self: start;
 }
 
+@media only screen and (max-width: 56.25rem) {
+  .hero {
+    height: auto;
+    position: relative;
+    background-image: url(../../dist/img/hero-pic.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: bottom;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #ffffff;
+    opacity: 0.6;
+  }
+  .hero > * {
+    position: relative;
+    z-index: 1;
+  }
+  .hero .container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  .hero .container > * {
+    align-self: auto;
+  }
+  .hero__content {
+    min-width: auto;
+    min-height: 23rem;
+  }
+  .hero__picture {
+    display: none;
+  }
+}
 .navbar {
   display: flex;
   flex-direction: column;
