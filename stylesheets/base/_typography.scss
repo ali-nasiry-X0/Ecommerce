@@ -1,5 +1,8 @@
 @use "../abstracts/variables" as v;
 // hedding
+body {
+  font-family: v.$font-primary;
+}
 h1 {
   font-size: 2.5rem;
   line-height: 150%;
