@@ -85,6 +85,7 @@ body {
 
 body {
   font-family: "poppins";
+  color: #0e1422;
 }
 
 h1 {
@@ -164,6 +165,14 @@ label {
 }
 .btn--primary img {
   filter: brightness(0) invert(1);
+}
+
+.benefits .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: space-between;
+  flex-wrap: nowrap;
 }
 
 .container {

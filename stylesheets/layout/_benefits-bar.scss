@@ -1,0 +1,8 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.benefits {
+  .container {
+    @include m.flex(row, center, space-between);
+  }
+}
