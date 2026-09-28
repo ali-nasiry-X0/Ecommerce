@@ -1,0 +1,25 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+.hero {
+  height: 27.5rem;
+  background-color: v.$neutral-w100;
+  .container {
+    @include m.flex(row, space-between, center);
+    padding-bottom: 0;
+    height: 100%;
+  }
+  &__picture {
+    align-self: flex-end;
+  }
+  &__content {
+    @include m.flex(column, center, end, nowrap, 3rem);
+    min-width: 22rem;
+    &__text {
+      @include m.flex(column, center, start);
+    }
+  }
+
+  &__cta {
+    align-self: start;
+  }
+}

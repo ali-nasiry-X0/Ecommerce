@@ -1,0 +1,15 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+.btn {
+  @include m.flex(row, center, center, nowrap, 1rem);
+  border-radius: 0.25rem;
+  padding: 0.6rem 1.5rem;
+  border: none;
+}
+.btn--primary {
+  background-color: v.$color-primary;
+  color: v.$neutral-white;
+  img {
+    filter: brightness(0) invert(1);
+  }
+}

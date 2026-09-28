@@ -56,7 +56,7 @@ function animateCategories(buttons) {
           );
         });
       });
-    }, 700);
+    }, 400);
   });
 }
 let isCategoriesOpen = false;
@@ -87,7 +87,7 @@ function closeCategories() {
   setTimeout(() => {
     categoriesItems.innerHTML = "";
     categoriesItems.classList.remove("is-stacked");
-  }, 500);
+  }, 400);
 
   isCategoriesOpen = false;
 }
