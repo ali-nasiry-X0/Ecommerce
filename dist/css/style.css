@@ -170,9 +170,29 @@ label {
 .benefits .container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: space-between;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: nowrap;
+}
+.benefits .benefit {
+  max-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: nowrap;
+  gap: 0.7rem;
+}
+.benefits .benefit__img img {
+  filter: brightness(0);
+}
+.benefits .benefit__img {
+  padding: 0.6rem;
+  border-radius: 50%;
+  background-color: #f6f6f6;
+}
+.benefits .benefit__text {
+  color: #5c5f6a;
 }
 
 .container {

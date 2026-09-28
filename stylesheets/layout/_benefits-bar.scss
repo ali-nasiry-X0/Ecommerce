@@ -3,6 +3,21 @@
 
 .benefits {
   .container {
-    @include m.flex(row, center, space-between);
+    @include m.flex(row, space-between, center);
+  }
+  .benefit {
+    max-width: 20rem;
+    @include m.flex(column, center, start, nowrap, 0.7rem);
+    &__img {
+      img {
+        filter: brightness(0);
+      }
+      padding: 0.6rem;
+      border-radius: 50%;
+      background-color: v.$neutral-w100;
+    }
+    &__text {
+      color: v.$neutral-b500;
+    }
   }
 }
