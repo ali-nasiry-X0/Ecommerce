@@ -1,6 +1,7 @@
 @use "../abstracts/mixins" as m;
 @use "../abstracts/variables" as v;
 .hero {
+  margin-bottom: v.$spacing-lg;
   height: 27.5rem;
   background-color: v.$neutral-w100;
   .container {

@@ -213,6 +213,7 @@ label {
   }
 }
 .hero {
+  margin-bottom: 4rem;
   height: 27.5rem;
   background-color: #f6f6f6;
 }
