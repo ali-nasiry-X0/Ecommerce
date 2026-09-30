@@ -1,7 +1,7 @@
 @use "../abstracts/mixins" as m;
 @use "../abstracts/variables" as v;
 .btn {
-  @include m.flex(row, center, center, nowrap, 1rem);
+  @include m.flex(row, center, center, nowrap, 0.5rem);
   border-radius: 0.25rem;
   padding: 0.6rem 1.5rem;
   border: none;

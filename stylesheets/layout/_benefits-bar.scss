@@ -2,6 +2,8 @@
 @use "../abstracts/mixins" as m;
 
 .benefits {
+  margin-bottom: v.$spacing-lg;
+
   .container {
     @include m.flex(row, space-between, center);
   }
@@ -18,6 +20,13 @@
     }
     &__text {
       color: v.$neutral-b500;
+    }
+  }
+}
+@include m.respond("port-tab") {
+  .benefits {
+    .container {
+      @include m.flex(column, center, center, nowrap, 2rem);
     }
   }
 }
