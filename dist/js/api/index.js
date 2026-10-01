@@ -24,6 +24,7 @@ const products = [
     review: 1284,
     rating: 4.7,
     category: "Trousers",
+    price: 59,
   },
   {
     id: 2,
@@ -32,8 +33,9 @@ const products = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     stock: 28,
     review: 892,
-    rating: 4.5,
+    rating: 2.5,
     category: "Trousers",
+    price: 49,
   },
   {
     id: 3,
@@ -44,6 +46,7 @@ const products = [
     review: 654,
     rating: 4.3,
     category: "Trousers",
+    price: 64,
   },
   {
     id: 4,
@@ -54,6 +57,7 @@ const products = [
     review: 2103,
     rating: 4.6,
     category: "Trousers",
+    price: 69,
   },
   {
     id: 5,
@@ -64,6 +68,7 @@ const products = [
     review: 487,
     rating: 4.8,
     category: "Trousers",
+    price: 74,
   },
   {
     id: 6,
@@ -72,8 +77,9 @@ const products = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     stock: 31,
     review: 1567,
-    rating: 4.4,
+    rating: 3.4,
     category: "Trousers",
+    price: 55,
   },
   {
     id: 7,
@@ -84,6 +90,7 @@ const products = [
     review: 734,
     rating: 4.9,
     category: "Trousers",
+    price: 89,
   },
   {
     id: 8,
@@ -94,6 +101,7 @@ const products = [
     review: 1892,
     rating: 4.2,
     category: "Trousers",
+    price: 45,
   },
 
   // ========== Shoe ==========
@@ -106,6 +114,7 @@ const products = [
     review: 3421,
     rating: 4.8,
     category: "shoe",
+    price: 89,
   },
   {
     id: 10,
@@ -114,8 +123,9 @@ const products = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     stock: 18,
     review: 978,
-    rating: 4.7,
+    rating: 3.7,
     category: "shoe",
+    price: 129,
   },
   {
     id: 11,
@@ -126,6 +136,7 @@ const products = [
     review: 1123,
     rating: 4.5,
     category: "shoe",
+    price: 115,
   },
   {
     id: 12,
@@ -136,6 +147,7 @@ const products = [
     review: 2756,
     rating: 4.6,
     category: "shoe",
+    price: 99,
   },
   {
     id: 13,
@@ -144,8 +156,9 @@ const products = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     stock: 44,
     review: 1634,
-    rating: 4.3,
+    rating: 1.3,
     category: "shoe",
+    price: 55,
   },
   {
     id: 14,
@@ -156,6 +169,7 @@ const products = [
     review: 589,
     rating: 4.9,
     category: "shoe",
+    price: 149,
   },
   {
     id: 15,
@@ -166,6 +180,7 @@ const products = [
     review: 876,
     rating: 4.1,
     category: "shoe",
+    price: 45,
   },
   {
     id: 16,
@@ -176,6 +191,7 @@ const products = [
     review: 1345,
     rating: 4.4,
     category: "shoe",
+    price: 85,
   },
 
   // ========== Handbag ==========
@@ -186,8 +202,9 @@ const products = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     stock: 21,
     review: 945,
-    rating: 4.7,
+    rating: 2.7,
     category: "handbag",
+    price: 119,
   },
   {
     id: 18,
@@ -198,6 +215,7 @@ const products = [
     review: 1678,
     rating: 4.5,
     category: "handbag",
+    price: 69,
   },
   {
     id: 19,
@@ -208,6 +226,7 @@ const products = [
     review: 723,
     rating: 4.8,
     category: "handbag",
+    price: 139,
   },
   {
     id: 20,
@@ -216,8 +235,9 @@ const products = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     stock: 48,
     review: 2109,
-    rating: 4.2,
+    rating: 1.2,
     category: "handbag",
+    price: 35,
   },
   {
     id: 21,
@@ -228,6 +248,7 @@ const products = [
     review: 412,
     rating: 4.6,
     category: "handbag",
+    price: 79,
   },
   {
     id: 22,
@@ -238,6 +259,7 @@ const products = [
     review: 1187,
     rating: 4.4,
     category: "handbag",
+    price: 129,
   },
   {
     id: 23,
@@ -246,8 +268,9 @@ const products = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     stock: 17,
     review: 834,
-    rating: 4.3,
+    rating: 2.3,
     category: "handbag",
+    price: 89,
   },
   {
     id: 24,
@@ -258,6 +281,7 @@ const products = [
     review: 1456,
     rating: 4.7,
     category: "handbag",
+    price: 149,
   },
 
   // ========== Hat ==========
@@ -270,6 +294,7 @@ const products = [
     review: 1023,
     rating: 4.6,
     category: "hat",
+    price: 45,
   },
   {
     id: 26,
@@ -278,8 +303,9 @@ const products = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     stock: 52,
     review: 2876,
-    rating: 4.4,
+    rating: 1.4,
     category: "hat",
+    price: 25,
   },
   {
     id: 27,
@@ -290,6 +316,7 @@ const products = [
     review: 1543,
     rating: 4.8,
     category: "hat",
+    price: 29,
   },
   {
     id: 28,
@@ -300,6 +327,7 @@ const products = [
     review: 678,
     rating: 4.5,
     category: "hat",
+    price: 39,
   },
   {
     id: 29,
@@ -310,6 +338,7 @@ const products = [
     review: 1923,
     rating: 4.3,
     category: "hat",
+    price: 32,
   },
   {
     id: 30,
@@ -318,8 +347,9 @@ const products = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     stock: 16,
     review: 534,
-    rating: 4.7,
+    rating: 3.7,
     category: "hat",
+    price: 35,
   },
   {
     id: 31,
@@ -330,6 +360,7 @@ const products = [
     review: 891,
     rating: 4.6,
     category: "hat",
+    price: 42,
   },
   {
     id: 32,
@@ -340,6 +371,7 @@ const products = [
     review: 1234,
     rating: 4.2,
     category: "hat",
+    price: 28,
   },
 
   // ========== Perfume ==========
@@ -350,8 +382,9 @@ const products = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     stock: 45,
     review: 2341,
-    rating: 4.7,
+    rating: 2.7,
     category: "perfume",
+    price: 65,
   },
   {
     id: 34,
@@ -362,6 +395,7 @@ const products = [
     review: 1876,
     rating: 4.9,
     category: "perfume",
+    price: 95,
   },
   {
     id: 35,
@@ -372,6 +406,7 @@ const products = [
     review: 1456,
     rating: 4.5,
     category: "perfume",
+    price: 85,
   },
   {
     id: 36,
@@ -382,6 +417,7 @@ const products = [
     review: 1123,
     rating: 4.4,
     category: "perfume",
+    price: 72,
   },
   {
     id: 37,
@@ -390,8 +426,9 @@ const products = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     stock: 19,
     review: 987,
-    rating: 4.6,
+    rating: 2.6,
     category: "perfume",
+    price: 68,
   },
   {
     id: 38,
@@ -402,6 +439,7 @@ const products = [
     review: 756,
     rating: 4.8,
     category: "perfume",
+    price: 110,
   },
   {
     id: 39,
@@ -412,6 +450,7 @@ const products = [
     review: 834,
     rating: 4.3,
     category: "perfume",
+    price: 59,
   },
   {
     id: 40,
@@ -420,8 +459,9 @@ const products = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     stock: 11,
     review: 2145,
-    rating: 4.9,
+    rating: 3.9,
     category: "perfume",
+    price: 125,
   },
 
   // ========== Thermos ==========
@@ -434,6 +474,7 @@ const products = [
     review: 3124,
     rating: 4.8,
     category: "thermos",
+    price: 35,
   },
   {
     id: 42,
@@ -444,6 +485,7 @@ const products = [
     review: 1987,
     rating: 4.6,
     category: "thermos",
+    price: 29,
   },
   {
     id: 43,
@@ -452,8 +494,9 @@ const products = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     stock: 27,
     review: 1456,
-    rating: 4.5,
+    rating: 1.5,
     category: "thermos",
+    price: 25,
   },
   {
     id: 44,
@@ -464,6 +507,7 @@ const products = [
     review: 876,
     rating: 4.7,
     category: "thermos",
+    price: 55,
   },
   {
     id: 45,
@@ -474,6 +518,7 @@ const products = [
     review: 1678,
     rating: 4.4,
     category: "thermos",
+    price: 32,
   },
   {
     id: 46,
@@ -482,8 +527,9 @@ const products = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     stock: 51,
     review: 2345,
-    rating: 4.3,
+    rating: 3.3,
     category: "thermos",
+    price: 22,
   },
   {
     id: 47,
@@ -494,6 +540,7 @@ const products = [
     review: 2891,
     rating: 4.9,
     category: "thermos",
+    price: 42,
   },
   {
     id: 48,
@@ -504,6 +551,7 @@ const products = [
     review: 1765,
     rating: 4.5,
     category: "thermos",
+    price: 28,
   },
   {
     id: 49,
@@ -512,8 +560,9 @@ const products = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     stock: 8,
     review: 654,
-    rating: 4.8,
+    rating: 2.8,
     category: "thermos",
+    price: 65,
   },
   {
     id: 50,
@@ -524,6 +573,7 @@ const products = [
     review: 1234,
     rating: 4.6,
     category: "thermos",
+    price: 38,
   },
 ];
 
