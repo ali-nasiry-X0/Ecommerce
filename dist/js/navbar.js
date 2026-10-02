@@ -1,4 +1,4 @@
-import { closePopupCategories } from "./categories.js";
+import { closePopupCategories } from "./renderCategories.js";
 const popupMenu = document.querySelector(".navbar__popup__menu");
 const popupBtn = document.querySelector(".navbar__popup__btn");
 const offer = document.querySelector(".get-offer");
