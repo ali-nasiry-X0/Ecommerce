@@ -5,7 +5,7 @@ const PORT = 3000;
 
 // لیست جداگانه کتگوری‌ها
 const categories = [
-  { id: 1, name: "Tshirt", slug: "trousers" },
+  { id: 1, name: "Tshirt", slug: "tshirt" },
   { id: 2, name: "Shoe", slug: "shoe" },
   { id: 3, name: "Handbag", slug: "handbag" },
   { id: 4, name: "Hat", slug: "hat" },
@@ -23,7 +23,7 @@ const products = [
     stock: 48,
     review: 2156,
     rating: 4.7,
-    category: "Tshirt",
+    category: "tshirt",
     price: 29,
   },
   {
@@ -34,7 +34,7 @@ const products = [
     stock: 52,
     review: 1893,
     rating: 4.5,
-    category: "Tshirt",
+    category: "tshirt",
     price: 27,
   },
   {
@@ -45,7 +45,7 @@ const products = [
     stock: 35,
     review: 1247,
     rating: 4.4,
-    category: "Tshirt",
+    category: "tshirt",
     price: 32,
   },
   {
@@ -56,7 +56,7 @@ const products = [
     stock: 29,
     review: 1678,
     rating: 4.6,
-    category: "Tshirt",
+    category: "tshirt",
     price: 39,
   },
   {
@@ -67,7 +67,7 @@ const products = [
     stock: 41,
     review: 982,
     rating: 4.3,
-    category: "Tshirt",
+    category: "tshirt",
     price: 45,
   },
   {
@@ -78,7 +78,7 @@ const products = [
     stock: 33,
     review: 1456,
     rating: 4.2,
-    category: "Tshirt",
+    category: "tshirt",
     price: 34,
   },
   {
@@ -89,7 +89,7 @@ const products = [
     stock: 22,
     review: 876,
     rating: 4.8,
-    category: "Tshirt",
+    category: "tshirt",
     price: 49,
   },
   {
@@ -100,7 +100,7 @@ const products = [
     stock: 57,
     review: 2034,
     rating: 4.5,
-    category: "Tshirt",
+    category: "tshirt",
     price: 25,
   },
   // ========== Shoe ==========
