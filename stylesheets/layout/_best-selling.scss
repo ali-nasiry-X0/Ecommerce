@@ -1,0 +1,18 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.bestSelling {
+  margin-bottom: v.$spacing-lg;
+
+  .container {
+    @include m.flex(column, space-between, center, nowrap, 4rem);
+  }
+  &__cta {
+    color: v.$neutral-b300;
+  }
+  &__content {
+    @include m.flex(row, space-between, center, nowrap, 2rem);
+    width: 100%;
+    overflow-x: scroll;
+  }
+}

@@ -167,8 +167,40 @@ label {
   filter: brightness(0) invert(1);
 }
 
+.product {
+  width: 18rem;
+}
+.product__img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  border-radius: 0.3rem;
+  height: 22rem;
+  background-color: #f6f6f6;
+  padding: 1rem;
+}
+.product img {
+  width: 14rem;
+  height: 15rem;
+}
+.product .product__detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 0.3rem;
+}
+.product .product__status {
+  border: 1px solid #0e1422;
+  border-radius: 2rem;
+  padding: 0.2rem 0.5rem;
+}
+
 .benefits {
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
 }
 .benefits .container {
   display: flex;
@@ -208,6 +240,31 @@ label {
     gap: 2rem;
   }
 }
+.bestSelling {
+  margin-bottom: 4rem;
+}
+.bestSelling .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 4rem;
+}
+.bestSelling__cta {
+  color: #878a92;
+}
+.bestSelling__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  width: 100%;
+  overflow-x: scroll;
+}
+
 .container {
   width: 90%;
   max-width: 100rem;
