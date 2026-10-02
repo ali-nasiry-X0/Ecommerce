@@ -17,7 +17,7 @@ function bestSelling() {
 
     productName.textContent = product.title;
     img.src = product.image;
-
+    productElement.id = product.id;
     if (!product.stock == 0) {
       productStatus.textContent = "IN STOCK";
     } else {

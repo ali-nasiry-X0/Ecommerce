@@ -2,7 +2,7 @@
 @use "../abstracts/mixins" as m;
 
 .bestSelling {
-  margin-bottom: v.$spacing-lg;
+  margin-bottom: v.$spacing-xxl;
 
   .container {
     @include m.flex(column, space-between, center, nowrap, 4rem);
