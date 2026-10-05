@@ -8,6 +8,5 @@ popupBtn.addEventListener("click", () => {
   popupMenu.classList.toggle("is-open");
   popupBtn.classList.toggle("active");
   offer.classList.toggle("popup-open");
-  body.classList.toggle("overflow-hidden");
   closePopupCategories();
 });

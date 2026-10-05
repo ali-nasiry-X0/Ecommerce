@@ -265,6 +265,11 @@ label {
   overflow-x: scroll;
 }
 
+@media only screen and (max-width: 37.5rem) {
+  .bestSelling .container {
+    gap: 1rem;
+  }
+}
 .container {
   width: 90%;
   max-width: 100rem;
@@ -272,6 +277,42 @@ label {
   padding: 0.5rem 1rem;
 }
 
+.cta {
+  margin-bottom: 6rem;
+  background-color: #f6f6f6;
+}
+.cta .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.cta__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  width: 40%;
+}
+.cta__content p {
+  color: #5c5f6a;
+}
+.cta__img img {
+  width: 20rem;
+  height: 20rem;
+}
+
+@media only screen and (max-width: 56.25rem) {
+  .cta .container {
+    flex-direction: column-reverse;
+  }
+  .cta__content {
+    width: 100%;
+  }
+}
 .get-offer {
   height: 2.5rem;
   background: #0e1422;
@@ -596,7 +637,6 @@ label {
   .navbar__popup__actions-general .menu-categories-items.is-open,
   .navbar__popup__actions-general .menu-categories__popup-items.is-open {
     height: 20rem;
-    overflow-y: auto;
   }
   .navbar__popup__actions-general .menu-categories-items button,
   .navbar__popup__actions-general .menu-categories__popup-items button {

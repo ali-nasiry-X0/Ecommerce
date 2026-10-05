@@ -1,7 +1,7 @@
 import { getCategories } from "./getCategories.js";
 import { listProducts } from "./products.js";
 let listProductByCategory = {};
-async function categories() {
+export async function listPcategories() {
   const allCategories = await getCategories();
 
   allCategories.forEach((category) => {
@@ -9,8 +9,7 @@ async function categories() {
   });
 
   listProducts.forEach((product) => {
-    console.log(product.category);
     listProductByCategory[product.category].push(product);
   });
+  return listProductByCategory;
 }
-categories();

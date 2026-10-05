@@ -197,7 +197,7 @@
             background-color: v.$neutral-b100;
             &.is-open {
               height: 20rem;
-              overflow-y: auto;
+              // overflow-y: auto;
             }
             button {
               padding: 0.5rem;

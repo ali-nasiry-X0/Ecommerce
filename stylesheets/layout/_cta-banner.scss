@@ -1,0 +1,33 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+.cta {
+  margin-bottom: v.$spacing-xxl;
+  background-color: v.$neutral-w100;
+  .container {
+    @include m.flex(row, space-between, center, nowrap);
+  }
+  &__content {
+    @include m.flex(column, space-between, start, nowrap, 2rem);
+    width: 40%;
+    p {
+      color: v.$neutral-b500;
+    }
+  }
+  &__img {
+    img {
+      width: 20rem;
+      height: 20rem;
+    }
+  }
+}
+@include m.respond("port-tab") {
+  .cta {
+    .container {
+      flex-direction: column-reverse;
+      //   overflow: hidden;
+    }
+    &__content {
+      width: 100%;
+    }
+  }
+}

@@ -16,3 +16,10 @@
     overflow-x: scroll;
   }
 }
+@include m.respond("phone") {
+  .bestSelling {
+    .container {
+      gap: 1rem;
+    }
+  }
+}
