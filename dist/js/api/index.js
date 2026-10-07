@@ -25,6 +25,7 @@ const products = [
     rating: 4.7,
     category: "tshirt",
     price: 29,
+    createdAt: "2023-01-15T09:30:00.000Z",
   },
   {
     id: 2,
@@ -36,6 +37,7 @@ const products = [
     rating: 4.5,
     category: "tshirt",
     price: 27,
+    createdAt: "2023-02-20T11:15:00.000Z",
   },
   {
     id: 3,
@@ -47,6 +49,7 @@ const products = [
     rating: 4.4,
     category: "tshirt",
     price: 32,
+    createdAt: "2023-04-08T14:00:00.000Z",
   },
   {
     id: 4,
@@ -58,6 +61,7 @@ const products = [
     rating: 4.6,
     category: "tshirt",
     price: 39,
+    createdAt: "2023-06-12T10:45:00.000Z",
   },
   {
     id: 5,
@@ -69,6 +73,7 @@ const products = [
     rating: 4.3,
     category: "tshirt",
     price: 45,
+    createdAt: "2023-09-05T16:20:00.000Z",
   },
   {
     id: 6,
@@ -80,6 +85,7 @@ const products = [
     rating: 4.2,
     category: "tshirt",
     price: 34,
+    createdAt: "2024-01-18T08:50:00.000Z",
   },
   {
     id: 7,
@@ -91,6 +97,7 @@ const products = [
     rating: 4.8,
     category: "tshirt",
     price: 49,
+    createdAt: "2024-05-22T13:10:00.000Z",
   },
   {
     id: 8,
@@ -102,6 +109,7 @@ const products = [
     rating: 4.5,
     category: "tshirt",
     price: 25,
+    createdAt: "2024-08-03T17:40:00.000Z",
   },
   // ========== Shoe ==========
   {
@@ -114,6 +122,7 @@ const products = [
     rating: 4.8,
     category: "shoe",
     price: 89,
+    createdAt: "2022-11-10T12:00:00.000Z",
   },
   {
     id: 10,
@@ -125,6 +134,7 @@ const products = [
     rating: 3.7,
     category: "shoe",
     price: 129,
+    createdAt: "2023-03-25T09:25:00.000Z",
   },
   {
     id: 11,
@@ -136,6 +146,7 @@ const products = [
     rating: 4.5,
     category: "shoe",
     price: 115,
+    createdAt: "2023-05-14T15:35:00.000Z",
   },
   {
     id: 12,
@@ -147,6 +158,7 @@ const products = [
     rating: 4.6,
     category: "shoe",
     price: 99,
+    createdAt: "2023-07-30T11:05:00.000Z",
   },
   {
     id: 13,
@@ -158,6 +170,7 @@ const products = [
     rating: 1.3,
     category: "shoe",
     price: 55,
+    createdAt: "2023-10-19T14:50:00.000Z",
   },
   {
     id: 14,
@@ -169,6 +182,7 @@ const products = [
     rating: 4.9,
     category: "shoe",
     price: 149,
+    createdAt: "2024-02-07T10:15:00.000Z",
   },
   {
     id: 15,
@@ -180,6 +194,7 @@ const products = [
     rating: 4.1,
     category: "shoe",
     price: 45,
+    createdAt: "2024-04-28T16:00:00.000Z",
   },
   {
     id: 16,
@@ -191,6 +206,7 @@ const products = [
     rating: 4.4,
     category: "shoe",
     price: 85,
+    createdAt: "2024-07-11T08:30:00.000Z",
   },
 
   // ========== Handbag ==========
@@ -204,6 +220,7 @@ const products = [
     rating: 2.7,
     category: "handbag",
     price: 119,
+    createdAt: "2023-01-28T13:20:00.000Z",
   },
   {
     id: 18,
@@ -215,6 +232,7 @@ const products = [
     rating: 4.5,
     category: "handbag",
     price: 69,
+    createdAt: "2023-04-16T09:40:00.000Z",
   },
   {
     id: 19,
@@ -226,6 +244,7 @@ const products = [
     rating: 4.8,
     category: "handbag",
     price: 139,
+    createdAt: "2023-08-02T15:55:00.000Z",
   },
   {
     id: 20,
@@ -237,6 +256,7 @@ const products = [
     rating: 1.2,
     category: "handbag",
     price: 35,
+    createdAt: "2023-11-21T11:10:00.000Z",
   },
   {
     id: 21,
@@ -248,6 +268,7 @@ const products = [
     rating: 4.6,
     category: "handbag",
     price: 79,
+    createdAt: "2024-01-09T17:25:00.000Z",
   },
   {
     id: 22,
@@ -259,6 +280,7 @@ const products = [
     rating: 4.4,
     category: "handbag",
     price: 129,
+    createdAt: "2024-03-15T12:45:00.000Z",
   },
   {
     id: 23,
@@ -270,6 +292,7 @@ const products = [
     rating: 2.3,
     category: "handbag",
     price: 89,
+    createdAt: "2024-06-20T10:00:00.000Z",
   },
   {
     id: 24,
@@ -281,6 +304,7 @@ const products = [
     rating: 4.7,
     category: "handbag",
     price: 149,
+    createdAt: "2024-09-04T14:30:00.000Z",
   },
 
   // ========== Hat ==========
@@ -294,6 +318,7 @@ const products = [
     rating: 4.8,
     category: "hat",
     price: 45,
+    createdAt: "2023-02-05T08:15:00.000Z",
   },
   {
     id: 26,
@@ -305,6 +330,7 @@ const products = [
     rating: 1.4,
     category: "hat",
     price: 25,
+    createdAt: "2023-05-01T16:40:00.000Z",
   },
   {
     id: 27,
@@ -316,6 +342,7 @@ const products = [
     rating: 4.7,
     category: "hat",
     price: 29,
+    createdAt: "2023-09-18T11:50:00.000Z",
   },
   {
     id: 28,
@@ -327,6 +354,7 @@ const products = [
     rating: 4.5,
     category: "hat",
     price: 39,
+    createdAt: "2024-02-14T09:05:00.000Z",
   },
   {
     id: 29,
@@ -338,6 +366,7 @@ const products = [
     rating: 4.3,
     category: "hat",
     price: 32,
+    createdAt: "2024-04-03T13:35:00.000Z",
   },
   {
     id: 30,
@@ -349,6 +378,7 @@ const products = [
     rating: 3.7,
     category: "hat",
     price: 35,
+    createdAt: "2024-06-08T15:20:00.000Z",
   },
   {
     id: 31,
@@ -360,6 +390,7 @@ const products = [
     rating: 4.6,
     category: "hat",
     price: 42,
+    createdAt: "2024-08-25T10:55:00.000Z",
   },
   {
     id: 32,
@@ -371,6 +402,7 @@ const products = [
     rating: 4.2,
     category: "hat",
     price: 28,
+    createdAt: "2025-01-12T12:10:00.000Z",
   },
 
   // ========== Perfume ==========
@@ -384,6 +416,7 @@ const products = [
     rating: 2.7,
     category: "perfume",
     price: 65,
+    createdAt: "2022-12-05T14:00:00.000Z",
   },
   {
     id: 34,
@@ -395,6 +428,7 @@ const products = [
     rating: 4.9,
     category: "perfume",
     price: 95,
+    createdAt: "2023-03-11T09:30:00.000Z",
   },
   {
     id: 35,
@@ -406,6 +440,7 @@ const products = [
     rating: 4.5,
     category: "perfume",
     price: 85,
+    createdAt: "2023-06-27T16:15:00.000Z",
   },
   {
     id: 36,
@@ -417,6 +452,7 @@ const products = [
     rating: 4.4,
     category: "perfume",
     price: 72,
+    createdAt: "2023-10-08T11:45:00.000Z",
   },
   {
     id: 37,
@@ -428,6 +464,7 @@ const products = [
     rating: 2.6,
     category: "perfume",
     price: 68,
+    createdAt: "2024-01-30T08:20:00.000Z",
   },
   {
     id: 38,
@@ -439,6 +476,7 @@ const products = [
     rating: 4.8,
     category: "perfume",
     price: 110,
+    createdAt: "2024-05-06T13:50:00.000Z",
   },
   {
     id: 39,
@@ -450,6 +488,7 @@ const products = [
     rating: 4.3,
     category: "perfume",
     price: 59,
+    createdAt: "2024-07-19T15:05:00.000Z",
   },
   {
     id: 40,
@@ -461,6 +500,7 @@ const products = [
     rating: 3.9,
     category: "perfume",
     price: 125,
+    createdAt: "2024-10-02T10:40:00.000Z",
   },
 
   // ========== Thermos ==========
@@ -474,6 +514,7 @@ const products = [
     rating: 4.8,
     category: "thermos",
     price: 35,
+    createdAt: "2022-10-18T12:25:00.000Z",
   },
   {
     id: 42,
@@ -485,6 +526,7 @@ const products = [
     rating: 4.6,
     category: "thermos",
     price: 29,
+    createdAt: "2023-02-22T14:10:00.000Z",
   },
   {
     id: 43,
@@ -496,6 +538,7 @@ const products = [
     rating: 1.5,
     category: "thermos",
     price: 25,
+    createdAt: "2023-05-09T09:00:00.000Z",
   },
   {
     id: 44,
@@ -507,6 +550,7 @@ const products = [
     rating: 4.7,
     category: "thermos",
     price: 55,
+    createdAt: "2023-08-14T16:30:00.000Z",
   },
   {
     id: 45,
@@ -518,6 +562,7 @@ const products = [
     rating: 4.4,
     category: "thermos",
     price: 32,
+    createdAt: "2023-11-03T11:20:00.000Z",
   },
   {
     id: 46,
@@ -529,6 +574,7 @@ const products = [
     rating: 3.3,
     category: "thermos",
     price: 22,
+    createdAt: "2024-02-26T08:45:00.000Z",
   },
   {
     id: 47,
@@ -540,6 +586,7 @@ const products = [
     rating: 4.9,
     category: "thermos",
     price: 42,
+    createdAt: "2024-05-15T13:00:00.000Z",
   },
   {
     id: 48,
@@ -551,6 +598,7 @@ const products = [
     rating: 4.5,
     category: "thermos",
     price: 28,
+    createdAt: "2024-07-28T15:40:00.000Z",
   },
   {
     id: 49,
@@ -562,6 +610,7 @@ const products = [
     rating: 2.8,
     category: "thermos",
     price: 65,
+    createdAt: "2024-09-16T10:15:00.000Z",
   },
   {
     id: 50,
@@ -573,6 +622,7 @@ const products = [
     rating: 4.6,
     category: "thermos",
     price: 38,
+    createdAt: "2025-02-01T12:50:00.000Z",
   },
 ];
 
