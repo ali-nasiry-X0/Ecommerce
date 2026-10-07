@@ -1,0 +1,24 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+.shortList {
+  margin-bottom: v.$spacing-xxl;
+
+  .container {
+    @include m.flex(column, space-between, center, nowrap, 4rem);
+  }
+  &__cta {
+    color: v.$neutral-b300;
+  }
+  &__content {
+    @include m.flex(row, space-between, center, nowrap, 2rem);
+    width: 100%;
+    overflow-x: scroll;
+  }
+}
+@include m.respond("phone") {
+  .shortList {
+    .container {
+      gap: 1rem;
+    }
+  }
+}
