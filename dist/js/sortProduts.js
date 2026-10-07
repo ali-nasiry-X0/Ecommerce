@@ -19,3 +19,9 @@ export function sortProductRank(listProducts) {
   });
   return productSortRating;
 }
+export function sortProductDate(listProducts) {
+  let latest_products = listProducts.sort(
+    (a, b) => new Date(b.createdAt) - new Date(a.createdAt),
+  );
+  return latest_products;
+}

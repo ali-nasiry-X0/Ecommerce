@@ -633,7 +633,7 @@ const products = [
     category: "thermos",
     price: 42,
     createdAt: "2024-05-15T13:00:00.000Z",
-    isFeatured: true,
+    isFeatured: false,
   },
   {
     id: 48,
