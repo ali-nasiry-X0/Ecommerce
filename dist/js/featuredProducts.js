@@ -1,11 +1,8 @@
 import { listProducts } from "./products.js";
 
 export async function listPfeatured() {
-  let listProductsFeatured = [];
-  listProducts.forEach((product) => {
-    if (product.isFeatured) {
-      listProductsFeatured.push(product);
-    }
-  });
+  let listProductsFeatured = listProducts.filter(
+    (product) => product.isFeatured,
+  );
   return listProductsFeatured;
 }
