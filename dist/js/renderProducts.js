@@ -20,7 +20,7 @@ function bestSelling() {
     productName.textContent = product.title;
     img.src = product.image;
     productElement.id = product.id;
-    if (!product.stock == 0) {
+    if (product.stock != 0) {
       productStatus.textContent = "IN STOCK";
     } else {
       productStatus.textContent = " SOLD OUT";
@@ -43,41 +43,83 @@ const featuredOptions =
 const btnFeature = featuredOptionsContainer.querySelector(".product-featured");
 const btnLatest = featuredOptionsContainer.querySelector(".product-latest");
 
+const contianerProductsFeatured = document.querySelector(".featured__content");
+let allproductContainer;
+function createFeatureProductElements() {
+  const aPorduct = document.createElement("a");
+
+  aPorduct.classList.add("featured__product", "product", "shortList__product");
+
+  const divImg = document.createElement("div");
+
+  divImg.classList.add(
+    "featured__product__img",
+    "product__img",
+    "shortList__product__img",
+  );
+
+  const imgProduct = document.createElement("img");
+
+  const divInfo = document.createElement("div");
+
+  divInfo.classList.add(
+    "featured__product__info",
+    "product__info",
+    "shortList__product__info",
+  );
+
+  const pName = document.createElement("p");
+
+  pName.classList.add("product__name");
+
+  const divPDetail = document.createElement("div");
+
+  divPDetail.classList.add("product__detail");
+
+  const pStatus = document.createElement("P");
+
+  pStatus.classList.add("product__status");
+
+  const pPrice = document.createElement("P");
+
+  pPrice.classList.add("product__price");
+
+  // appending
+
+  divPDetail.appendChild(pStatus);
+  divPDetail.appendChild(pPrice);
+  divInfo.appendChild(pName);
+  divInfo.appendChild(divPDetail);
+  divImg.appendChild(imgProduct);
+  aPorduct.appendChild(divImg);
+  aPorduct.appendChild(divInfo);
+  contianerProductsFeatured.appendChild(aPorduct);
+}
 async function featuredProducts() {
-  const contianerProductsFeatured =
-    document.querySelectorAll(".featured__product");
-
   const allProductsFeature = await listPfeatured();
-
-  let indexFeatureProducts = [];
-
-  let featured_products = [];
-
-  for (let i = 0; indexFeatureProducts.length < 4; i++) {
-    let index = Math.floor(
-      Math.random() / (allProductsFeature.length / 200 + 0.2),
-    );
-    if (!indexFeatureProducts.includes(index)) {
-      indexFeatureProducts.push(index);
-    }
-  }
+  contianerProductsFeatured.innerHTML = "";
 
   if (btnFeature.classList.contains("active")) {
-    indexFeatureProducts.forEach((index) => {
-      featured_products.push(allProductsFeature[index]);
+    allProductsFeature.forEach(() => {
+      createFeatureProductElements();
     });
-    renderFP(featured_products);
+    allproductContainer = document.querySelectorAll(".featured__product");
+    renderFP(allProductsFeature);
   }
-
   if (btnLatest.classList.contains("active")) {
-    let latest_products = sortProductRank(listProducts);
+    let latest_products = sortProductRank(listProducts).slice(0, 4);
+    console.log(latest_products);
+
+    latest_products.forEach(() => {
+      createFeatureProductElements();
+    });
+    allproductContainer = document.querySelectorAll(".featured__product");
+
     renderFP(latest_products);
   }
 
   function renderFP(listProducts) {
-    contianerProductsFeatured.forEach((productElement, index) => {
-      console.log(listProducts[index]);
-
+    allproductContainer.forEach((productElement, index) => {
       const product = listProducts[index];
       const img = productElement.querySelector("img");
       const productName = productElement.querySelector(".product__name");
@@ -87,7 +129,7 @@ async function featuredProducts() {
       productName.textContent = product.title;
       img.src = product.image;
       productElement.id = product.id;
-      if (!product.stock == 0) {
+      if (product.stock != 0) {
         productStatus.textContent = "IN STOCK";
       } else {
         productStatus.textContent = " SOLD OUT";
