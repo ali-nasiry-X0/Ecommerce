@@ -11,7 +11,7 @@
 // @use "components/accordion";
 @use "components/button";
 @use "components/product-card";
-// @use "components/form";
+@use "components/shortList";
 // @use "components/team-card";
 // @use "components/testimonials-text";
 
@@ -35,6 +35,7 @@
 @use "layout/status-payment";
 @use "layout/user-cart";
 @use "layout/user-dashbord";
+@use "layout/featured-products";
 
 @use "pages/home";
 

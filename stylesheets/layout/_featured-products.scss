@@ -1,0 +1,19 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.featured {
+  margin-bottom: v.$spacing-xxl;
+  &__options {
+    width: 100%;
+    @include m.flex(row, center, center, nowrap, 0.2rem);
+  }
+  &__option {
+    color: v.$neutral-b500;
+    border-radius: 2rem;
+    cursor: pointer;
+    &.active {
+      border: 1px solid v.$neutral-w200;
+      color: v.$neutral-black;
+    }
+  }
+}

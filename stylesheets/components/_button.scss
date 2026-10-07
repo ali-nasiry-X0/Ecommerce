@@ -4,6 +4,7 @@
   @include m.flex(row, center, center, nowrap, 0.5rem);
   border-radius: 0.25rem;
   padding: 0.6rem 1.5rem;
+  background-color: transparent;
   border: none;
 }
 .btn--primary {
