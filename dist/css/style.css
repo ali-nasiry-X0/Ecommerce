@@ -338,6 +338,77 @@ label {
     width: 100%;
   }
 }
+.ctaNews {
+  margin-bottom: 6rem;
+  background-color: #f6f6f6;
+}
+.ctaNews .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  height: 15rem;
+}
+.ctaNews__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: nowrap;
+  gap: 2rem;
+}
+.ctaNews__text {
+  color: #5c5f6a;
+}
+.ctaNews__emailBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+}
+.ctaNews__emailInput {
+  border: 1px solid #e6e7e8;
+  padding: 0.6rem 1.5rem;
+  background-color: transparent;
+  width: 20rem;
+}
+
+@media only screen and (max-width: 56.25rem) {
+  .ctaNews .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 3rem;
+  }
+  .ctaNews__content {
+    gap: 1rem;
+  }
+}
+@media only screen and (max-width: 37.5rem) {
+  .ctaNews .container {
+    height: 20rem;
+  }
+  .ctaNews__emailInput {
+    width: 100%;
+  }
+  .ctaNews__emailBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+  .ctaNews__btnSubmit {
+    width: 100%;
+  }
+}
 .get-offer {
   height: 2.5rem;
   background: #0e1422;

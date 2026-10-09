@@ -1,0 +1,55 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.ctaNews {
+  margin-bottom: v.$spacing-xxl;
+  background-color: v.$neutral-w100;
+  .container {
+    @include m.flex(row, space-between, center, nowrap);
+    height: 15rem;
+  }
+  &__content {
+    @include m.flex(column, center, start, nowrap, 2rem);
+  }
+  &__text {
+    color: v.$neutral-b500;
+  }
+  &__emailBox {
+    @include m.flex(row, center, center, nowrap, 0.5rem);
+  }
+  &__emailInput {
+    border: 1px solid v.$neutral-b100;
+    padding: 0.6rem 1.5rem;
+    background-color: transparent;
+    width: 20rem;
+  }
+}
+
+@include m.respond("port-tab") {
+  .ctaNews {
+    .container {
+      @include m.flex(column, center, center, nowrap, 3rem);
+    }
+
+    &__content {
+      gap: 1rem;
+    }
+  }
+}
+@include m.respond("phone") {
+  .ctaNews {
+    .container {
+      height: 20rem;
+    }
+    &__emailInput {
+      width: 100%;
+    }
+    &__emailBox {
+      width: 100%;
+      @include m.flex(column, center, center, nowrap, 0.5rem);
+    }
+    &__btnSubmit {
+      width: 100%;
+    }
+  }
+}
