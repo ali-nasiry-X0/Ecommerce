@@ -1,0 +1,100 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.footer {
+  .container {
+    @include m.flex(column, stretch, stretch, nowrap, 5rem);
+  }
+  &__orig {
+    @include m.flex(row, space-between, start, nowrap);
+  }
+  &__socialMedia {
+    width: 30%;
+    @include m.flex(column, center, start, nowrap, 1rem);
+
+    &__logo {
+      @include m.flex(row, center, center, nowrap, 0.5rem);
+    }
+    &__imgLogo {
+      padding: 0.5rem;
+      border: 1px solid v.$neutral-b100;
+      border-radius: 0.5rem;
+    }
+    &__text {
+      p {
+        color: v.$neutral-b500;
+      }
+    }
+    &__social {
+      @include m.flex(row, center, center, nowrap, 1rem);
+    }
+  }
+  &__content {
+    @include m.flex(row, space-between, center, nowrap, 5rem);
+    &__support,
+    &__company,
+    &__shop {
+      @include m.flex(column, center, start, nowrap, 2rem);
+      color: v.$neutral-b300;
+    }
+    &__options {
+      @include m.flex(column, start, start, nowrap, 1rem);
+    }
+    &__option {
+      color: v.$neutral-b500;
+      width: 100%;
+    }
+  }
+  &__payments {
+    @include m.flex(column, start, center, nowrap, 3rem);
+    &__title {
+      color: v.$neutral-b300;
+    }
+    &__icons {
+      @include m.flex(row, center, center, nowrap, 1rem);
+      img {
+        filter: grayscale(1);
+      }
+    }
+  }
+  &__copyR {
+    @include m.flex(column, stretch, center, nowrap, 1rem);
+    hr {
+      width: 100%;
+      border: 1px solid v.$neutral-w100;
+    }
+    p {
+      color: v.$neutral-b500;
+    }
+  }
+}
+@include m.respond("land-tab") {
+  .footer {
+    &__socialMedia {
+      width: auto;
+    }
+    &__content {
+      width: 100%;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+    &__payments {
+      gap: 1rem;
+      &__icons {
+        flex-direction: column;
+      }
+    }
+  }
+}
+@include m.respond("port-tab") {
+  .footer {
+    &__payments {
+      &__icons {
+        flex-direction: row;
+      }
+    }
+    &__orig {
+      @include m.flex(column, center, start, nowrap, 3rem);
+    }
+  }
+}
