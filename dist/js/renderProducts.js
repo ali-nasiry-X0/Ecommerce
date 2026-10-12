@@ -2,6 +2,7 @@ import { listProducts } from "./products.js";
 import { sortProductRank } from "./sortProduts.js";
 import { listPcategories } from "./seprateProductsByCategories.js";
 import { listPfeatured } from "./featuredProducts.js";
+import { productsById } from "./products.js";
 
 function bestSelling() {
   const bestProducts = sortProductRank(listProducts).slice(0, 4);
@@ -45,6 +46,7 @@ const btnLatest = featuredOptionsContainer.querySelector(".product-latest");
 
 const contianerProductsFeatured = document.querySelector(".featured__content");
 let allproductContainer;
+
 function createFeatureProductElements() {
   const aPorduct = document.createElement("a");
 
@@ -97,6 +99,7 @@ function createFeatureProductElements() {
 }
 async function featuredProducts() {
   const allProductsFeature = await listPfeatured();
+
   contianerProductsFeatured.innerHTML = "";
 
   if (btnFeature.classList.contains("active")) {
@@ -108,7 +111,6 @@ async function featuredProducts() {
   }
   if (btnLatest.classList.contains("active")) {
     let latest_products = sortProductRank(listProducts).slice(0, 4);
-    console.log(latest_products);
 
     latest_products.forEach(() => {
       createFeatureProductElements();
@@ -137,6 +139,7 @@ async function featuredProducts() {
       productPrice.textContent = `${product.price} $`;
     });
   }
+  redirectToproductDetail();
 }
 btnFeature.addEventListener("click", () => {
   if (!btnFeature.classList.contains("active")) {
@@ -145,6 +148,7 @@ btnFeature.addEventListener("click", () => {
     });
     btnFeature.classList.add("active");
     featuredProducts();
+    redirectToproductDetail();
   }
 });
 btnLatest.addEventListener("click", () => {
@@ -154,9 +158,19 @@ btnLatest.addEventListener("click", () => {
     });
     btnLatest.classList.add("active");
     featuredProducts();
+    redirectToproductDetail();
   }
 });
 
+function redirectToproductDetail() {
+  let domProducts = document.querySelectorAll(".product");
+  domProducts.forEach((domProduct) => {
+    domProduct.addEventListener("click", () => {
+      const baseUrl = "product.html";
+      window.location.href = `${baseUrl}?id=${productsById.get(Number(domProduct.id)).id}`;
+    });
+  });
+}
 bestSelling();
 ctaImg();
 featuredProducts();
