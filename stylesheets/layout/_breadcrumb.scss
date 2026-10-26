@@ -2,6 +2,7 @@
 @use "../abstracts/variables" as v;
 
 .breadCrumb {
+  margin-bottom: v.$spacing-md;
   .container {
     @include m.flex(row, stretch, stretch);
     & > *:not(:last-child) {

@@ -95,5 +95,81 @@
         <a class="breadCrumb__main" href="./home.html">Ecommerce</a>
       </div>
     </section>
+    <main class="product-detail">
+      <div class="container">
+        <div class="product-detail__purchase">
+          <div class="product-detail__gallery">
+            <div class="product-detail__pictures">
+              <div class="product-detail__wrapper">
+                <img src="../img/hero-pic.png" alt="" />
+                <img src="../img/hero-pic.png" alt="" />
+                <img src="../img/hero-pic.png" alt="" />
+              </div>
+            </div>
+            <div class="product-detail__controls">
+              <button type="button">1</button>
+              <button type="button">2</button>
+              <button type="button">3</button>
+            </div>
+          </div>
+          <div class="product-detail__options">
+            <div class="product-detail__title">
+              <h3 class="product-detail__nameProduct"></h3>
+              <img
+                class="product-detail__shareIcon"
+                src="../icons/ui/Share.svg"
+                alt=""
+              />
+            </div>
+            <div class="product-detail__generalInfo">
+              <div class="product-detail__rank">
+                <img src="../icons/ui/Star.svg" alt="" />
+                <p class="product-detail__rank__content"></p>
+              </div>
+              <div class="product-detail__status"></div>
+            </div>
+            <p class="product-detail__price"></p>
+
+            <div class="product-detail__dynamicOptions">
+              <div class="product-detail__selectColors">
+                <p>AVAILABLE COLORS</p>
+                <div class="product-detail__colors">
+                  <button class="product-detail__color"></button>
+                </div>
+              </div>
+              <!-- این قسمت باید داینامیک بشه -->
+              <div class="product-detail__selectSize">
+                <p>SELECT SIZE</p>
+                <div class="product-detail__size">
+                  <button>s</button>
+                  <button>m</button>
+                  <button>x</button>
+                </div>
+              </div>
+              <!-- این قسمت باید داینامیک بشه  -->
+            </div>
+
+            <div class="product-detail__quantity">
+              <p>QUANTITY</p>
+              <div class="product-detail__quantityBox">
+                <button>+</button>
+                <input type="text" />
+                <button>-</button>
+              </div>
+            </div>
+            <div class="product-detail__actionProduct">
+              <button class="product-detail__addToCart">Add to cart</button>
+              <button class="like">
+                <img src="../icons/ui/Heart.svg" alt="" />
+              </button>
+            </div>
+            <p class="product-detail__proposal">
+              — Free shipping on orders $100+
+            </p>
+          </div>
+        </div>
+        <div class="product-detail__information"></div>
+      </div>
+    </main>
   </body>
 </html>

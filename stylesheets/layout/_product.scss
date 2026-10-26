@@ -1,0 +1,51 @@
+@use "../abstracts/mixins" as m;
+
+@use "../abstracts/variables" as v;
+
+.product-detail {
+  .contianer {
+    @include m.flex(column, center, center, nowrap);
+  }
+  &__purchase {
+    @include m.flex(row, space-between, center, nowrap);
+    & > * {
+      height: 100%;
+    }
+  }
+  &__gallery {
+    @include m.flex(column, space-around, center, nowrap);
+    width: 34rem;
+    height: 36.5rem;
+    background-color: v.$neutral-w100;
+  }
+  &__pictures {
+    width: 90%;
+    overflow-x: scroll;
+    background-color: inherit;
+  }
+  &__wrapper {
+    @include m.flex(row, center, center, nowrap);
+  }
+  &__title {
+    @include m.flex(row, space-between, center, nowrap);
+  }
+  &__options {
+    flex: 0 0 45%;
+  }
+  &__generalInfo {
+    @include m.flex(row, stretch, center, nowrap, 2rem);
+  }
+  &__rank {
+    @include m.flex(row, stretch, stretch, nowrap, 1rem);
+    background-color: v.$neutral-w100;
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    color: v.$neutral-b500;
+  }
+  &__status {
+    border: 1px solid v.$neutral-b100;
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    color: v.$neutral-b500;
+  }
+}
