@@ -3,7 +3,7 @@ import { sortProductRank } from "./sortProduts.js";
 import { listPcategories } from "./seprateProductsByCategories.js";
 import { listPfeatured } from "./featuredProducts.js";
 import { productsById } from "./products.js";
-
+import { stock } from "./stockProduct.js";
 function bestSelling() {
   const bestProducts = sortProductRank(listProducts).slice(0, 4);
 
@@ -21,7 +21,7 @@ function bestSelling() {
     productName.textContent = product.title;
     img.src = product.image;
     productElement.id = product.id;
-    if (product.stock != 0) {
+    if (stock(product) > 0) {
       productStatus.textContent = "IN STOCK";
     } else {
       productStatus.textContent = " SOLD OUT";
