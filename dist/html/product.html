@@ -129,26 +129,22 @@
               <div class="product-detail__status"></div>
             </div>
             <p class="product-detail__price"></p>
-
-            <div class="product-detail__dynamicOptions">
-              <div class="product-detail__selectColors">
-                <p>AVAILABLE COLORS</p>
-                <div class="product-detail__colors">
-                  <button class="product-detail__color"></button>
+            <div class="product-detail__optional">
+              <template class="selectColors-template">
+                <div class="product-detail__selectColors">
+                  <p>AVAILABLE COLORS</p>
+                  <div class="product-detail__colors">
+                    <button class="product-detail__color"></button>
+                  </div>
                 </div>
-              </div>
-              <!-- این قسمت باید داینامیک بشه -->
-              <div class="product-detail__selectSize">
-                <p>SELECT SIZE</p>
-                <div class="product-detail__size">
-                  <button>s</button>
-                  <button>m</button>
-                  <button>x</button>
+              </template>
+              <template class="selectSize-template">
+                <div class="product-detail__selectSize">
+                  <p>SELECT SIZE</p>
+                  <div class="product-detail__size"></div>
                 </div>
-              </div>
-              <!-- این قسمت باید داینامیک بشه  -->
+              </template>
             </div>
-
             <div class="product-detail__quantity">
               <p>QUANTITY</p>
               <div class="product-detail__quantityBox">
