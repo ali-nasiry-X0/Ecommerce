@@ -1040,6 +1040,45 @@ label {
   border-radius: 3rem;
   color: #5c5f6a;
 }
+.product-detail__colors button {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: relative;
+  border-color: #b6b7bc;
+}
+.product-detail__colors button::before {
+  content: "";
+  position: absolute;
+  inset: 0.2rem;
+  border-radius: 50%;
+  background: var(--swatch-color);
+}
+.product-detail__colors button.is-selected {
+  border-color: #000000;
+}
+.product-detail__size button {
+  border: 1px solid #b6b7bc;
+  border-radius: 0.2rem;
+  background-color: #ffffff;
+  padding: 0.2rem 0.5rem;
+  margin-right: 0.5rem;
+}
+.product-detail__size button.is-selected {
+  border-color: #000000;
+}
+.product-detail__quantityBox input[type=number]::-webkit-inner-spin-button,
+.product-detail__quantityBox input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.product-detail__quantityBox input[type=number] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
 
 .featured {
   margin-bottom: 6rem;

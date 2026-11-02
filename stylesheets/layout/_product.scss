@@ -48,4 +48,53 @@
     border-radius: 3rem;
     color: v.$neutral-b500;
   }
+  &__colors {
+    button {
+      width: 2rem;
+      height: 2rem;
+      padding: 0.5rem;
+      border: 1px solid transparent;
+      border-radius: 50%;
+      background-color: v.$neutral-white;
+      position: relative;
+      border-color: v.$neutral-b200;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0.2rem;
+        border-radius: 50%;
+        background: var(--swatch-color);
+      }
+
+      &.is-selected {
+        border-color: v.$neutral-black;
+      }
+    }
+  }
+  &__size {
+    button {
+      border: 1px solid v.$neutral-b200;
+      border-radius: 0.2rem;
+      background-color: v.$neutral-white;
+      padding: 0.2rem 0.5rem;
+      margin-right: 0.5rem;
+
+      &.is-selected {
+        border-color: v.$neutral-black;
+      }
+    }
+  }
+  &__quantityBox {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type="number"] {
+      appearance: textfield;
+      -moz-appearance: textfield;
+    }
+  }
 }
