@@ -1,7 +1,3 @@
-// let quantityInput = document.querySelector(".productQuantity");
-// const inButton = document.querySelector(".inButton");
-// const deButton = document.querySelector(".deButton");
-
 export function operateQuantity(input, inB, deB) {
   let counter = input.value;
   inB.addEventListener("click", () => {
@@ -13,4 +9,3 @@ export function operateQuantity(input, inB, deB) {
     input.value = counter;
   });
 }
-// operateQuantity(quantityInput, inButton, deButton);
