@@ -79,19 +79,37 @@
       background-color: v.$neutral-white;
       padding: 0.2rem 0.5rem;
       margin-right: 0.5rem;
-
+      color: v.$neutral-b500;
       &.is-selected {
         border-color: v.$neutral-black;
+        color: v.$neutral-black;
       }
     }
   }
   &__quantityBox {
+    @include m.flex(row, start, center, nowrap);
+    width: max-content;
+    border: 1px solid v.$neutral-b100;
+    border-radius: 0.5rem;
+    input {
+      width: 5rem;
+      border: none;
+      text-align: center;
+      outline: none;
+    }
+    button {
+      width: 3rem;
+      font-size: 1.5rem;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      color: v.$neutral-b500;
+    }
     input[type="number"]::-webkit-inner-spin-button,
     input[type="number"]::-webkit-outer-spin-button {
       -webkit-appearance: none;
       margin: 0;
     }
-
     input[type="number"] {
       appearance: textfield;
       -moz-appearance: textfield;

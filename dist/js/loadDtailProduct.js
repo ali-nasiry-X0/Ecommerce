@@ -1,6 +1,7 @@
 // import { getCategories } from "./getCategories.js";
 import { productsById } from "./products.js";
 import { stock } from "./stockProduct.js";
+import { operateQuantity } from "./productQuantity.js";
 const purchaseContainer = document.querySelector(".product-detail__purchase");
 const optionsContainer = purchaseContainer.querySelector(
   ".product-detail__optional",
@@ -20,6 +21,7 @@ function loadAllDetail(product) {
   if (dynamicOptions.includes("size")) {
     renderSizeOption(sizes, optionsContainer);
   }
+  numOfProductBuy();
 }
 
 function loadBaseDetail(product) {
@@ -114,5 +116,13 @@ function selectable(btnElem, container) {
 
   btnElem.classList.add("is-selected");
 }
-
+function numOfProductBuy() {
+  const counterContaienr = document.querySelector(
+    ".product-detail__quantityBox",
+  );
+  const input = counterContaienr.querySelector(".productQuantity");
+  const inbtn = counterContaienr.querySelector(".inButton");
+  const debtn = counterContaienr.querySelector(".deButton");
+  operateQuantity(input, inbtn, debtn);
+}
 init();

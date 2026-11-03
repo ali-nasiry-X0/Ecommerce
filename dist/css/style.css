@@ -1066,9 +1066,35 @@ label {
   background-color: #ffffff;
   padding: 0.2rem 0.5rem;
   margin-right: 0.5rem;
+  color: #5c5f6a;
 }
 .product-detail__size button.is-selected {
   border-color: #000000;
+  color: #000000;
+}
+.product-detail__quantityBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: max-content;
+  border: 1px solid #e6e7e8;
+  border-radius: 0.5rem;
+}
+.product-detail__quantityBox input {
+  width: 5rem;
+  border: none;
+  text-align: center;
+  outline: none;
+}
+.product-detail__quantityBox button {
+  width: 3rem;
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #5c5f6a;
 }
 .product-detail__quantityBox input[type=number]::-webkit-inner-spin-button,
 .product-detail__quantityBox input[type=number]::-webkit-outer-spin-button {
