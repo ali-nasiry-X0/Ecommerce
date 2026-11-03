@@ -14,3 +14,10 @@
     filter: brightness(0) invert(1);
   }
 }
+
+.btn--secondary {
+  background-color: v.$neutral-white;
+  color: v.$neutral-black;
+  border: 1px solid v.$neutral-b100;
+  padding: 0.6rem;
+}

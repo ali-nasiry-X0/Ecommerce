@@ -7,9 +7,10 @@
     @include m.flex(column, center, center, nowrap);
   }
   &__purchase {
-    @include m.flex(row, space-between, center, nowrap);
+    @include m.flex(row, space-between, stretch, nowrap);
+
     & > * {
-      height: 100%;
+      height: auto;
     }
   }
   &__gallery {
@@ -27,10 +28,21 @@
     @include m.flex(row, center, center, nowrap);
   }
   &__title {
-    @include m.flex(row, space-between, center, nowrap);
+    @include m.flex(column, space-between, stretch, nowrap);
+  }
+  &__shareIcon {
+    width: 2rem;
+    height: 2rem;
+  }
+  &__head {
+    @include m.flex(row, space-between, stretch, nowrap);
   }
   &__options {
     flex: 0 0 45%;
+    @include m.flex(column, space-between, space-between, nowrap);
+  }
+  &__optional {
+    @include m.flex(column, stretch, stretch, nowrap, 2rem);
   }
   &__generalInfo {
     @include m.flex(row, stretch, center, nowrap, 2rem);
@@ -53,6 +65,8 @@
       width: 2rem;
       height: 2rem;
       padding: 0.5rem;
+      margin-top: 0.5rem;
+      margin-right: 0.5rem;
       border: 1px solid transparent;
       border-radius: 50%;
       background-color: v.$neutral-white;
@@ -78,6 +92,7 @@
       border-radius: 0.2rem;
       background-color: v.$neutral-white;
       padding: 0.2rem 0.5rem;
+      margin-top: 0.5rem;
       margin-right: 0.5rem;
       color: v.$neutral-b500;
       &.is-selected {
@@ -114,5 +129,11 @@
       appearance: textfield;
       -moz-appearance: textfield;
     }
+  }
+  &__actionProduct {
+    @include m.flex(row, stretch, center, nowrap, 0.5rem);
+  }
+  &__addToCart {
+    width: 20rem;
   }
 }
