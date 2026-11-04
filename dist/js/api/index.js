@@ -8,35 +8,44 @@ const categories = [
   {
     id: 1,
     name: "Tshirt",
-    slug: "tshirt",
+    slug: "tshirt"
   },
   {
     id: 2,
     name: "Shoe",
-    slug: "shoe",
+    slug: "shoe"
   },
   {
     id: 3,
     name: "Handbag",
-    slug: "handbag",
+    slug: "handbag"
   },
   {
     id: 4,
     name: "Hat",
-    slug: "hat",
+    slug: "hat"
   },
   {
     id: 5,
     name: "Perfume",
-    slug: "perfume",
+    slug: "perfume"
   },
   {
     id: 6,
     name: "Thermos",
-    slug: "thermos",
-  },
+    slug: "thermos"
+  }
 ];
 
+/*
+  ساختار هر محصول:
+  - options : محورهای انتخاب (color / size) با مقادیرشان (hex برای نمایش دایره رنگ؛ آرایه چون بعضی رنگ‌ها دو رنگه‌اند)
+              عطر فقط محور size (حجم) دارد.
+  - variants: هر ترکیب قابل فروش یک آیتم با sku یکتا
+              stock: 0  => ترکیب وجود دارد ولی تمام شده
+              نبودن ترکیب در لیست => آن ترکیب اصلاً تولید نمی‌شود
+  - موجودی کل، رنگ‌های موجود، فیلتر و ... را فرانت از روی variants حساب می‌کند.
+*/
 const products = [
   {
     id: 1,
@@ -54,91 +63,103 @@ const products = [
         values: [
           {
             name: "White",
-            hex: ["#FFFFFF"],
+            hex: [
+              "#FFFFFF"
+            ]
           },
           {
             name: "Off White",
-            hex: ["#F5F5F0"],
+            hex: [
+              "#F5F5F0"
+            ]
           },
           {
             name: "Ivory",
-            hex: ["#FFFFF0"],
-          },
-        ],
+            hex: [
+              "#FFFFF0"
+            ]
+          }
+        ]
       },
       {
         name: "size",
-        values: ["S", "M", "L", "XL", "XXL"],
-      },
+        values: [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ]
+      }
     ],
     variants: [
       {
-        sku: "TSH-001-WHI-S",
+        sku: "TSH-0001-WHI-S",
         color: "White",
         size: "S",
-        stock: 8,
+        stock: 8
       },
       {
-        sku: "TSH-001-WHI-M",
+        sku: "TSH-0001-WHI-M",
         color: "White",
         size: "M",
-        stock: 12,
+        stock: 12
       },
       {
-        sku: "TSH-001-WHI-L",
+        sku: "TSH-0001-WHI-L",
         color: "White",
         size: "L",
-        stock: 10,
+        stock: 10
       },
       {
-        sku: "TSH-001-WHI-XL",
+        sku: "TSH-0001-WHI-XL",
         color: "White",
         size: "XL",
-        stock: 9,
+        stock: 9
       },
       {
-        sku: "TSH-001-WHI-XXL",
+        sku: "TSH-0001-WHI-XXL",
         color: "White",
         size: "XXL",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "TSH-001-OFFWHI-S",
+        sku: "TSH-0001-OFFWHI-S",
         color: "Off White",
         size: "S",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "TSH-001-OFFWHI-M",
+        sku: "TSH-0001-OFFWHI-M",
         color: "Off White",
         size: "M",
-        stock: 7,
+        stock: 7
       },
       {
-        sku: "TSH-001-OFFWHI-L",
+        sku: "TSH-0001-OFFWHI-L",
         color: "Off White",
         size: "L",
-        stock: 0,
+        stock: 0
       },
       {
-        sku: "TSH-001-OFFWHI-XL",
+        sku: "TSH-0001-OFFWHI-XL",
         color: "Off White",
         size: "XL",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "TSH-001-IVO-L",
+        sku: "TSH-0001-IVO-L",
         color: "Ivory",
         size: "L",
-        stock: 6,
+        stock: 6
       },
       {
-        sku: "TSH-001-IVO-XXL",
+        sku: "TSH-0001-IVO-XXL",
         color: "Ivory",
         size: "XXL",
-        stock: 3,
-      },
-    ],
+        stock: 3
+      }
+    ]
   },
   {
     id: 2,
@@ -156,91 +177,103 @@ const products = [
         values: [
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Charcoal",
-            hex: ["#36454F"],
+            hex: [
+              "#36454F"
+            ]
           },
           {
             name: "Dark Gray",
-            hex: ["#4A4A4A"],
-          },
-        ],
+            hex: [
+              "#4A4A4A"
+            ]
+          }
+        ]
       },
       {
         name: "size",
-        values: ["S", "M", "L", "XL", "XXL"],
-      },
+        values: [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ]
+      }
     ],
     variants: [
       {
-        sku: "TSH-002-BLA-S",
+        sku: "TSH-0002-BLA-S",
         color: "Black",
         size: "S",
-        stock: 9,
+        stock: 9
       },
       {
-        sku: "TSH-002-BLA-M",
+        sku: "TSH-0002-BLA-M",
         color: "Black",
         size: "M",
-        stock: 14,
+        stock: 14
       },
       {
-        sku: "TSH-002-BLA-L",
+        sku: "TSH-0002-BLA-L",
         color: "Black",
         size: "L",
-        stock: 11,
+        stock: 11
       },
       {
-        sku: "TSH-002-BLA-XL",
+        sku: "TSH-0002-BLA-XL",
         color: "Black",
         size: "XL",
-        stock: 8,
+        stock: 8
       },
       {
-        sku: "TSH-002-BLA-XXL",
+        sku: "TSH-0002-BLA-XXL",
         color: "Black",
         size: "XXL",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "TSH-002-CHA-S",
+        sku: "TSH-0002-CHA-S",
         color: "Charcoal",
         size: "S",
-        stock: 6,
+        stock: 6
       },
       {
-        sku: "TSH-002-CHA-M",
+        sku: "TSH-0002-CHA-M",
         color: "Charcoal",
         size: "M",
-        stock: 0,
+        stock: 0
       },
       {
-        sku: "TSH-002-CHA-L",
+        sku: "TSH-0002-CHA-L",
         color: "Charcoal",
         size: "L",
-        stock: 7,
+        stock: 7
       },
       {
-        sku: "TSH-002-CHA-XXL",
+        sku: "TSH-0002-CHA-XXL",
         color: "Charcoal",
         size: "XXL",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "TSH-002-DARGRA-M",
+        sku: "TSH-0002-DARGRA-M",
         color: "Dark Gray",
         size: "M",
-        stock: 8,
+        stock: 8
       },
       {
-        sku: "TSH-002-DARGRA-XL",
+        sku: "TSH-0002-DARGRA-XL",
         color: "Dark Gray",
         size: "XL",
-        stock: 5,
-      },
-    ],
+        stock: 5
+      }
+    ]
   },
   {
     id: 3,
@@ -258,91 +291,103 @@ const products = [
         values: [
           {
             name: "Navy",
-            hex: ["#1F2A44"],
+            hex: [
+              "#1F2A44"
+            ]
           },
           {
             name: "Royal Blue",
-            hex: ["#2851A3"],
+            hex: [
+              "#2851A3"
+            ]
           },
           {
             name: "Sky Blue",
-            hex: ["#87CEEB"],
-          },
-        ],
+            hex: [
+              "#87CEEB"
+            ]
+          }
+        ]
       },
       {
         name: "size",
-        values: ["S", "M", "L", "XL", "XXL"],
-      },
+        values: [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ]
+      }
     ],
     variants: [
       {
-        sku: "TSH-003-NAV-S",
+        sku: "TSH-0003-NAV-S",
         color: "Navy",
         size: "S",
-        stock: 6,
+        stock: 6
       },
       {
-        sku: "TSH-003-NAV-M",
+        sku: "TSH-0003-NAV-M",
         color: "Navy",
         size: "M",
-        stock: 9,
+        stock: 9
       },
       {
-        sku: "TSH-003-NAV-L",
+        sku: "TSH-0003-NAV-L",
         color: "Navy",
         size: "L",
-        stock: 8,
+        stock: 8
       },
       {
-        sku: "TSH-003-NAV-XL",
+        sku: "TSH-0003-NAV-XL",
         color: "Navy",
         size: "XL",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "TSH-003-NAV-XXL",
+        sku: "TSH-0003-NAV-XXL",
         color: "Navy",
         size: "XXL",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "TSH-003-ROYBLU-S",
+        sku: "TSH-0003-ROYBLU-S",
         color: "Royal Blue",
         size: "S",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "TSH-003-ROYBLU-M",
+        sku: "TSH-0003-ROYBLU-M",
         color: "Royal Blue",
         size: "M",
-        stock: 0,
+        stock: 0
       },
       {
-        sku: "TSH-003-ROYBLU-L",
+        sku: "TSH-0003-ROYBLU-L",
         color: "Royal Blue",
         size: "L",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "TSH-003-ROYBLU-XXL",
+        sku: "TSH-0003-ROYBLU-XXL",
         color: "Royal Blue",
         size: "XXL",
-        stock: 2,
+        stock: 2
       },
       {
-        sku: "TSH-003-SKYBLU-M",
+        sku: "TSH-0003-SKYBLU-M",
         color: "Sky Blue",
         size: "M",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "TSH-003-SKYBLU-XL",
+        sku: "TSH-0003-SKYBLU-XL",
         color: "Sky Blue",
         size: "XL",
-        stock: 3,
-      },
-    ],
+        stock: 3
+      }
+    ]
   },
   {
     id: 4,
@@ -360,107 +405,121 @@ const products = [
         values: [
           {
             name: "White",
-            hex: ["#FFFFFF"],
+            hex: [
+              "#FFFFFF"
+            ]
           },
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Red",
-            hex: ["#D32F2F"],
+            hex: [
+              "#D32F2F"
+            ]
           },
           {
             name: "Gray",
-            hex: ["#9E9E9E"],
-          },
-        ],
+            hex: [
+              "#9E9E9E"
+            ]
+          }
+        ]
       },
       {
         name: "size",
-        values: ["S", "M", "L", "XL", "XXL"],
-      },
+        values: [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ]
+      }
     ],
     variants: [
       {
-        sku: "TSH-004-WHI-S",
+        sku: "TSH-0004-WHI-S",
         color: "White",
         size: "S",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "TSH-004-WHI-M",
+        sku: "TSH-0004-WHI-M",
         color: "White",
         size: "M",
-        stock: 7,
+        stock: 7
       },
       {
-        sku: "TSH-004-WHI-L",
+        sku: "TSH-0004-WHI-L",
         color: "White",
         size: "L",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "TSH-004-WHI-XL",
+        sku: "TSH-0004-WHI-XL",
         color: "White",
         size: "XL",
-        stock: 0,
+        stock: 0
       },
       {
-        sku: "TSH-004-WHI-XXL",
+        sku: "TSH-0004-WHI-XXL",
         color: "White",
         size: "XXL",
-        stock: 2,
+        stock: 2
       },
       {
-        sku: "TSH-004-BLA-S",
+        sku: "TSH-0004-BLA-S",
         color: "Black",
         size: "S",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "TSH-004-BLA-M",
+        sku: "TSH-0004-BLA-M",
         color: "Black",
         size: "M",
-        stock: 6,
+        stock: 6
       },
       {
-        sku: "TSH-004-BLA-L",
+        sku: "TSH-0004-BLA-L",
         color: "Black",
         size: "L",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "TSH-004-BLA-XL",
+        sku: "TSH-0004-BLA-XL",
         color: "Black",
         size: "XL",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "TSH-004-RED-M",
+        sku: "TSH-0004-RED-M",
         color: "Red",
         size: "M",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "TSH-004-RED-XL",
+        sku: "TSH-0004-RED-XL",
         color: "Red",
         size: "XL",
-        stock: 2,
+        stock: 2
       },
       {
-        sku: "TSH-004-GRA-L",
+        sku: "TSH-0004-GRA-L",
         color: "Gray",
         size: "L",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "TSH-004-GRA-XXL",
+        sku: "TSH-0004-GRA-XXL",
         color: "Gray",
         size: "XXL",
-        stock: 1,
-      },
-    ],
+        stock: 1
+      }
+    ]
   },
   {
     id: 5,
@@ -478,101 +537,115 @@ const products = [
         values: [
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Olive",
-            hex: ["#6B7B3A"],
+            hex: [
+              "#6B7B3A"
+            ]
           },
           {
             name: "Beige",
-            hex: ["#E1D5BC"],
+            hex: [
+              "#E1D5BC"
+            ]
           },
           {
             name: "White",
-            hex: ["#FFFFFF"],
-          },
-        ],
+            hex: [
+              "#FFFFFF"
+            ]
+          }
+        ]
       },
       {
         name: "size",
-        values: ["S", "M", "L", "XL", "XXL"],
-      },
+        values: [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ]
+      }
     ],
     variants: [
       {
-        sku: "TSH-005-BLA-S",
+        sku: "TSH-0005-BLA-S",
         color: "Black",
         size: "S",
-        stock: 6,
+        stock: 6
       },
       {
-        sku: "TSH-005-BLA-M",
+        sku: "TSH-0005-BLA-M",
         color: "Black",
         size: "M",
-        stock: 9,
+        stock: 9
       },
       {
-        sku: "TSH-005-BLA-L",
+        sku: "TSH-0005-BLA-L",
         color: "Black",
         size: "L",
-        stock: 7,
+        stock: 7
       },
       {
-        sku: "TSH-005-BLA-XL",
+        sku: "TSH-0005-BLA-XL",
         color: "Black",
         size: "XL",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "TSH-005-BLA-XXL",
+        sku: "TSH-0005-BLA-XXL",
         color: "Black",
         size: "XXL",
-        stock: 0,
+        stock: 0
       },
       {
-        sku: "TSH-005-OLI-S",
+        sku: "TSH-0005-OLI-S",
         color: "Olive",
         size: "S",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "TSH-005-OLI-L",
+        sku: "TSH-0005-OLI-L",
         color: "Olive",
         size: "L",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "TSH-005-OLI-XXL",
+        sku: "TSH-0005-OLI-XXL",
         color: "Olive",
         size: "XXL",
-        stock: 2,
+        stock: 2
       },
       {
-        sku: "TSH-005-BEI-M",
+        sku: "TSH-0005-BEI-M",
         color: "Beige",
         size: "M",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "TSH-005-BEI-XL",
+        sku: "TSH-0005-BEI-XL",
         color: "Beige",
         size: "XL",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "TSH-005-WHI-L",
+        sku: "TSH-0005-WHI-L",
         color: "White",
         size: "L",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "TSH-005-WHI-XXL",
+        sku: "TSH-0005-WHI-XXL",
         color: "White",
         size: "XXL",
-        stock: 2,
-      },
-    ],
+        stock: 2
+      }
+    ]
   },
   {
     id: 6,
@@ -590,91 +663,106 @@ const products = [
         values: [
           {
             name: "Navy/White",
-            hex: ["#1F2A44", "#FFFFFF"],
+            hex: [
+              "#1F2A44",
+              "#FFFFFF"
+            ]
           },
           {
             name: "Black/White",
-            hex: ["#111111", "#FFFFFF"],
+            hex: [
+              "#111111",
+              "#FFFFFF"
+            ]
           },
           {
             name: "Red/White",
-            hex: ["#D32F2F", "#FFFFFF"],
-          },
-        ],
+            hex: [
+              "#D32F2F",
+              "#FFFFFF"
+            ]
+          }
+        ]
       },
       {
         name: "size",
-        values: ["S", "M", "L", "XL", "XXL"],
-      },
+        values: [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ]
+      }
     ],
     variants: [
       {
-        sku: "TSH-006-NAVWHI-S",
+        sku: "TSH-0006-NAVWHI-S",
         color: "Navy/White",
         size: "S",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "TSH-006-NAVWHI-M",
+        sku: "TSH-0006-NAVWHI-M",
         color: "Navy/White",
         size: "M",
-        stock: 8,
+        stock: 8
       },
       {
-        sku: "TSH-006-NAVWHI-L",
+        sku: "TSH-0006-NAVWHI-L",
         color: "Navy/White",
         size: "L",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "TSH-006-NAVWHI-XL",
+        sku: "TSH-0006-NAVWHI-XL",
         color: "Navy/White",
         size: "XL",
-        stock: 0,
+        stock: 0
       },
       {
-        sku: "TSH-006-NAVWHI-XXL",
+        sku: "TSH-0006-NAVWHI-XXL",
         color: "Navy/White",
         size: "XXL",
-        stock: 2,
+        stock: 2
       },
       {
-        sku: "TSH-006-BLAWHI-S",
+        sku: "TSH-0006-BLAWHI-S",
         color: "Black/White",
         size: "S",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "TSH-006-BLAWHI-L",
+        sku: "TSH-0006-BLAWHI-L",
         color: "Black/White",
         size: "L",
-        stock: 7,
+        stock: 7
       },
       {
-        sku: "TSH-006-BLAWHI-XL",
+        sku: "TSH-0006-BLAWHI-XL",
         color: "Black/White",
         size: "XL",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "TSH-006-BLAWHI-XXL",
+        sku: "TSH-0006-BLAWHI-XXL",
         color: "Black/White",
         size: "XXL",
-        stock: 2,
+        stock: 2
       },
       {
-        sku: "TSH-006-REDWHI-M",
+        sku: "TSH-0006-REDWHI-M",
         color: "Red/White",
         size: "M",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "TSH-006-REDWHI-XL",
+        sku: "TSH-0006-REDWHI-XL",
         color: "Red/White",
         size: "XL",
-        stock: 3,
-      },
-    ],
+        stock: 3
+      }
+    ]
   },
   {
     id: 7,
@@ -692,95 +780,109 @@ const products = [
         values: [
           {
             name: "White",
-            hex: ["#FFFFFF"],
+            hex: [
+              "#FFFFFF"
+            ]
           },
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Gray",
-            hex: ["#9E9E9E"],
+            hex: [
+              "#9E9E9E"
+            ]
           },
           {
             name: "Beige",
-            hex: ["#E1D5BC"],
-          },
-        ],
+            hex: [
+              "#E1D5BC"
+            ]
+          }
+        ]
       },
       {
         name: "size",
-        values: ["S", "M", "L", "XL", "XXL"],
-      },
+        values: [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ]
+      }
     ],
     variants: [
       {
-        sku: "TSH-007-WHI-S",
+        sku: "TSH-0007-WHI-S",
         color: "White",
         size: "S",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "TSH-007-WHI-M",
+        sku: "TSH-0007-WHI-M",
         color: "White",
         size: "M",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "TSH-007-WHI-L",
+        sku: "TSH-0007-WHI-L",
         color: "White",
         size: "L",
-        stock: 0,
+        stock: 0
       },
       {
-        sku: "TSH-007-WHI-XL",
+        sku: "TSH-0007-WHI-XL",
         color: "White",
         size: "XL",
-        stock: 2,
+        stock: 2
       },
       {
-        sku: "TSH-007-BLA-S",
+        sku: "TSH-0007-BLA-S",
         color: "Black",
         size: "S",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "TSH-007-BLA-L",
+        sku: "TSH-0007-BLA-L",
         color: "Black",
         size: "L",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "TSH-007-BLA-XL",
+        sku: "TSH-0007-BLA-XL",
         color: "Black",
         size: "XL",
-        stock: 2,
+        stock: 2
       },
       {
-        sku: "TSH-007-GRA-M",
+        sku: "TSH-0007-GRA-M",
         color: "Gray",
         size: "M",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "TSH-007-GRA-XXL",
+        sku: "TSH-0007-GRA-XXL",
         color: "Gray",
         size: "XXL",
-        stock: 1,
+        stock: 1
       },
       {
-        sku: "TSH-007-BEI-L",
+        sku: "TSH-0007-BEI-L",
         color: "Beige",
         size: "L",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "TSH-007-BEI-XXL",
+        sku: "TSH-0007-BEI-XXL",
         color: "Beige",
         size: "XXL",
-        stock: 1,
-      },
-    ],
+        stock: 1
+      }
+    ]
   },
   {
     id: 8,
@@ -798,105 +900,121 @@ const products = [
         values: [
           {
             name: "White",
-            hex: ["#FFFFFF"],
+            hex: [
+              "#FFFFFF"
+            ]
           },
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Navy",
-            hex: ["#1F2A44"],
+            hex: [
+              "#1F2A44"
+            ]
           },
           {
             name: "Gray",
-            hex: ["#9E9E9E"],
+            hex: [
+              "#9E9E9E"
+            ]
           },
           {
             name: "Red",
-            hex: ["#D32F2F"],
-          },
-        ],
+            hex: [
+              "#D32F2F"
+            ]
+          }
+        ]
       },
       {
         name: "size",
-        values: ["S", "M", "L", "XL", "XXL"],
-      },
+        values: [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ]
+      }
     ],
     variants: [
       {
-        sku: "TSH-008-WHI-S",
+        sku: "TSH-0008-WHI-S",
         color: "White",
         size: "S",
-        stock: 8,
+        stock: 8
       },
       {
-        sku: "TSH-008-WHI-M",
+        sku: "TSH-0008-WHI-M",
         color: "White",
         size: "M",
-        stock: 10,
+        stock: 10
       },
       {
-        sku: "TSH-008-WHI-L",
+        sku: "TSH-0008-WHI-L",
         color: "White",
         size: "L",
-        stock: 0,
+        stock: 0
       },
       {
-        sku: "TSH-008-WHI-XL",
+        sku: "TSH-0008-WHI-XL",
         color: "White",
         size: "XL",
-        stock: 6,
+        stock: 6
       },
       {
-        sku: "TSH-008-BLA-S",
+        sku: "TSH-0008-BLA-S",
         color: "Black",
         size: "S",
-        stock: 7,
+        stock: 7
       },
       {
-        sku: "TSH-008-BLA-L",
+        sku: "TSH-0008-BLA-L",
         color: "Black",
         size: "L",
-        stock: 9,
+        stock: 9
       },
       {
-        sku: "TSH-008-BLA-XXL",
+        sku: "TSH-0008-BLA-XXL",
         color: "Black",
         size: "XXL",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "TSH-008-NAV-M",
+        sku: "TSH-0008-NAV-M",
         color: "Navy",
         size: "M",
-        stock: 8,
+        stock: 8
       },
       {
-        sku: "TSH-008-NAV-XL",
+        sku: "TSH-0008-NAV-XL",
         color: "Navy",
         size: "XL",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "TSH-008-GRA-M",
+        sku: "TSH-0008-GRA-M",
         color: "Gray",
         size: "M",
-        stock: 6,
+        stock: 6
       },
       {
-        sku: "TSH-008-GRA-XXL",
+        sku: "TSH-0008-GRA-XXL",
         color: "Gray",
         size: "XXL",
-        stock: 2,
+        stock: 2
       },
       {
-        sku: "TSH-008-RED-L",
+        sku: "TSH-0008-RED-L",
         color: "Red",
         size: "L",
-        stock: 5,
-      },
-    ],
+        stock: 5
+      }
+    ]
   },
   {
     id: 9,
@@ -914,91 +1032,105 @@ const products = [
         values: [
           {
             name: "White",
-            hex: ["#FFFFFF"],
+            hex: [
+              "#FFFFFF"
+            ]
           },
           {
             name: "White/Black",
-            hex: ["#FFFFFF", "#111111"],
+            hex: [
+              "#FFFFFF",
+              "#111111"
+            ]
           },
           {
             name: "White/Blue",
-            hex: ["#FFFFFF", "#1E6FD9"],
-          },
-        ],
+            hex: [
+              "#FFFFFF",
+              "#1E6FD9"
+            ]
+          }
+        ]
       },
       {
         name: "size",
-        values: ["40", "41", "42", "43", "44"],
-      },
+        values: [
+          "40",
+          "41",
+          "42",
+          "43",
+          "44"
+        ]
+      }
     ],
     variants: [
       {
-        sku: "SHO-009-WHI-40",
+        sku: "SHO-0009-WHI-40",
         color: "White",
         size: "40",
-        stock: 8,
+        stock: 8
       },
       {
-        sku: "SHO-009-WHI-41",
+        sku: "SHO-0009-WHI-41",
         color: "White",
         size: "41",
-        stock: 12,
+        stock: 12
       },
       {
-        sku: "SHO-009-WHI-42",
+        sku: "SHO-0009-WHI-42",
         color: "White",
         size: "42",
-        stock: 10,
+        stock: 10
       },
       {
-        sku: "SHO-009-WHI-43",
+        sku: "SHO-0009-WHI-43",
         color: "White",
         size: "43",
-        stock: 8,
+        stock: 8
       },
       {
-        sku: "SHO-009-WHI-44",
+        sku: "SHO-0009-WHI-44",
         color: "White",
         size: "44",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "SHO-009-WHIBLA-40",
+        sku: "SHO-0009-WHIBLA-40",
         color: "White/Black",
         size: "40",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "SHO-009-WHIBLA-41",
+        sku: "SHO-0009-WHIBLA-41",
         color: "White/Black",
         size: "41",
-        stock: 0,
+        stock: 0
       },
       {
-        sku: "SHO-009-WHIBLA-42",
+        sku: "SHO-0009-WHIBLA-42",
         color: "White/Black",
         size: "42",
-        stock: 6,
+        stock: 6
       },
       {
-        sku: "SHO-009-WHIBLA-44",
+        sku: "SHO-0009-WHIBLA-44",
         color: "White/Black",
         size: "44",
-        stock: 2,
+        stock: 2
       },
       {
-        sku: "SHO-009-WHIBLU-41",
+        sku: "SHO-0009-WHIBLU-41",
         color: "White/Blue",
         size: "41",
-        stock: 7,
+        stock: 7
       },
       {
-        sku: "SHO-009-WHIBLU-43",
+        sku: "SHO-0009-WHIBLU-43",
         color: "White/Blue",
         size: "43",
-        stock: 4,
-      },
-    ],
+        stock: 4
+      }
+    ]
   },
   {
     id: 10,
@@ -1016,85 +1148,97 @@ const products = [
         values: [
           {
             name: "Brown",
-            hex: ["#6D4C41"],
+            hex: [
+              "#6D4C41"
+            ]
           },
           {
             name: "Dark Brown",
-            hex: ["#3E2723"],
+            hex: [
+              "#3E2723"
+            ]
           },
           {
             name: "Tan",
-            hex: ["#D2B48C"],
-          },
-        ],
+            hex: [
+              "#D2B48C"
+            ]
+          }
+        ]
       },
       {
         name: "size",
-        values: ["40", "41", "42", "43", "44"],
-      },
+        values: [
+          "40",
+          "41",
+          "42",
+          "43",
+          "44"
+        ]
+      }
     ],
     variants: [
       {
-        sku: "SHO-010-BRO-40",
+        sku: "SHO-0010-BRO-40",
         color: "Brown",
         size: "40",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "SHO-010-BRO-41",
+        sku: "SHO-0010-BRO-41",
         color: "Brown",
         size: "41",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "SHO-010-BRO-42",
+        sku: "SHO-0010-BRO-42",
         color: "Brown",
         size: "42",
-        stock: 2,
+        stock: 2
       },
       {
-        sku: "SHO-010-BRO-43",
+        sku: "SHO-0010-BRO-43",
         color: "Brown",
         size: "43",
-        stock: 0,
+        stock: 0
       },
       {
-        sku: "SHO-010-BRO-44",
+        sku: "SHO-0010-BRO-44",
         color: "Brown",
         size: "44",
-        stock: 1,
+        stock: 1
       },
       {
-        sku: "SHO-010-DARBRO-40",
+        sku: "SHO-0010-DARBRO-40",
         color: "Dark Brown",
         size: "40",
-        stock: 2,
+        stock: 2
       },
       {
-        sku: "SHO-010-DARBRO-42",
+        sku: "SHO-0010-DARBRO-42",
         color: "Dark Brown",
         size: "42",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "SHO-010-DARBRO-44",
+        sku: "SHO-0010-DARBRO-44",
         color: "Dark Brown",
         size: "44",
-        stock: 1,
+        stock: 1
       },
       {
-        sku: "SHO-010-TAN-41",
+        sku: "SHO-0010-TAN-41",
         color: "Tan",
         size: "41",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "SHO-010-TAN-43",
+        sku: "SHO-0010-TAN-43",
         color: "Tan",
         size: "43",
-        stock: 2,
-      },
-    ],
+        stock: 2
+      }
+    ]
   },
   {
     id: 11,
@@ -1112,63 +1256,73 @@ const products = [
         values: [
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Dark Brown",
-            hex: ["#3E2723"],
-          },
-        ],
+            hex: [
+              "#3E2723"
+            ]
+          }
+        ]
       },
       {
         name: "size",
-        values: ["40", "41", "42", "43", "44"],
-      },
+        values: [
+          "40",
+          "41",
+          "42",
+          "43",
+          "44"
+        ]
+      }
     ],
     variants: [
       {
-        sku: "SHO-011-BLA-40",
+        sku: "SHO-0011-BLA-40",
         color: "Black",
         size: "40",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "SHO-011-BLA-41",
+        sku: "SHO-0011-BLA-41",
         color: "Black",
         size: "41",
-        stock: 7,
+        stock: 7
       },
       {
-        sku: "SHO-011-BLA-42",
+        sku: "SHO-0011-BLA-42",
         color: "Black",
         size: "42",
-        stock: 6,
+        stock: 6
       },
       {
-        sku: "SHO-011-BLA-43",
+        sku: "SHO-0011-BLA-43",
         color: "Black",
         size: "43",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "SHO-011-BLA-44",
+        sku: "SHO-0011-BLA-44",
         color: "Black",
         size: "44",
-        stock: 2,
+        stock: 2
       },
       {
-        sku: "SHO-011-DARBRO-41",
+        sku: "SHO-0011-DARBRO-41",
         color: "Dark Brown",
         size: "41",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "SHO-011-DARBRO-42",
+        sku: "SHO-0011-DARBRO-42",
         color: "Dark Brown",
         size: "42",
-        stock: 2,
-      },
-    ],
+        stock: 2
+      }
+    ]
   },
   {
     id: 12,
@@ -1186,105 +1340,121 @@ const products = [
         values: [
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Blue",
-            hex: ["#1E6FD9"],
+            hex: [
+              "#1E6FD9"
+            ]
           },
           {
             name: "Red",
-            hex: ["#D32F2F"],
+            hex: [
+              "#D32F2F"
+            ]
           },
           {
             name: "Gray",
-            hex: ["#9E9E9E"],
+            hex: [
+              "#9E9E9E"
+            ]
           },
           {
             name: "White",
-            hex: ["#FFFFFF"],
-          },
-        ],
+            hex: [
+              "#FFFFFF"
+            ]
+          }
+        ]
       },
       {
         name: "size",
-        values: ["40", "41", "42", "43", "44"],
-      },
+        values: [
+          "40",
+          "41",
+          "42",
+          "43",
+          "44"
+        ]
+      }
     ],
     variants: [
       {
-        sku: "SHO-012-BLA-40",
+        sku: "SHO-0012-BLA-40",
         color: "Black",
         size: "40",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "SHO-012-BLA-41",
+        sku: "SHO-0012-BLA-41",
         color: "Black",
         size: "41",
-        stock: 8,
+        stock: 8
       },
       {
-        sku: "SHO-012-BLA-42",
+        sku: "SHO-0012-BLA-42",
         color: "Black",
         size: "42",
-        stock: 0,
+        stock: 0
       },
       {
-        sku: "SHO-012-BLA-43",
+        sku: "SHO-0012-BLA-43",
         color: "Black",
         size: "43",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "SHO-012-BLU-40",
+        sku: "SHO-0012-BLU-40",
         color: "Blue",
         size: "40",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "SHO-012-BLU-42",
+        sku: "SHO-0012-BLU-42",
         color: "Blue",
         size: "42",
-        stock: 6,
+        stock: 6
       },
       {
-        sku: "SHO-012-RED-41",
+        sku: "SHO-0012-RED-41",
         color: "Red",
         size: "41",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "SHO-012-RED-43",
+        sku: "SHO-0012-RED-43",
         color: "Red",
         size: "43",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "SHO-012-GRA-41",
+        sku: "SHO-0012-GRA-41",
         color: "Gray",
         size: "41",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "SHO-012-GRA-44",
+        sku: "SHO-0012-GRA-44",
         color: "Gray",
         size: "44",
-        stock: 2,
+        stock: 2
       },
       {
-        sku: "SHO-012-WHI-42",
+        sku: "SHO-0012-WHI-42",
         color: "White",
         size: "42",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "SHO-012-WHI-44",
+        sku: "SHO-0012-WHI-44",
         color: "White",
         size: "44",
-        stock: 2,
-      },
-    ],
+        stock: 2
+      }
+    ]
   },
   {
     id: 13,
@@ -1302,105 +1472,121 @@ const products = [
         values: [
           {
             name: "White",
-            hex: ["#FFFFFF"],
+            hex: [
+              "#FFFFFF"
+            ]
           },
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Red",
-            hex: ["#D32F2F"],
+            hex: [
+              "#D32F2F"
+            ]
           },
           {
             name: "Navy",
-            hex: ["#1F2A44"],
+            hex: [
+              "#1F2A44"
+            ]
           },
           {
             name: "Beige",
-            hex: ["#E1D5BC"],
-          },
-        ],
+            hex: [
+              "#E1D5BC"
+            ]
+          }
+        ]
       },
       {
         name: "size",
-        values: ["40", "41", "42", "43", "44"],
-      },
+        values: [
+          "40",
+          "41",
+          "42",
+          "43",
+          "44"
+        ]
+      }
     ],
     variants: [
       {
-        sku: "SHO-013-WHI-40",
+        sku: "SHO-0013-WHI-40",
         color: "White",
         size: "40",
-        stock: 7,
+        stock: 7
       },
       {
-        sku: "SHO-013-WHI-41",
+        sku: "SHO-0013-WHI-41",
         color: "White",
         size: "41",
-        stock: 9,
+        stock: 9
       },
       {
-        sku: "SHO-013-WHI-42",
+        sku: "SHO-0013-WHI-42",
         color: "White",
         size: "42",
-        stock: 0,
+        stock: 0
       },
       {
-        sku: "SHO-013-WHI-43",
+        sku: "SHO-0013-WHI-43",
         color: "White",
         size: "43",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "SHO-013-BLA-40",
+        sku: "SHO-0013-BLA-40",
         color: "Black",
         size: "40",
-        stock: 6,
+        stock: 6
       },
       {
-        sku: "SHO-013-BLA-42",
+        sku: "SHO-0013-BLA-42",
         color: "Black",
         size: "42",
-        stock: 7,
+        stock: 7
       },
       {
-        sku: "SHO-013-BLA-44",
+        sku: "SHO-0013-BLA-44",
         color: "Black",
         size: "44",
-        stock: 2,
+        stock: 2
       },
       {
-        sku: "SHO-013-RED-41",
+        sku: "SHO-0013-RED-41",
         color: "Red",
         size: "41",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "SHO-013-RED-44",
+        sku: "SHO-0013-RED-44",
         color: "Red",
         size: "44",
-        stock: 2,
+        stock: 2
       },
       {
-        sku: "SHO-013-NAV-41",
+        sku: "SHO-0013-NAV-41",
         color: "Navy",
         size: "41",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "SHO-013-NAV-43",
+        sku: "SHO-0013-NAV-43",
         color: "Navy",
         size: "43",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "SHO-013-BEI-42",
+        sku: "SHO-0013-BEI-42",
         color: "Beige",
         size: "42",
-        stock: 4,
-      },
-    ],
+        stock: 4
+      }
+    ]
   },
   {
     id: 14,
@@ -1418,73 +1604,85 @@ const products = [
         values: [
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Brown",
-            hex: ["#6D4C41"],
+            hex: [
+              "#6D4C41"
+            ]
           },
           {
             name: "Burgundy",
-            hex: ["#800020"],
-          },
-        ],
+            hex: [
+              "#800020"
+            ]
+          }
+        ]
       },
       {
         name: "size",
-        values: ["40", "41", "42", "43", "44"],
-      },
+        values: [
+          "40",
+          "41",
+          "42",
+          "43",
+          "44"
+        ]
+      }
     ],
     variants: [
       {
-        sku: "SHO-014-BLA-40",
+        sku: "SHO-0014-BLA-40",
         color: "Black",
         size: "40",
-        stock: 2,
+        stock: 2
       },
       {
-        sku: "SHO-014-BLA-41",
+        sku: "SHO-0014-BLA-41",
         color: "Black",
         size: "41",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "SHO-014-BLA-42",
+        sku: "SHO-0014-BLA-42",
         color: "Black",
         size: "42",
-        stock: 2,
+        stock: 2
       },
       {
-        sku: "SHO-014-BLA-43",
+        sku: "SHO-0014-BLA-43",
         color: "Black",
         size: "43",
-        stock: 0,
+        stock: 0
       },
       {
-        sku: "SHO-014-BLA-44",
+        sku: "SHO-0014-BLA-44",
         color: "Black",
         size: "44",
-        stock: 1,
+        stock: 1
       },
       {
-        sku: "SHO-014-BRO-41",
+        sku: "SHO-0014-BRO-41",
         color: "Brown",
         size: "41",
-        stock: 2,
+        stock: 2
       },
       {
-        sku: "SHO-014-BRO-43",
+        sku: "SHO-0014-BRO-43",
         color: "Brown",
         size: "43",
-        stock: 1,
+        stock: 1
       },
       {
-        sku: "SHO-014-BUR-42",
+        sku: "SHO-0014-BUR-42",
         color: "Burgundy",
         size: "42",
-        stock: 1,
-      },
-    ],
+        stock: 1
+      }
+    ]
   },
   {
     id: 15,
@@ -1502,77 +1700,91 @@ const products = [
         values: [
           {
             name: "Brown",
-            hex: ["#6D4C41"],
+            hex: [
+              "#6D4C41"
+            ]
           },
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Beige",
-            hex: ["#E1D5BC"],
+            hex: [
+              "#E1D5BC"
+            ]
           },
           {
             name: "White",
-            hex: ["#FFFFFF"],
-          },
-        ],
+            hex: [
+              "#FFFFFF"
+            ]
+          }
+        ]
       },
       {
         name: "size",
-        values: ["40", "41", "42", "43", "44"],
-      },
+        values: [
+          "40",
+          "41",
+          "42",
+          "43",
+          "44"
+        ]
+      }
     ],
     variants: [
       {
-        sku: "SHO-015-BRO-40",
+        sku: "SHO-0015-BRO-40",
         color: "Brown",
         size: "40",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "SHO-015-BRO-42",
+        sku: "SHO-0015-BRO-42",
         color: "Brown",
         size: "42",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "SHO-015-BLA-40",
+        sku: "SHO-0015-BLA-40",
         color: "Black",
         size: "40",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "SHO-015-BLA-42",
+        sku: "SHO-0015-BLA-42",
         color: "Black",
         size: "42",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "SHO-015-BEI-41",
+        sku: "SHO-0015-BEI-41",
         color: "Beige",
         size: "41",
-        stock: 7,
+        stock: 7
       },
       {
-        sku: "SHO-015-BEI-43",
+        sku: "SHO-0015-BEI-43",
         color: "Beige",
         size: "43",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "SHO-015-WHI-41",
+        sku: "SHO-0015-WHI-41",
         color: "White",
         size: "41",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "SHO-015-WHI-44",
+        sku: "SHO-0015-WHI-44",
         color: "White",
         size: "44",
-        stock: 2,
-      },
-    ],
+        stock: 2
+      }
+    ]
   },
   {
     id: 16,
@@ -1590,83 +1802,97 @@ const products = [
         values: [
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "White",
-            hex: ["#FFFFFF"],
+            hex: [
+              "#FFFFFF"
+            ]
           },
           {
             name: "Gray",
-            hex: ["#9E9E9E"],
+            hex: [
+              "#9E9E9E"
+            ]
           },
           {
             name: "Navy",
-            hex: ["#1F2A44"],
-          },
-        ],
+            hex: [
+              "#1F2A44"
+            ]
+          }
+        ]
       },
       {
         name: "size",
-        values: ["40", "41", "42", "43", "44"],
-      },
+        values: [
+          "40",
+          "41",
+          "42",
+          "43",
+          "44"
+        ]
+      }
     ],
     variants: [
       {
-        sku: "SHO-016-BLA-40",
+        sku: "SHO-0016-BLA-40",
         color: "Black",
         size: "40",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "SHO-016-BLA-41",
+        sku: "SHO-0016-BLA-41",
         color: "Black",
         size: "41",
-        stock: 6,
+        stock: 6
       },
       {
-        sku: "SHO-016-BLA-42",
+        sku: "SHO-0016-BLA-42",
         color: "Black",
         size: "42",
-        stock: 0,
+        stock: 0
       },
       {
-        sku: "SHO-016-BLA-43",
+        sku: "SHO-0016-BLA-43",
         color: "Black",
         size: "43",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "SHO-016-WHI-40",
+        sku: "SHO-0016-WHI-40",
         color: "White",
         size: "40",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "SHO-016-WHI-42",
+        sku: "SHO-0016-WHI-42",
         color: "White",
         size: "42",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "SHO-016-GRA-41",
+        sku: "SHO-0016-GRA-41",
         color: "Gray",
         size: "41",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "SHO-016-GRA-44",
+        sku: "SHO-0016-GRA-44",
         color: "Gray",
         size: "44",
-        stock: 2,
+        stock: 2
       },
       {
-        sku: "SHO-016-NAV-42",
+        sku: "SHO-0016-NAV-42",
         color: "Navy",
         size: "42",
-        stock: 5,
-      },
-    ],
+        stock: 5
+      }
+    ]
   },
   {
     id: 17,
@@ -1684,45 +1910,53 @@ const products = [
         values: [
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Brown",
-            hex: ["#6D4C41"],
+            hex: [
+              "#6D4C41"
+            ]
           },
           {
             name: "Tan",
-            hex: ["#D2B48C"],
+            hex: [
+              "#D2B48C"
+            ]
           },
           {
             name: "Burgundy",
-            hex: ["#800020"],
-          },
-        ],
-      },
+            hex: [
+              "#800020"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "BAG-017-BLA",
+        sku: "BAG-0017-BLA",
         color: "Black",
-        stock: 7,
+        stock: 7
       },
       {
-        sku: "BAG-017-BRO",
+        sku: "BAG-0017-BRO",
         color: "Brown",
-        stock: 6,
+        stock: 6
       },
       {
-        sku: "BAG-017-TAN",
+        sku: "BAG-0017-TAN",
         color: "Tan",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "BAG-017-BUR",
+        sku: "BAG-0017-BUR",
         color: "Burgundy",
-        stock: 3,
-      },
-    ],
+        stock: 3
+      }
+    ]
   },
   {
     id: 18,
@@ -1740,45 +1974,53 @@ const products = [
         values: [
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Beige",
-            hex: ["#E1D5BC"],
+            hex: [
+              "#E1D5BC"
+            ]
           },
           {
             name: "Pink",
-            hex: ["#F48FB1"],
+            hex: [
+              "#F48FB1"
+            ]
           },
           {
             name: "Navy",
-            hex: ["#1F2A44"],
-          },
-        ],
-      },
+            hex: [
+              "#1F2A44"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "BAG-018-BLA",
+        sku: "BAG-0018-BLA",
         color: "Black",
-        stock: 12,
+        stock: 12
       },
       {
-        sku: "BAG-018-BEI",
+        sku: "BAG-0018-BEI",
         color: "Beige",
-        stock: 10,
+        stock: 10
       },
       {
-        sku: "BAG-018-PIN",
+        sku: "BAG-0018-PIN",
         color: "Pink",
-        stock: 8,
+        stock: 8
       },
       {
-        sku: "BAG-018-NAV",
+        sku: "BAG-0018-NAV",
         color: "Navy",
-        stock: 6,
-      },
-    ],
+        stock: 6
+      }
+    ]
   },
   {
     id: 19,
@@ -1796,45 +2038,53 @@ const products = [
         values: [
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Brown",
-            hex: ["#6D4C41"],
+            hex: [
+              "#6D4C41"
+            ]
           },
           {
             name: "Red",
-            hex: ["#D32F2F"],
+            hex: [
+              "#D32F2F"
+            ]
           },
           {
             name: "Gray",
-            hex: ["#9E9E9E"],
-          },
-        ],
-      },
+            hex: [
+              "#9E9E9E"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "BAG-019-BLA",
+        sku: "BAG-0019-BLA",
         color: "Black",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "BAG-019-BRO",
+        sku: "BAG-0019-BRO",
         color: "Brown",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "BAG-019-RED",
+        sku: "BAG-0019-RED",
         color: "Red",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "BAG-019-GRA",
+        sku: "BAG-0019-GRA",
         color: "Gray",
-        stock: 2,
-      },
-    ],
+        stock: 2
+      }
+    ]
   },
   {
     id: 20,
@@ -1852,45 +2102,53 @@ const products = [
         values: [
           {
             name: "Beige",
-            hex: ["#E1D5BC"],
+            hex: [
+              "#E1D5BC"
+            ]
           },
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Navy",
-            hex: ["#1F2A44"],
+            hex: [
+              "#1F2A44"
+            ]
           },
           {
             name: "Olive",
-            hex: ["#6B7B3A"],
-          },
-        ],
-      },
+            hex: [
+              "#6B7B3A"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "BAG-020-BEI",
+        sku: "BAG-0020-BEI",
         color: "Beige",
-        stock: 15,
+        stock: 15
       },
       {
-        sku: "BAG-020-BLA",
+        sku: "BAG-0020-BLA",
         color: "Black",
-        stock: 13,
+        stock: 13
       },
       {
-        sku: "BAG-020-NAV",
+        sku: "BAG-0020-NAV",
         color: "Navy",
-        stock: 12,
+        stock: 12
       },
       {
-        sku: "BAG-020-OLI",
+        sku: "BAG-0020-OLI",
         color: "Olive",
-        stock: 8,
-      },
-    ],
+        stock: 8
+      }
+    ]
   },
   {
     id: 21,
@@ -1908,45 +2166,53 @@ const products = [
         values: [
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Gold",
-            hex: ["#D4AF37"],
+            hex: [
+              "#D4AF37"
+            ]
           },
           {
             name: "Silver",
-            hex: ["#C0C0C0"],
+            hex: [
+              "#C0C0C0"
+            ]
           },
           {
             name: "Red",
-            hex: ["#D32F2F"],
-          },
-        ],
-      },
+            hex: [
+              "#D32F2F"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "BAG-021-BLA",
+        sku: "BAG-0021-BLA",
         color: "Black",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "BAG-021-GOL",
+        sku: "BAG-0021-GOL",
         color: "Gold",
-        stock: 2,
+        stock: 2
       },
       {
-        sku: "BAG-021-SIL",
+        sku: "BAG-0021-SIL",
         color: "Silver",
-        stock: 2,
+        stock: 2
       },
       {
-        sku: "BAG-021-RED",
+        sku: "BAG-0021-RED",
         color: "Red",
-        stock: 2,
-      },
-    ],
+        stock: 2
+      }
+    ]
   },
   {
     id: 22,
@@ -1964,36 +2230,42 @@ const products = [
         values: [
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Brown",
-            hex: ["#6D4C41"],
+            hex: [
+              "#6D4C41"
+            ]
           },
           {
             name: "Dark Green",
-            hex: ["#1B4D2E"],
-          },
-        ],
-      },
+            hex: [
+              "#1B4D2E"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "BAG-022-BLA",
+        sku: "BAG-0022-BLA",
         color: "Black",
-        stock: 9,
+        stock: 9
       },
       {
-        sku: "BAG-022-BRO",
+        sku: "BAG-0022-BRO",
         color: "Brown",
-        stock: 8,
+        stock: 8
       },
       {
-        sku: "BAG-022-DARGRE",
+        sku: "BAG-0022-DARGRE",
         color: "Dark Green",
-        stock: 6,
-      },
-    ],
+        stock: 6
+      }
+    ]
   },
   {
     id: 23,
@@ -2011,45 +2283,53 @@ const products = [
         values: [
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Brown",
-            hex: ["#6D4C41"],
+            hex: [
+              "#6D4C41"
+            ]
           },
           {
             name: "Beige",
-            hex: ["#E1D5BC"],
+            hex: [
+              "#E1D5BC"
+            ]
           },
           {
             name: "Camel",
-            hex: ["#C19A6B"],
-          },
-        ],
-      },
+            hex: [
+              "#C19A6B"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "BAG-023-BLA",
+        sku: "BAG-0023-BLA",
         color: "Black",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "BAG-023-BRO",
+        sku: "BAG-0023-BRO",
         color: "Brown",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "BAG-023-BEI",
+        sku: "BAG-0023-BEI",
         color: "Beige",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "BAG-023-CAM",
+        sku: "BAG-0023-CAM",
         color: "Camel",
-        stock: 3,
-      },
-    ],
+        stock: 3
+      }
+    ]
   },
   {
     id: 24,
@@ -2067,45 +2347,53 @@ const products = [
         values: [
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Gray",
-            hex: ["#9E9E9E"],
+            hex: [
+              "#9E9E9E"
+            ]
           },
           {
             name: "Navy",
-            hex: ["#1F2A44"],
+            hex: [
+              "#1F2A44"
+            ]
           },
           {
             name: "Brown",
-            hex: ["#6D4C41"],
-          },
-        ],
-      },
+            hex: [
+              "#6D4C41"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "BAG-024-BLA",
+        sku: "BAG-0024-BLA",
         color: "Black",
-        stock: 10,
+        stock: 10
       },
       {
-        sku: "BAG-024-GRA",
+        sku: "BAG-0024-GRA",
         color: "Gray",
-        stock: 8,
+        stock: 8
       },
       {
-        sku: "BAG-024-NAV",
+        sku: "BAG-0024-NAV",
         color: "Navy",
-        stock: 7,
+        stock: 7
       },
       {
-        sku: "BAG-024-BRO",
+        sku: "BAG-0024-BRO",
         color: "Brown",
-        stock: 4,
-      },
-    ],
+        stock: 4
+      }
+    ]
   },
   {
     id: 25,
@@ -2123,45 +2411,53 @@ const products = [
         values: [
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Brown",
-            hex: ["#6D4C41"],
+            hex: [
+              "#6D4C41"
+            ]
           },
           {
             name: "Gray",
-            hex: ["#9E9E9E"],
+            hex: [
+              "#9E9E9E"
+            ]
           },
           {
             name: "Beige",
-            hex: ["#E1D5BC"],
-          },
-        ],
-      },
+            hex: [
+              "#E1D5BC"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "HAT-025-BLA",
+        sku: "HAT-0025-BLA",
         color: "Black",
-        stock: 10,
+        stock: 10
       },
       {
-        sku: "HAT-025-BRO",
+        sku: "HAT-0025-BRO",
         color: "Brown",
-        stock: 9,
+        stock: 9
       },
       {
-        sku: "HAT-025-GRA",
+        sku: "HAT-0025-GRA",
         color: "Gray",
-        stock: 7,
+        stock: 7
       },
       {
-        sku: "HAT-025-BEI",
+        sku: "HAT-0025-BEI",
         color: "Beige",
-        stock: 5,
-      },
-    ],
+        stock: 5
+      }
+    ]
   },
   {
     id: 26,
@@ -2179,54 +2475,64 @@ const products = [
         values: [
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Navy",
-            hex: ["#1F2A44"],
+            hex: [
+              "#1F2A44"
+            ]
           },
           {
             name: "Red",
-            hex: ["#D32F2F"],
+            hex: [
+              "#D32F2F"
+            ]
           },
           {
             name: "White",
-            hex: ["#FFFFFF"],
+            hex: [
+              "#FFFFFF"
+            ]
           },
           {
             name: "Gray",
-            hex: ["#9E9E9E"],
-          },
-        ],
-      },
+            hex: [
+              "#9E9E9E"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "HAT-026-BLA",
+        sku: "HAT-0026-BLA",
         color: "Black",
-        stock: 14,
+        stock: 14
       },
       {
-        sku: "HAT-026-NAV",
+        sku: "HAT-0026-NAV",
         color: "Navy",
-        stock: 12,
+        stock: 12
       },
       {
-        sku: "HAT-026-RED",
+        sku: "HAT-0026-RED",
         color: "Red",
-        stock: 10,
+        stock: 10
       },
       {
-        sku: "HAT-026-WHI",
+        sku: "HAT-0026-WHI",
         color: "White",
-        stock: 9,
+        stock: 9
       },
       {
-        sku: "HAT-026-GRA",
+        sku: "HAT-0026-GRA",
         color: "Gray",
-        stock: 7,
-      },
-    ],
+        stock: 7
+      }
+    ]
   },
   {
     id: 27,
@@ -2244,54 +2550,64 @@ const products = [
         values: [
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Gray",
-            hex: ["#9E9E9E"],
+            hex: [
+              "#9E9E9E"
+            ]
           },
           {
             name: "Navy",
-            hex: ["#1F2A44"],
+            hex: [
+              "#1F2A44"
+            ]
           },
           {
             name: "Burgundy",
-            hex: ["#800020"],
+            hex: [
+              "#800020"
+            ]
           },
           {
             name: "Olive",
-            hex: ["#6B7B3A"],
-          },
-        ],
-      },
+            hex: [
+              "#6B7B3A"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "HAT-027-BLA",
+        sku: "HAT-0027-BLA",
         color: "Black",
-        stock: 10,
+        stock: 10
       },
       {
-        sku: "HAT-027-GRA",
+        sku: "HAT-0027-GRA",
         color: "Gray",
-        stock: 9,
+        stock: 9
       },
       {
-        sku: "HAT-027-NAV",
+        sku: "HAT-0027-NAV",
         color: "Navy",
-        stock: 8,
+        stock: 8
       },
       {
-        sku: "HAT-027-BUR",
+        sku: "HAT-0027-BUR",
         color: "Burgundy",
-        stock: 6,
+        stock: 6
       },
       {
-        sku: "HAT-027-OLI",
+        sku: "HAT-0027-OLI",
         color: "Olive",
-        stock: 5,
-      },
-    ],
+        stock: 5
+      }
+    ]
   },
   {
     id: 28,
@@ -2309,45 +2625,53 @@ const products = [
         values: [
           {
             name: "Natural",
-            hex: ["#E8D9B5"],
+            hex: [
+              "#E8D9B5"
+            ]
           },
           {
             name: "Beige",
-            hex: ["#E1D5BC"],
+            hex: [
+              "#E1D5BC"
+            ]
           },
           {
             name: "White",
-            hex: ["#FFFFFF"],
+            hex: [
+              "#FFFFFF"
+            ]
           },
           {
             name: "Black",
-            hex: ["#111111"],
-          },
-        ],
-      },
+            hex: [
+              "#111111"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "HAT-028-NAT",
+        sku: "HAT-0028-NAT",
         color: "Natural",
-        stock: 7,
+        stock: 7
       },
       {
-        sku: "HAT-028-BEI",
+        sku: "HAT-0028-BEI",
         color: "Beige",
-        stock: 6,
+        stock: 6
       },
       {
-        sku: "HAT-028-WHI",
+        sku: "HAT-0028-WHI",
         color: "White",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "HAT-028-BLA",
+        sku: "HAT-0028-BLA",
         color: "Black",
-        stock: 3,
-      },
-    ],
+        stock: 3
+      }
+    ]
   },
   {
     id: 29,
@@ -2365,54 +2689,64 @@ const products = [
         values: [
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Khaki",
-            hex: ["#C3B091"],
+            hex: [
+              "#C3B091"
+            ]
           },
           {
             name: "Navy",
-            hex: ["#1F2A44"],
+            hex: [
+              "#1F2A44"
+            ]
           },
           {
             name: "Olive",
-            hex: ["#6B7B3A"],
+            hex: [
+              "#6B7B3A"
+            ]
           },
           {
             name: "White",
-            hex: ["#FFFFFF"],
-          },
-        ],
-      },
+            hex: [
+              "#FFFFFF"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "HAT-029-BLA",
+        sku: "HAT-0029-BLA",
         color: "Black",
-        stock: 11,
+        stock: 11
       },
       {
-        sku: "HAT-029-KHA",
+        sku: "HAT-0029-KHA",
         color: "Khaki",
-        stock: 10,
+        stock: 10
       },
       {
-        sku: "HAT-029-NAV",
+        sku: "HAT-0029-NAV",
         color: "Navy",
-        stock: 8,
+        stock: 8
       },
       {
-        sku: "HAT-029-OLI",
+        sku: "HAT-0029-OLI",
         color: "Olive",
-        stock: 7,
+        stock: 7
       },
       {
-        sku: "HAT-029-WHI",
+        sku: "HAT-0029-WHI",
         color: "White",
-        stock: 5,
-      },
-    ],
+        stock: 5
+      }
+    ]
   },
   {
     id: 30,
@@ -2430,45 +2764,53 @@ const products = [
         values: [
           {
             name: "Gray",
-            hex: ["#9E9E9E"],
+            hex: [
+              "#9E9E9E"
+            ]
           },
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Brown",
-            hex: ["#6D4C41"],
+            hex: [
+              "#6D4C41"
+            ]
           },
           {
             name: "Navy",
-            hex: ["#1F2A44"],
-          },
-        ],
-      },
+            hex: [
+              "#1F2A44"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "HAT-030-GRA",
+        sku: "HAT-0030-GRA",
         color: "Gray",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "HAT-030-BLA",
+        sku: "HAT-0030-BLA",
         color: "Black",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "HAT-030-BRO",
+        sku: "HAT-0030-BRO",
         color: "Brown",
-        stock: 4,
+        stock: 4
       },
       {
-        sku: "HAT-030-NAV",
+        sku: "HAT-0030-NAV",
         color: "Navy",
-        stock: 3,
-      },
-    ],
+        stock: 3
+      }
+    ]
   },
   {
     id: 31,
@@ -2486,45 +2828,53 @@ const products = [
         values: [
           {
             name: "Natural",
-            hex: ["#E8D9B5"],
+            hex: [
+              "#E8D9B5"
+            ]
           },
           {
             name: "Beige",
-            hex: ["#E1D5BC"],
+            hex: [
+              "#E1D5BC"
+            ]
           },
           {
             name: "White",
-            hex: ["#FFFFFF"],
+            hex: [
+              "#FFFFFF"
+            ]
           },
           {
             name: "Black",
-            hex: ["#111111"],
-          },
-        ],
-      },
+            hex: [
+              "#111111"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "HAT-031-NAT",
+        sku: "HAT-0031-NAT",
         color: "Natural",
-        stock: 8,
+        stock: 8
       },
       {
-        sku: "HAT-031-BEI",
+        sku: "HAT-0031-BEI",
         color: "Beige",
-        stock: 7,
+        stock: 7
       },
       {
-        sku: "HAT-031-WHI",
+        sku: "HAT-0031-WHI",
         color: "White",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "HAT-031-BLA",
+        sku: "HAT-0031-BLA",
         color: "Black",
-        stock: 4,
-      },
-    ],
+        stock: 4
+      }
+    ]
   },
   {
     id: 32,
@@ -2542,54 +2892,64 @@ const products = [
         values: [
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Navy",
-            hex: ["#1F2A44"],
+            hex: [
+              "#1F2A44"
+            ]
           },
           {
             name: "Red",
-            hex: ["#D32F2F"],
+            hex: [
+              "#D32F2F"
+            ]
           },
           {
             name: "White",
-            hex: ["#FFFFFF"],
+            hex: [
+              "#FFFFFF"
+            ]
           },
           {
             name: "Camo",
-            hex: ["#78866B"],
-          },
-        ],
-      },
+            hex: [
+              "#78866B"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "HAT-032-BLA",
+        sku: "HAT-0032-BLA",
         color: "Black",
-        stock: 9,
+        stock: 9
       },
       {
-        sku: "HAT-032-NAV",
+        sku: "HAT-0032-NAV",
         color: "Navy",
-        stock: 8,
+        stock: 8
       },
       {
-        sku: "HAT-032-RED",
+        sku: "HAT-0032-RED",
         color: "Red",
-        stock: 7,
+        stock: 7
       },
       {
-        sku: "HAT-032-WHI",
+        sku: "HAT-0032-WHI",
         color: "White",
-        stock: 6,
+        stock: 6
       },
       {
-        sku: "HAT-032-CAM",
+        sku: "HAT-0032-CAM",
         color: "Camo",
-        stock: 5,
-      },
-    ],
+        stock: 5
+      }
+    ]
   },
   {
     id: 33,
@@ -2601,13 +2961,33 @@ const products = [
     rating: 2.7,
     createdAt: "2022-12-05T14:00:00.000Z",
     isFeatured: false,
-    options: [],
+    options: [
+      {
+        name: "size",
+        values: [
+          "30ml",
+          "50ml",
+          "100ml"
+        ]
+      }
+    ],
     variants: [
       {
-        sku: "PRF-033",
-        stock: 45,
+        sku: "PRF-0033-30ML",
+        size: "30ml",
+        stock: 14
       },
-    ],
+      {
+        sku: "PRF-0033-50ML",
+        size: "50ml",
+        stock: 20
+      },
+      {
+        sku: "PRF-0033-100ML",
+        size: "100ml",
+        stock: 11
+      }
+    ]
   },
   {
     id: 34,
@@ -2619,13 +2999,33 @@ const products = [
     rating: 4.9,
     createdAt: "2023-03-11T09:30:00.000Z",
     isFeatured: true,
-    options: [],
+    options: [
+      {
+        name: "size",
+        values: [
+          "30ml",
+          "50ml",
+          "100ml"
+        ]
+      }
+    ],
     variants: [
       {
-        sku: "PRF-034",
-        stock: 22,
+        sku: "PRF-0034-30ML",
+        size: "30ml",
+        stock: 7
       },
-    ],
+      {
+        sku: "PRF-0034-50ML",
+        size: "50ml",
+        stock: 9
+      },
+      {
+        sku: "PRF-0034-100ML",
+        size: "100ml",
+        stock: 6
+      }
+    ]
   },
   {
     id: 35,
@@ -2637,13 +3037,33 @@ const products = [
     rating: 4.5,
     createdAt: "2023-06-27T16:15:00.000Z",
     isFeatured: false,
-    options: [],
+    options: [
+      {
+        name: "size",
+        values: [
+          "30ml",
+          "50ml",
+          "100ml"
+        ]
+      }
+    ],
     variants: [
       {
-        sku: "PRF-035",
-        stock: 30,
+        sku: "PRF-0035-30ML",
+        size: "30ml",
+        stock: 9
       },
-    ],
+      {
+        sku: "PRF-0035-50ML",
+        size: "50ml",
+        stock: 13
+      },
+      {
+        sku: "PRF-0035-100ML",
+        size: "100ml",
+        stock: 8
+      }
+    ]
   },
   {
     id: 36,
@@ -2655,13 +3075,33 @@ const products = [
     rating: 4.4,
     createdAt: "2023-10-08T11:45:00.000Z",
     isFeatured: false,
-    options: [],
+    options: [
+      {
+        name: "size",
+        values: [
+          "30ml",
+          "50ml",
+          "100ml"
+        ]
+      }
+    ],
     variants: [
       {
-        sku: "PRF-036",
-        stock: 37,
+        sku: "PRF-0036-30ML",
+        size: "30ml",
+        stock: 11
       },
-    ],
+      {
+        sku: "PRF-0036-50ML",
+        size: "50ml",
+        stock: 17
+      },
+      {
+        sku: "PRF-0036-100ML",
+        size: "100ml",
+        stock: 9
+      }
+    ]
   },
   {
     id: 37,
@@ -2673,13 +3113,33 @@ const products = [
     rating: 2.6,
     createdAt: "2024-01-30T08:20:00.000Z",
     isFeatured: false,
-    options: [],
+    options: [
+      {
+        name: "size",
+        values: [
+          "30ml",
+          "50ml",
+          "100ml"
+        ]
+      }
+    ],
     variants: [
       {
-        sku: "PRF-037",
-        stock: 19,
+        sku: "PRF-0037-30ML",
+        size: "30ml",
+        stock: 6
       },
-    ],
+      {
+        sku: "PRF-0037-50ML",
+        size: "50ml",
+        stock: 8
+      },
+      {
+        sku: "PRF-0037-100ML",
+        size: "100ml",
+        stock: 5
+      }
+    ]
   },
   {
     id: 38,
@@ -2691,13 +3151,33 @@ const products = [
     rating: 4.8,
     createdAt: "2024-05-06T13:50:00.000Z",
     isFeatured: true,
-    options: [],
+    options: [
+      {
+        name: "size",
+        values: [
+          "30ml",
+          "50ml",
+          "100ml"
+        ]
+      }
+    ],
     variants: [
       {
-        sku: "PRF-038",
-        stock: 14,
+        sku: "PRF-0038-30ML",
+        size: "30ml",
+        stock: 4
       },
-    ],
+      {
+        sku: "PRF-0038-50ML",
+        size: "50ml",
+        stock: 6
+      },
+      {
+        sku: "PRF-0038-100ML",
+        size: "100ml",
+        stock: 4
+      }
+    ]
   },
   {
     id: 39,
@@ -2709,13 +3189,33 @@ const products = [
     rating: 4.3,
     createdAt: "2024-07-19T15:05:00.000Z",
     isFeatured: false,
-    options: [],
+    options: [
+      {
+        name: "size",
+        values: [
+          "30ml",
+          "50ml",
+          "100ml"
+        ]
+      }
+    ],
     variants: [
       {
-        sku: "PRF-039",
-        stock: 26,
+        sku: "PRF-0039-30ML",
+        size: "30ml",
+        stock: 8
       },
-    ],
+      {
+        sku: "PRF-0039-50ML",
+        size: "50ml",
+        stock: 11
+      },
+      {
+        sku: "PRF-0039-100ML",
+        size: "100ml",
+        stock: 7
+      }
+    ]
   },
   {
     id: 40,
@@ -2727,13 +3227,33 @@ const products = [
     rating: 3.9,
     createdAt: "2024-10-02T10:40:00.000Z",
     isFeatured: false,
-    options: [],
+    options: [
+      {
+        name: "size",
+        values: [
+          "30ml",
+          "50ml",
+          "100ml"
+        ]
+      }
+    ],
     variants: [
       {
-        sku: "PRF-040",
-        stock: 11,
+        sku: "PRF-0040-30ML",
+        size: "30ml",
+        stock: 3
       },
-    ],
+      {
+        sku: "PRF-0040-50ML",
+        size: "50ml",
+        stock: 5
+      },
+      {
+        sku: "PRF-0040-100ML",
+        size: "100ml",
+        stock: 3
+      }
+    ]
   },
   {
     id: 41,
@@ -2751,45 +3271,53 @@ const products = [
         values: [
           {
             name: "Silver",
-            hex: ["#C0C0C0"],
+            hex: [
+              "#C0C0C0"
+            ]
           },
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "White",
-            hex: ["#FFFFFF"],
+            hex: [
+              "#FFFFFF"
+            ]
           },
           {
             name: "Blue",
-            hex: ["#1E6FD9"],
-          },
-        ],
-      },
+            hex: [
+              "#1E6FD9"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "THM-041-SIL",
+        sku: "THM-0041-SIL",
         color: "Silver",
-        stock: 18,
+        stock: 18
       },
       {
-        sku: "THM-041-BLA",
+        sku: "THM-0041-BLA",
         color: "Black",
-        stock: 16,
+        stock: 16
       },
       {
-        sku: "THM-041-WHI",
+        sku: "THM-0041-WHI",
         color: "White",
-        stock: 14,
+        stock: 14
       },
       {
-        sku: "THM-041-BLU",
+        sku: "THM-0041-BLU",
         color: "Blue",
-        stock: 10,
-      },
-    ],
+        stock: 10
+      }
+    ]
   },
   {
     id: 42,
@@ -2807,45 +3335,53 @@ const products = [
         values: [
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "White",
-            hex: ["#FFFFFF"],
+            hex: [
+              "#FFFFFF"
+            ]
           },
           {
             name: "Red",
-            hex: ["#D32F2F"],
+            hex: [
+              "#D32F2F"
+            ]
           },
           {
             name: "Navy",
-            hex: ["#1F2A44"],
-          },
-        ],
-      },
+            hex: [
+              "#1F2A44"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "THM-042-BLA",
+        sku: "THM-0042-BLA",
         color: "Black",
-        stock: 14,
+        stock: 14
       },
       {
-        sku: "THM-042-WHI",
+        sku: "THM-0042-WHI",
         color: "White",
-        stock: 12,
+        stock: 12
       },
       {
-        sku: "THM-042-RED",
+        sku: "THM-0042-RED",
         color: "Red",
-        stock: 10,
+        stock: 10
       },
       {
-        sku: "THM-042-NAV",
+        sku: "THM-0042-NAV",
         color: "Navy",
-        stock: 7,
-      },
-    ],
+        stock: 7
+      }
+    ]
   },
   {
     id: 43,
@@ -2863,36 +3399,42 @@ const products = [
         values: [
           {
             name: "Silver",
-            hex: ["#C0C0C0"],
+            hex: [
+              "#C0C0C0"
+            ]
           },
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Green",
-            hex: ["#2E7D32"],
-          },
-        ],
-      },
+            hex: [
+              "#2E7D32"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "THM-043-SIL",
+        sku: "THM-0043-SIL",
         color: "Silver",
-        stock: 11,
+        stock: 11
       },
       {
-        sku: "THM-043-BLA",
+        sku: "THM-0043-BLA",
         color: "Black",
-        stock: 10,
+        stock: 10
       },
       {
-        sku: "THM-043-GRE",
+        sku: "THM-0043-GRE",
         color: "Green",
-        stock: 6,
-      },
-    ],
+        stock: 6
+      }
+    ]
   },
   {
     id: 44,
@@ -2910,36 +3452,42 @@ const products = [
         values: [
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Silver",
-            hex: ["#C0C0C0"],
+            hex: [
+              "#C0C0C0"
+            ]
           },
           {
             name: "White",
-            hex: ["#FFFFFF"],
-          },
-        ],
-      },
+            hex: [
+              "#FFFFFF"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "THM-044-BLA",
+        sku: "THM-0044-BLA",
         color: "Black",
-        stock: 6,
+        stock: 6
       },
       {
-        sku: "THM-044-SIL",
+        sku: "THM-0044-SIL",
         color: "Silver",
-        stock: 5,
+        stock: 5
       },
       {
-        sku: "THM-044-WHI",
+        sku: "THM-0044-WHI",
         color: "White",
-        stock: 4,
-      },
-    ],
+        stock: 4
+      }
+    ]
   },
   {
     id: 45,
@@ -2957,36 +3505,42 @@ const products = [
         values: [
           {
             name: "Matte Black",
-            hex: ["#1C1C1C"],
+            hex: [
+              "#1C1C1C"
+            ]
           },
           {
             name: "Matte Gray",
-            hex: ["#6B6B6B"],
+            hex: [
+              "#6B6B6B"
+            ]
           },
           {
             name: "Matte Blue",
-            hex: ["#2F4F6F"],
-          },
-        ],
-      },
+            hex: [
+              "#2F4F6F"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "THM-045-MATBLA",
+        sku: "THM-0045-MATBLA",
         color: "Matte Black",
-        stock: 16,
+        stock: 16
       },
       {
-        sku: "THM-045-MATGRA",
+        sku: "THM-0045-MATGRA",
         color: "Matte Gray",
-        stock: 13,
+        stock: 13
       },
       {
-        sku: "THM-045-MATBLU",
+        sku: "THM-0045-MATBLU",
         color: "Matte Blue",
-        stock: 10,
-      },
-    ],
+        stock: 10
+      }
+    ]
   },
   {
     id: 46,
@@ -3004,54 +3558,64 @@ const products = [
         values: [
           {
             name: "Pink",
-            hex: ["#F48FB1"],
+            hex: [
+              "#F48FB1"
+            ]
           },
           {
             name: "Blue",
-            hex: ["#1E6FD9"],
+            hex: [
+              "#1E6FD9"
+            ]
           },
           {
             name: "Yellow",
-            hex: ["#FDD835"],
+            hex: [
+              "#FDD835"
+            ]
           },
           {
             name: "Green",
-            hex: ["#2E7D32"],
+            hex: [
+              "#2E7D32"
+            ]
           },
           {
             name: "Purple",
-            hex: ["#8E24AA"],
-          },
-        ],
-      },
+            hex: [
+              "#8E24AA"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "THM-046-PIN",
+        sku: "THM-0046-PIN",
         color: "Pink",
-        stock: 12,
+        stock: 12
       },
       {
-        sku: "THM-046-BLU",
+        sku: "THM-0046-BLU",
         color: "Blue",
-        stock: 12,
+        stock: 12
       },
       {
-        sku: "THM-046-YEL",
+        sku: "THM-0046-YEL",
         color: "Yellow",
-        stock: 10,
+        stock: 10
       },
       {
-        sku: "THM-046-GRE",
+        sku: "THM-0046-GRE",
         color: "Green",
-        stock: 9,
+        stock: 9
       },
       {
-        sku: "THM-046-PUR",
+        sku: "THM-0046-PUR",
         color: "Purple",
-        stock: 8,
-      },
-    ],
+        stock: 8
+      }
+    ]
   },
   {
     id: 47,
@@ -3069,45 +3633,53 @@ const products = [
         values: [
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Silver",
-            hex: ["#C0C0C0"],
+            hex: [
+              "#C0C0C0"
+            ]
           },
           {
             name: "White",
-            hex: ["#FFFFFF"],
+            hex: [
+              "#FFFFFF"
+            ]
           },
           {
             name: "Red",
-            hex: ["#D32F2F"],
-          },
-        ],
-      },
+            hex: [
+              "#D32F2F"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "THM-047-BLA",
+        sku: "THM-0047-BLA",
         color: "Black",
-        stock: 11,
+        stock: 11
       },
       {
-        sku: "THM-047-SIL",
+        sku: "THM-0047-SIL",
         color: "Silver",
-        stock: 9,
+        stock: 9
       },
       {
-        sku: "THM-047-WHI",
+        sku: "THM-0047-WHI",
         color: "White",
-        stock: 8,
+        stock: 8
       },
       {
-        sku: "THM-047-RED",
+        sku: "THM-0047-RED",
         color: "Red",
-        stock: 5,
-      },
-    ],
+        stock: 5
+      }
+    ]
   },
   {
     id: 48,
@@ -3125,54 +3697,64 @@ const products = [
         values: [
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "Blue",
-            hex: ["#1E6FD9"],
+            hex: [
+              "#1E6FD9"
+            ]
           },
           {
             name: "Red",
-            hex: ["#D32F2F"],
+            hex: [
+              "#D32F2F"
+            ]
           },
           {
             name: "Green",
-            hex: ["#2E7D32"],
+            hex: [
+              "#2E7D32"
+            ]
           },
           {
             name: "Orange",
-            hex: ["#F57C00"],
-          },
-        ],
-      },
+            hex: [
+              "#F57C00"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "THM-048-BLA",
+        sku: "THM-0048-BLA",
         color: "Black",
-        stock: 12,
+        stock: 12
       },
       {
-        sku: "THM-048-BLU",
+        sku: "THM-0048-BLU",
         color: "Blue",
-        stock: 11,
+        stock: 11
       },
       {
-        sku: "THM-048-RED",
+        sku: "THM-0048-RED",
         color: "Red",
-        stock: 9,
+        stock: 9
       },
       {
-        sku: "THM-048-GRE",
+        sku: "THM-0048-GRE",
         color: "Green",
-        stock: 8,
+        stock: 8
       },
       {
-        sku: "THM-048-ORA",
+        sku: "THM-0048-ORA",
         color: "Orange",
-        stock: 6,
-      },
-    ],
+        stock: 6
+      }
+    ]
   },
   {
     id: 49,
@@ -3190,36 +3772,45 @@ const products = [
         values: [
           {
             name: "Black/Gold",
-            hex: ["#111111", "#D4AF37"],
+            hex: [
+              "#111111",
+              "#D4AF37"
+            ]
           },
           {
             name: "White/Gold",
-            hex: ["#FFFFFF", "#D4AF37"],
+            hex: [
+              "#FFFFFF",
+              "#D4AF37"
+            ]
           },
           {
             name: "Navy/Gold",
-            hex: ["#1F2A44", "#D4AF37"],
-          },
-        ],
-      },
+            hex: [
+              "#1F2A44",
+              "#D4AF37"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "THM-049-BLAGOL",
+        sku: "THM-0049-BLAGOL",
         color: "Black/Gold",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "THM-049-WHIGOL",
+        sku: "THM-0049-WHIGOL",
         color: "White/Gold",
-        stock: 3,
+        stock: 3
       },
       {
-        sku: "THM-049-NAVGOL",
+        sku: "THM-0049-NAVGOL",
         color: "Navy/Gold",
-        stock: 2,
-      },
-    ],
+        stock: 2
+      }
+    ]
   },
   {
     id: 50,
@@ -3237,46 +3828,54 @@ const products = [
         values: [
           {
             name: "Natural",
-            hex: ["#E8D9B5"],
+            hex: [
+              "#E8D9B5"
+            ]
           },
           {
             name: "Black",
-            hex: ["#111111"],
+            hex: [
+              "#111111"
+            ]
           },
           {
             name: "White",
-            hex: ["#FFFFFF"],
+            hex: [
+              "#FFFFFF"
+            ]
           },
           {
             name: "Green",
-            hex: ["#2E7D32"],
-          },
-        ],
-      },
+            hex: [
+              "#2E7D32"
+            ]
+          }
+        ]
+      }
     ],
     variants: [
       {
-        sku: "THM-050-NAT",
+        sku: "THM-0050-NAT",
         color: "Natural",
-        stock: 9,
+        stock: 9
       },
       {
-        sku: "THM-050-BLA",
+        sku: "THM-0050-BLA",
         color: "Black",
-        stock: 8,
+        stock: 8
       },
       {
-        sku: "THM-050-WHI",
+        sku: "THM-0050-WHI",
         color: "White",
-        stock: 7,
+        stock: 7
       },
       {
-        sku: "THM-050-GRE",
+        sku: "THM-0050-GRE",
         color: "Green",
-        stock: 5,
-      },
-    ],
-  },
+        stock: 5
+      }
+    ]
+  }
 ];
 
 app.use(cors());

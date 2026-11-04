@@ -8,3 +8,6 @@ export function formatTextDetaSet(text) {
 export function formatNumber(number) {
   return String(number).padStart(4, "0");
 }
+export function formatSize(text) {
+  return text.toUpperCase();
+}

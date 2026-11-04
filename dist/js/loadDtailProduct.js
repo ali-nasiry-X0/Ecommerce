@@ -2,7 +2,11 @@
 import { productsById } from "./products.js";
 import { stock } from "./stockProduct.js";
 import { operateQuantity } from "./productQuantity.js";
-import { formatTextDetaSet, formatNumber } from "./tools/formater.js";
+import {
+  formatTextDetaSet,
+  formatNumber,
+  formatSize,
+} from "./tools/formater.js";
 
 const purchaseContainer = document.querySelector(".product-detail__purchase");
 const optionsContainer = purchaseContainer.querySelector(
@@ -97,7 +101,7 @@ function renderSizeOption(product, sizes, container) {
   for (let i = 0; i < sizes.length; i++) {
     const btnElem = document.createElement("button");
     btnElem.textContent = sizes[i];
-    btnElem.dataset.size = formatTextDetaSet(sizes[i]);
+    btnElem.dataset.size = formatSize(sizes[i]);
     btnElem.classList.add(`${sizes[i]}_size`);
     if (i == 0) {
       btnElem.classList.add("is-selected");
@@ -118,7 +122,6 @@ function getProductOptions(product) {
   product.options.forEach((option) => {
     dynamicOptions.add(Object.values(option)[0]);
   });
-
   product.variants.forEach((variant) => {
     if (variant.color) colors.add(variant.color);
     if (variant.size) sizes.add(variant.size);
@@ -151,19 +154,23 @@ function createSku(product) {
   let size;
   const elemColor = optionsContainer.querySelector(".product-detail__colors");
   const elemSize = optionsContainer.querySelector(".product-detail__size");
+  if (elemColor) {
+    elemColor.childNodes.forEach((option) => {
+      if (option.classList.contains("is-selected")) {
+        color = option.dataset.color;
+      }
+    });
+  }
+  if (elemSize) {
+    elemSize.childNodes.forEach((option) => {
+      if (option.classList.contains("is-selected")) {
+        size = option.dataset.size;
+      }
+    });
+  }
 
-  elemColor.childNodes.forEach((option) => {
-    if (option.classList.contains("is-selected")) {
-      color = option.dataset.color;
-    }
-  });
-  elemSize.childNodes.forEach((option) => {
-    if (option.classList.contains("is-selected")) {
-      size = option.dataset.size;
-    }
-  });
-
-  return `${cat}_${id}_${color}_${size}`;
+  return [cat, id, color, size].filter(Boolean).join("_");
 }
 
 init();
+console.log(sku);
