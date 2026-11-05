@@ -1010,11 +1010,20 @@ label {
   scrollbar-width: none;
   scroll-snap-type: x mandatory;
   overscroll-behavior-x: contain;
-  cursor: grab;
-  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 .product-detail__pictures::-webkit-scrollbar {
   display: none;
+}
+.product-detail__pictures:focus-visible {
+  outline: 2px solid #000000;
+  outline-offset: 2px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .product-detail__pictures {
+    cursor: grab;
+    user-select: none;
+  }
 }
 .product-detail__pictures.is-dragging {
   cursor: grabbing;
@@ -1038,6 +1047,7 @@ label {
   min-width: 0;
   object-fit: contain;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
   -webkit-user-drag: none;
   user-select: none;
 }
@@ -1051,9 +1061,14 @@ label {
 }
 .product-detail__controls button {
   cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  background-color: #b6b7bc;
+  width: 0.6rem;
+  height: 0.6rem;
 }
 .product-detail__controls button[aria-current=true] {
-  font-weight: 700;
+  background-color: #0e1422;
 }
 .product-detail__title {
   display: flex;
@@ -1080,6 +1095,7 @@ label {
   justify-content: space-between;
   align-items: space-between;
   flex-wrap: nowrap;
+  margin-left: 1rem;
 }
 .product-detail__optional {
   display: flex;
@@ -1199,6 +1215,33 @@ label {
   font-size: 1.5rem;
 }
 
+@media only screen and (max-width: 56.25rem) {
+  .product-detail__purchase {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .product-detail__options {
+    gap: 2rem;
+  }
+}
+@media only screen and (max-width: 37.5rem) {
+  .product-detail__gallery {
+    width: 20rem;
+    height: 25rem;
+  }
+  .product-detail__addToCart {
+    width: 70%;
+  }
+  .product-detail__generalInfo {
+    gap: 1rem;
+  }
+  .product-detail__status, .product-detail__rank {
+    border-radius: 1rem;
+    padding: 0.5rem;
+    gap: 0.2rem;
+  }
+}
 .featured {
   margin-bottom: 6rem;
 }
