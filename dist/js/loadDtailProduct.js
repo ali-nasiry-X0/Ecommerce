@@ -7,6 +7,7 @@ import {
   formatNumber,
   formatSize,
 } from "./tools/formater.js";
+import { slider } from "./sliders.js";
 
 const purchaseContainer = document.querySelector(".product-detail__purchase");
 const optionsContainer = purchaseContainer.querySelector(
@@ -17,7 +18,11 @@ let sku;
 function init() {
   const id = Number(new URLSearchParams(location.search).get("id"));
   const product = productsById.get(id);
-
+  const gallery = document.querySelector(".product-detail__gallery");
+  const viewport = gallery.querySelector(".product-detail__pictures");
+  const track = gallery.querySelector(".product-detail__track");
+  let controlsBox = gallery.querySelector(".product-detail__controls");
+  slider(gallery, viewport, track, controlsBox);
   if (!product) return console.warn("Product not found");
   loadAllDetail(product);
   createSku(product);
@@ -26,6 +31,7 @@ function init() {
 function loadAllDetail(product) {
   const { dynamicOptions, sizes, colors } = getProductOptions(product);
   loadBaseDetail(product);
+  renderPictureProduct(product.image);
   if (dynamicOptions.includes("color")) {
     renderColorOption(product, colors, optionsContainer);
   }
@@ -54,6 +60,15 @@ function loadBaseDetail(product) {
     statusP.textContent = "Sold Out";
   }
   costP.textContent = `$ ${product.price}.00`;
+}
+function renderPictureProduct(images) {
+  images.forEach((img) => {
+    const containerSliders = document.querySelector(".product-detail__track");
+    const elemImg = document.createElement("img");
+    elemImg.classList.add("product-detail__media");
+    elemImg.src = img;
+    containerSliders.append(elemImg);
+  });
 }
 function renderColorOption(product, colors, container) {
   const template = document.querySelector(".selectColors-template");
