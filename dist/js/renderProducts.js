@@ -19,7 +19,7 @@ function bestSelling() {
     const productPrice = productElement.querySelector(".product__price");
 
     productName.textContent = product.title;
-    img.src = product.image;
+    img.src = product.image[0];
     productElement.id = product.id;
     if (stock(product) > 0) {
       productStatus.textContent = "IN STOCK";
@@ -35,7 +35,7 @@ async function ctaImg() {
   const img = cta_img.querySelector("img");
   const productHat = await listPcategories();
   const bestHat = sortProductRank(productHat.hat)[0];
-  img.src = bestHat.image;
+  img.src = bestHat.image[0];
 }
 
 const featuredOptionsContainer = document.querySelector(".featured__options");
@@ -129,7 +129,7 @@ async function featuredProducts() {
       const productPrice = productElement.querySelector(".product__price");
 
       productName.textContent = product.title;
-      img.src = product.image;
+      img.src = product.image[0];
       productElement.id = product.id;
       if (product.stock != 0) {
         productStatus.textContent = "IN STOCK";
