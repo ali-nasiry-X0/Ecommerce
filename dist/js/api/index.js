@@ -50,7 +50,11 @@ const products = [
   {
     id: 1,
     title: "Classic White T-Shirt",
-    image: "https://pngimg.com/uploads/tshirt/tshirt_PNG5454.png",
+    image: [
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5454.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5454.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5454.png"
+      ],
     category: "tshirt",
     price: 29,
     review: 2156,
@@ -164,7 +168,11 @@ const products = [
   {
     id: 2,
     title: "Black Cotton Tee",
-    image: "https://pngimg.com/uploads/tshirt/tshirt_PNG5453.png",
+    image: [
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5453.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5453.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5453.png"
+      ],
     category: "tshirt",
     price: 27,
     review: 1893,
@@ -278,7 +286,11 @@ const products = [
   {
     id: 3,
     title: "Navy Blue Crew Neck",
-    image: "https://pngimg.com/uploads/tshirt/tshirt_PNG5452.png",
+    image: [
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5452.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5452.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5452.png"
+      ],
     category: "tshirt",
     price: 32,
     review: 1247,
@@ -392,7 +404,15 @@ const products = [
   {
     id: 4,
     title: "Graphic Print T-Shirt",
-    image: "https://pngimg.com/uploads/tshirt/tshirt_PNG5451.png",
+    image: [
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5451.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5451.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5451.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5451.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5451.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5451.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5451.png"
+      ],
     category: "tshirt",
     price: 39,
     review: 1678,
@@ -524,7 +544,14 @@ const products = [
   {
     id: 5,
     title: "Oversized Streetwear Tee",
-    image: "https://pngimg.com/uploads/tshirt/tshirt_PNG5450.png",
+    image: [
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5450.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5450.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5450.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5450.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5450.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5450.png"
+      ],
     category: "tshirt",
     price: 45,
     review: 982,
@@ -650,7 +677,11 @@ const products = [
   {
     id: 6,
     title: "Striped Casual T-Shirt",
-    image: "https://pngimg.com/uploads/tshirt/tshirt_PNG5449.png",
+    image: [
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5449.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5449.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5449.png"
+      ],
     category: "tshirt",
     price: 34,
     review: 1456,
@@ -767,7 +798,15 @@ const products = [
   {
     id: 7,
     title: "Premium Soft Touch Tee",
-    image: "https://pngimg.com/uploads/tshirt/tshirt_PNG5448.png",
+    image: [
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5448.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5448.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5448.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5448.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5448.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5448.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5448.png"
+      ],
     category: "tshirt",
     price: 49,
     review: 876,
@@ -887,7 +926,13 @@ const products = [
   {
     id: 8,
     title: "V-Neck Basic T-Shirt",
-    image: "https://pngimg.com/uploads/tshirt/tshirt_PNG5447.png",
+    image: [
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5447.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5447.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5447.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5447.png",
+        "https://pngimg.com/uploads/tshirt/tshirt_PNG5447.png"
+      ],
     category: "tshirt",
     price: 25,
     review: 2034,
@@ -1019,7 +1064,11 @@ const products = [
   {
     id: 9,
     title: "White Sneakers",
-    image: "https://pngimg.com/uploads/running_shoes/running_shoes_PNG5827.png",
+    image: [
+        "https://pngimg.com/uploads/running_shoes/running_shoes_PNG5827.png",
+        "https://pngimg.com/uploads/running_shoes/running_shoes_PNG5827.png",
+        "https://pngimg.com/uploads/running_shoes/running_shoes_PNG5827.png"
+      ],
     category: "shoe",
     price: 89,
     review: 3421,
@@ -1135,7 +1184,11 @@ const products = [
   {
     id: 10,
     title: "Brown Leather Boots",
-    image: "https://pngimg.com/uploads/boots/boots_PNG7815.png",
+    image: [
+        "https://pngimg.com/uploads/boots/boots_PNG7815.png",
+        "https://pngimg.com/uploads/boots/boots_PNG7815.png",
+        "https://pngimg.com/uploads/boots/boots_PNG7815.png"
+      ],
     category: "shoe",
     price: 129,
     review: 978,
@@ -1243,7 +1296,14 @@ const products = [
   {
     id: 11,
     title: "Black Formal Shoes",
-    image: "https://pngimg.com/uploads/boots/boots_PNG7813.png",
+    image: [
+        "https://pngimg.com/uploads/boots/boots_PNG7813.png",
+        "https://pngimg.com/uploads/boots/boots_PNG7813.png",
+        "https://pngimg.com/uploads/boots/boots_PNG7813.png",
+        "https://pngimg.com/uploads/boots/boots_PNG7813.png",
+        "https://pngimg.com/uploads/boots/boots_PNG7813.png",
+        "https://pngimg.com/uploads/boots/boots_PNG7813.png"
+      ],
     category: "shoe",
     price: 115,
     review: 1123,
@@ -1327,7 +1387,15 @@ const products = [
   {
     id: 12,
     title: "Running Shoes",
-    image: "https://pngimg.com/uploads/running_shoes/running_shoes_PNG5826.png",
+    image: [
+        "https://pngimg.com/uploads/running_shoes/running_shoes_PNG5826.png",
+        "https://pngimg.com/uploads/running_shoes/running_shoes_PNG5826.png",
+        "https://pngimg.com/uploads/running_shoes/running_shoes_PNG5826.png",
+        "https://pngimg.com/uploads/running_shoes/running_shoes_PNG5826.png",
+        "https://pngimg.com/uploads/running_shoes/running_shoes_PNG5826.png",
+        "https://pngimg.com/uploads/running_shoes/running_shoes_PNG5826.png",
+        "https://pngimg.com/uploads/running_shoes/running_shoes_PNG5826.png"
+      ],
     category: "shoe",
     price: 99,
     review: 2756,
@@ -1459,7 +1527,14 @@ const products = [
   {
     id: 13,
     title: "Canvas Low Top",
-    image: "https://pngimg.com/uploads/converse/converse_PNG66.png",
+    image: [
+        "https://pngimg.com/uploads/converse/converse_PNG66.png",
+        "https://pngimg.com/uploads/converse/converse_PNG66.png",
+        "https://pngimg.com/uploads/converse/converse_PNG66.png",
+        "https://pngimg.com/uploads/converse/converse_PNG66.png",
+        "https://pngimg.com/uploads/converse/converse_PNG66.png",
+        "https://pngimg.com/uploads/converse/converse_PNG66.png"
+      ],
     category: "shoe",
     price: 55,
     review: 1634,
@@ -1591,7 +1666,12 @@ const products = [
   {
     id: 14,
     title: "Chelsea Boots",
-    image: "https://pngimg.com/uploads/boots/boots_PNG7809.png",
+    image: [
+        "https://pngimg.com/uploads/boots/boots_PNG7809.png",
+        "https://pngimg.com/uploads/boots/boots_PNG7809.png",
+        "https://pngimg.com/uploads/boots/boots_PNG7809.png",
+        "https://pngimg.com/uploads/boots/boots_PNG7809.png"
+      ],
     category: "shoe",
     price: 149,
     review: 589,
@@ -1687,7 +1767,12 @@ const products = [
   {
     id: 15,
     title: "Sandals Summer",
-    image: "https://pngimg.com/uploads/boots/boots_PNG7808.png",
+    image: [
+        "https://pngimg.com/uploads/boots/boots_PNG7808.png",
+        "https://pngimg.com/uploads/boots/boots_PNG7808.png",
+        "https://pngimg.com/uploads/boots/boots_PNG7808.png",
+        "https://pngimg.com/uploads/boots/boots_PNG7808.png"
+      ],
     category: "shoe",
     price: 45,
     review: 876,
@@ -1789,7 +1874,15 @@ const products = [
   {
     id: 16,
     title: "High Top Sneakers",
-    image: "https://pngimg.com/uploads/running_shoes/running_shoes_PNG5817.png",
+    image: [
+        "https://pngimg.com/uploads/running_shoes/running_shoes_PNG5817.png",
+        "https://pngimg.com/uploads/running_shoes/running_shoes_PNG5817.png",
+        "https://pngimg.com/uploads/running_shoes/running_shoes_PNG5817.png",
+        "https://pngimg.com/uploads/running_shoes/running_shoes_PNG5817.png",
+        "https://pngimg.com/uploads/running_shoes/running_shoes_PNG5817.png",
+        "https://pngimg.com/uploads/running_shoes/running_shoes_PNG5817.png",
+        "https://pngimg.com/uploads/running_shoes/running_shoes_PNG5817.png"
+      ],
     category: "shoe",
     price: 85,
     review: 1345,
@@ -1897,7 +1990,11 @@ const products = [
   {
     id: 17,
     title: "Leather Tote Bag",
-    image: "https://pngimg.com/uploads/women_bag/women_bag_PNG6406.png",
+    image: [
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6406.png",
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6406.png",
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6406.png"
+      ],
     category: "handbag",
     price: 119,
     review: 945,
@@ -1961,7 +2058,12 @@ const products = [
   {
     id: 18,
     title: "Mini Crossbody Bag",
-    image: "https://pngimg.com/uploads/women_bag/women_bag_PNG6407.png",
+    image: [
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6407.png",
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6407.png",
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6407.png",
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6407.png"
+      ],
     category: "handbag",
     price: 69,
     review: 1678,
@@ -2025,7 +2127,12 @@ const products = [
   {
     id: 19,
     title: "Structured Shoulder Bag",
-    image: "https://pngimg.com/uploads/women_bag/women_bag_PNG6408.png",
+    image: [
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6408.png",
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6408.png",
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6408.png",
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6408.png"
+      ],
     category: "handbag",
     price: 139,
     review: 723,
@@ -2089,7 +2196,13 @@ const products = [
   {
     id: 20,
     title: "Canvas Shopper",
-    image: "https://pngimg.com/uploads/shopping_bag/shopping_bag_PNG6392.png",
+    image: [
+        "https://pngimg.com/uploads/shopping_bag/shopping_bag_PNG6392.png",
+        "https://pngimg.com/uploads/shopping_bag/shopping_bag_PNG6392.png",
+        "https://pngimg.com/uploads/shopping_bag/shopping_bag_PNG6392.png",
+        "https://pngimg.com/uploads/shopping_bag/shopping_bag_PNG6392.png",
+        "https://pngimg.com/uploads/shopping_bag/shopping_bag_PNG6392.png"
+      ],
     category: "handbag",
     price: 35,
     review: 2109,
@@ -2153,7 +2266,14 @@ const products = [
   {
     id: 21,
     title: "Clutch Evening Bag",
-    image: "https://pngimg.com/uploads/women_bag/women_bag_PNG6409.png",
+    image: [
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6409.png",
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6409.png",
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6409.png",
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6409.png",
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6409.png",
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6409.png"
+      ],
     category: "handbag",
     price: 79,
     review: 412,
@@ -2217,7 +2337,13 @@ const products = [
   {
     id: 22,
     title: "Backpack Leather",
-    image: "https://pngimg.com/uploads/women_bag/women_bag_PNG6410.png",
+    image: [
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6410.png",
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6410.png",
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6410.png",
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6410.png",
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6410.png"
+      ],
     category: "handbag",
     price: 129,
     review: 1187,
@@ -2270,7 +2396,11 @@ const products = [
   {
     id: 23,
     title: "Bucket Bag",
-    image: "https://pngimg.com/uploads/women_bag/women_bag_PNG6411.png",
+    image: [
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6411.png",
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6411.png",
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6411.png"
+      ],
     category: "handbag",
     price: 89,
     review: 834,
@@ -2334,7 +2464,11 @@ const products = [
   {
     id: 24,
     title: "Work Laptop Bag",
-    image: "https://pngimg.com/uploads/women_bag/women_bag_PNG6428.png",
+    image: [
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6428.png",
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6428.png",
+        "https://pngimg.com/uploads/women_bag/women_bag_PNG6428.png"
+      ],
     category: "handbag",
     price: 149,
     review: 1456,
@@ -2398,7 +2532,11 @@ const products = [
   {
     id: 25,
     title: "Classic Fedora",
-    image: "https://pngimg.com/uploads/hat/hat_PNG5697.png",
+    image: [
+        "https://pngimg.com/uploads/hat/hat_PNG5697.png",
+        "https://pngimg.com/uploads/hat/hat_PNG5697.png",
+        "https://pngimg.com/uploads/hat/hat_PNG5697.png"
+      ],
     category: "hat",
     price: 45,
     review: 1023,
@@ -2462,7 +2600,11 @@ const products = [
   {
     id: 26,
     title: "Baseball Cap",
-    image: "https://pngimg.com/uploads/cap/cap_PNG5685.png",
+    image: [
+        "https://pngimg.com/uploads/cap/cap_PNG5685.png",
+        "https://pngimg.com/uploads/cap/cap_PNG5685.png",
+        "https://pngimg.com/uploads/cap/cap_PNG5685.png"
+      ],
     category: "hat",
     price: 25,
     review: 2876,
@@ -2537,7 +2679,12 @@ const products = [
   {
     id: 27,
     title: "Wool Beanie",
-    image: "https://pngimg.com/uploads/hat/hat_PNG5698.png",
+    image: [
+        "https://pngimg.com/uploads/hat/hat_PNG5698.png",
+        "https://pngimg.com/uploads/hat/hat_PNG5698.png",
+        "https://pngimg.com/uploads/hat/hat_PNG5698.png",
+        "https://pngimg.com/uploads/hat/hat_PNG5698.png"
+      ],
     category: "hat",
     price: 29,
     review: 1543,
@@ -2612,7 +2759,15 @@ const products = [
   {
     id: 28,
     title: "Straw Summer Hat",
-    image: "https://pngimg.com/uploads/hat/hat_PNG5699.png",
+    image: [
+        "https://pngimg.com/uploads/hat/hat_PNG5699.png",
+        "https://pngimg.com/uploads/hat/hat_PNG5699.png",
+        "https://pngimg.com/uploads/hat/hat_PNG5699.png",
+        "https://pngimg.com/uploads/hat/hat_PNG5699.png",
+        "https://pngimg.com/uploads/hat/hat_PNG5699.png",
+        "https://pngimg.com/uploads/hat/hat_PNG5699.png",
+        "https://pngimg.com/uploads/hat/hat_PNG5699.png"
+      ],
     category: "hat",
     price: 39,
     review: 678,
@@ -2676,7 +2831,13 @@ const products = [
   {
     id: 29,
     title: "Bucket Hat",
-    image: "https://pngimg.com/uploads/hat/hat_PNG5700.png",
+    image: [
+        "https://pngimg.com/uploads/hat/hat_PNG5700.png",
+        "https://pngimg.com/uploads/hat/hat_PNG5700.png",
+        "https://pngimg.com/uploads/hat/hat_PNG5700.png",
+        "https://pngimg.com/uploads/hat/hat_PNG5700.png",
+        "https://pngimg.com/uploads/hat/hat_PNG5700.png"
+      ],
     category: "hat",
     price: 32,
     review: 1923,
@@ -2751,7 +2912,11 @@ const products = [
   {
     id: 30,
     title: "Newsboy Cap",
-    image: "https://pngimg.com/uploads/cap/cap_PNG5686.png",
+    image: [
+        "https://pngimg.com/uploads/cap/cap_PNG5686.png",
+        "https://pngimg.com/uploads/cap/cap_PNG5686.png",
+        "https://pngimg.com/uploads/cap/cap_PNG5686.png"
+      ],
     category: "hat",
     price: 35,
     review: 534,
@@ -2815,7 +2980,11 @@ const products = [
   {
     id: 31,
     title: "Sun Hat Wide Brim",
-    image: "https://pngimg.com/uploads/hat/hat_PNG5701.png",
+    image: [
+        "https://pngimg.com/uploads/hat/hat_PNG5701.png",
+        "https://pngimg.com/uploads/hat/hat_PNG5701.png",
+        "https://pngimg.com/uploads/hat/hat_PNG5701.png"
+      ],
     category: "hat",
     price: 42,
     review: 891,
@@ -2879,7 +3048,14 @@ const products = [
   {
     id: 32,
     title: "Trucker Cap",
-    image: "https://pngimg.com/uploads/cap/cap_PNG5687.png",
+    image: [
+        "https://pngimg.com/uploads/cap/cap_PNG5687.png",
+        "https://pngimg.com/uploads/cap/cap_PNG5687.png",
+        "https://pngimg.com/uploads/cap/cap_PNG5687.png",
+        "https://pngimg.com/uploads/cap/cap_PNG5687.png",
+        "https://pngimg.com/uploads/cap/cap_PNG5687.png",
+        "https://pngimg.com/uploads/cap/cap_PNG5687.png"
+      ],
     category: "hat",
     price: 28,
     review: 1234,
@@ -2954,7 +3130,14 @@ const products = [
   {
     id: 33,
     title: "Fresh Citrus Cologne",
-    image: "https://pngimg.com/uploads/perfume/perfume_PNG99997.png",
+    image: [
+        "https://pngimg.com/uploads/perfume/perfume_PNG99997.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG99997.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG99997.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG99997.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG99997.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG99997.png"
+      ],
     category: "perfume",
     price: 65,
     review: 2341,
@@ -2992,7 +3175,11 @@ const products = [
   {
     id: 34,
     title: "Woody Oriental Perfume",
-    image: "https://pngimg.com/uploads/perfume/perfume_PNG99996.png",
+    image: [
+        "https://pngimg.com/uploads/perfume/perfume_PNG99996.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG99996.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG99996.png"
+      ],
     category: "perfume",
     price: 95,
     review: 1876,
@@ -3030,7 +3217,13 @@ const products = [
   {
     id: 35,
     title: "Floral Eau de Parfum",
-    image: "https://pngimg.com/uploads/perfume/perfume_PNG99995.png",
+    image: [
+        "https://pngimg.com/uploads/perfume/perfume_PNG99995.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG99995.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG99995.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG99995.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG99995.png"
+      ],
     category: "perfume",
     price: 85,
     review: 1456,
@@ -3068,7 +3261,11 @@ const products = [
   {
     id: 36,
     title: "Aquatic Fresh Scent",
-    image: "https://pngimg.com/uploads/perfume/perfume_PNG99993.png",
+    image: [
+        "https://pngimg.com/uploads/perfume/perfume_PNG99993.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG99993.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG99993.png"
+      ],
     category: "perfume",
     price: 72,
     review: 1123,
@@ -3106,7 +3303,11 @@ const products = [
   {
     id: 37,
     title: "Vanilla Sweet Perfume",
-    image: "https://pngimg.com/uploads/perfume/perfume_PNG99991.png",
+    image: [
+        "https://pngimg.com/uploads/perfume/perfume_PNG99991.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG99991.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG99991.png"
+      ],
     category: "perfume",
     price: 68,
     review: 987,
@@ -3144,7 +3345,11 @@ const products = [
   {
     id: 38,
     title: "Spicy Oriental",
-    image: "https://pngimg.com/uploads/perfume/perfume_PNG99989.png",
+    image: [
+        "https://pngimg.com/uploads/perfume/perfume_PNG99989.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG99989.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG99989.png"
+      ],
     category: "perfume",
     price: 110,
     review: 756,
@@ -3182,7 +3387,15 @@ const products = [
   {
     id: 39,
     title: "Green Herbal Cologne",
-    image: "https://pngimg.com/uploads/perfume/perfume_PNG99985.png",
+    image: [
+        "https://pngimg.com/uploads/perfume/perfume_PNG99985.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG99985.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG99985.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG99985.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG99985.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG99985.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG99985.png"
+      ],
     category: "perfume",
     price: 59,
     review: 834,
@@ -3220,7 +3433,13 @@ const products = [
   {
     id: 40,
     title: "Luxury Night Perfume",
-    image: "https://pngimg.com/uploads/perfume/perfume_PNG10245.png",
+    image: [
+        "https://pngimg.com/uploads/perfume/perfume_PNG10245.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG10245.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG10245.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG10245.png",
+        "https://pngimg.com/uploads/perfume/perfume_PNG10245.png"
+      ],
     category: "perfume",
     price: 125,
     review: 2145,
@@ -3258,7 +3477,14 @@ const products = [
   {
     id: 41,
     title: "Stainless Steel Thermos 500ml",
-    image: "https://pngimg.com/uploads/thermos/thermos_PNG44.png",
+    image: [
+        "https://pngimg.com/uploads/thermos/thermos_PNG44.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG44.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG44.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG44.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG44.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG44.png"
+      ],
     category: "thermos",
     price: 35,
     review: 3124,
@@ -3322,7 +3548,12 @@ const products = [
   {
     id: 42,
     title: "Insulated Travel Mug",
-    image: "https://pngimg.com/uploads/thermos/thermos_PNG42.png",
+    image: [
+        "https://pngimg.com/uploads/thermos/thermos_PNG42.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG42.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG42.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG42.png"
+      ],
     category: "thermos",
     price: 29,
     review: 1987,
@@ -3386,7 +3617,15 @@ const products = [
   {
     id: 43,
     title: "Vacuum Flask Classic",
-    image: "https://pngimg.com/uploads/thermos/thermos_PNG41.png",
+    image: [
+        "https://pngimg.com/uploads/thermos/thermos_PNG41.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG41.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG41.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG41.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG41.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG41.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG41.png"
+      ],
     category: "thermos",
     price: 25,
     review: 1456,
@@ -3439,7 +3678,13 @@ const products = [
   {
     id: 44,
     title: "Smart Temperature Thermos",
-    image: "https://pngimg.com/uploads/thermos/thermos_PNG40.png",
+    image: [
+        "https://pngimg.com/uploads/thermos/thermos_PNG40.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG40.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG40.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG40.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG40.png"
+      ],
     category: "thermos",
     price: 55,
     review: 876,
@@ -3492,7 +3737,12 @@ const products = [
   {
     id: 45,
     title: "Matte Black Bottle",
-    image: "https://pngimg.com/uploads/thermos/thermos_PNG39.png",
+    image: [
+        "https://pngimg.com/uploads/thermos/thermos_PNG39.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG39.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG39.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG39.png"
+      ],
     category: "thermos",
     price: 32,
     review: 1678,
@@ -3545,7 +3795,15 @@ const products = [
   {
     id: 46,
     title: "Kids Colorful Thermos",
-    image: "https://pngimg.com/uploads/thermos/thermos_PNG35.png",
+    image: [
+        "https://pngimg.com/uploads/thermos/thermos_PNG35.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG35.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG35.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG35.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG35.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG35.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG35.png"
+      ],
     category: "thermos",
     price: 22,
     review: 2345,
@@ -3620,7 +3878,11 @@ const products = [
   {
     id: 47,
     title: "Double Wall Coffee Flask",
-    image: "https://pngimg.com/uploads/thermos/thermos_PNG31.png",
+    image: [
+        "https://pngimg.com/uploads/thermos/thermos_PNG31.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG31.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG31.png"
+      ],
     category: "thermos",
     price: 42,
     review: 2891,
@@ -3684,7 +3946,15 @@ const products = [
   {
     id: 48,
     title: "Sport Water Bottle",
-    image: "https://pngimg.com/uploads/thermos/thermos_PNG25.png",
+    image: [
+        "https://pngimg.com/uploads/thermos/thermos_PNG25.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG25.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG25.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG25.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG25.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG25.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG25.png"
+      ],
     category: "thermos",
     price: 28,
     review: 1765,
@@ -3759,7 +4029,15 @@ const products = [
   {
     id: 49,
     title: "Premium Gold Trim Thermos",
-    image: "https://pngimg.com/uploads/thermos/thermos_PNG16.png",
+    image: [
+        "https://pngimg.com/uploads/thermos/thermos_PNG16.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG16.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG16.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG16.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG16.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG16.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG16.png"
+      ],
     category: "thermos",
     price: 65,
     review: 654,
@@ -3815,7 +4093,15 @@ const products = [
   {
     id: 50,
     title: "Eco Bamboo Lid Flask",
-    image: "https://pngimg.com/uploads/thermos/thermos_PNG15.png",
+    image: [
+        "https://pngimg.com/uploads/thermos/thermos_PNG15.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG15.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG15.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG15.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG15.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG15.png",
+        "https://pngimg.com/uploads/thermos/thermos_PNG15.png"
+      ],
     category: "thermos",
     price: 38,
     review: 1234,
