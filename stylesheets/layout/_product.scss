@@ -8,7 +8,7 @@
   }
   &__purchase {
     @include m.flex(row, space-between, stretch, nowrap);
-
+    margin-bottom: v.$spacing-xxl;
     & > * {
       height: auto;
     }
@@ -200,6 +200,98 @@
   &__price {
     font-weight: 500;
     font-size: 1.5rem;
+  }
+  &__information {
+    @include m.flex(row, space-between, center, nowrap, 5rem);
+  }
+  &__tabs {
+    @include m.flex(column, center, stretch, nowrap, 1rem);
+    flex: 0 0 20%;
+    button {
+      justify-content: start;
+      width: 100%;
+      color: v.$neutral-b500;
+    }
+    button.is-selected {
+      background-color: v.$neutral-w100;
+      color: v.$neutral-black;
+    }
+  }
+  &__detail {
+    @include m.flex(column, stretch, stretch, nowrap, 2rem);
+    display: none;
+    ul {
+      list-style-type: disc;
+    }
+    & > :not(h5) {
+      color: v.$neutral-b500;
+    }
+  }
+
+  &__reviews {
+    // display: none;
+    @include m.flex(column, stretch, stretch, nowrap, 1rem);
+    width: 100%;
+    &__header {
+      @include m.flex(column, start, start, nowrap, 1rem);
+    }
+    &-total-rank {
+      @include m.flex(row, stretch, center, nowrap, 0.5rem);
+      p {
+        color: v.$neutral-b500;
+      }
+    }
+    &-add {
+      border-color: v.$neutral-black;
+    }
+    &-sorting {
+      align-self: flex-end;
+      outline: none;
+      option {
+        color: v.$neutral-b500;
+        border: 1px solid v.$neutral-w100;
+        &:checked {
+          background-color: v.$neutral-w100;
+          color: v.$neutral-black;
+        }
+      }
+    }
+  }
+  &__comments {
+    @include m.flex(column, stretch, stretch, nowrap, 2rem);
+    .comment {
+      margin-bottom: 2rem;
+      @include m.flex(column, stretch, stretch, nowrap, 1rem);
+      &__info {
+        @include m.flex(row, space-between, center, nowrap);
+      }
+      &__rank {
+        @include m.flex(row, start, start, nowrap, 0.5rem);
+      }
+      &__text {
+        color: v.$neutral-b500;
+      }
+    }
+    .person {
+      &__info {
+        @include m.flex(row, start, start, nowrap, 2rem);
+      }
+      &__date {
+        color: v.$neutral-b500;
+      }
+      &__profile {
+        width: 3rem;
+        height: 3rem;
+        background-color: v.$blue-100;
+        border-radius: 50%;
+        @include m.flex(row, center, center);
+
+        color: v.$blue-900;
+      }
+      &__detail {
+        @include m.flex(column, center, start, nowrap, 0.5rem);
+      }
+    }
   }
 }
 
