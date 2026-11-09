@@ -1,5 +1,5 @@
 import { listProducts } from "./products.js";
-import { sortProductRank } from "./sortProduts.js";
+import { sortProductRank, sortProductDate } from "./sortProduts.js";
 import { listPcategories } from "./seprateProductsByCategories.js";
 import { listPfeatured } from "./featuredProducts.js";
 import { productsById } from "./products.js";
@@ -10,7 +10,6 @@ function bestSelling() {
   const containersProductBestSelling = document.querySelectorAll(
     ".bestSelling__product",
   );
-
   containersProductBestSelling.forEach((productElement, index) => {
     const product = bestProducts[index];
     const img = productElement.querySelector("img");
@@ -110,7 +109,7 @@ async function featuredProducts() {
     renderFP(allProductsFeature);
   }
   if (btnLatest.classList.contains("active")) {
-    let latest_products = sortProductRank(listProducts).slice(0, 4);
+    let latest_products = sortProductDate(listProducts).slice(0, 4);
 
     latest_products.forEach(() => {
       createFeatureProductElements();
@@ -139,7 +138,7 @@ async function featuredProducts() {
       productPrice.textContent = `${product.price} $`;
     });
   }
-  redirectToproductDetail();
+  redirectToProductDetail();
 }
 btnFeature.addEventListener("click", () => {
   if (!btnFeature.classList.contains("active")) {
@@ -148,7 +147,7 @@ btnFeature.addEventListener("click", () => {
     });
     btnFeature.classList.add("active");
     featuredProducts();
-    redirectToproductDetail();
+    redirectToProductDetail();
   }
 });
 btnLatest.addEventListener("click", () => {
@@ -158,11 +157,11 @@ btnLatest.addEventListener("click", () => {
     });
     btnLatest.classList.add("active");
     featuredProducts();
-    redirectToproductDetail();
+    redirectToProductDetail();
   }
 });
 
-function redirectToproductDetail() {
+function redirectToProductDetail() {
   let domProducts = document.querySelectorAll(".product");
   domProducts.forEach((domProduct) => {
     domProduct.addEventListener("click", () => {
