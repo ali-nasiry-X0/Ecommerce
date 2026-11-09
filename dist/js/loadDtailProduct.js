@@ -8,6 +8,8 @@ import {
   formatSize,
 } from "./tools/formater.js";
 import { slider } from "./sliders.js";
+import { diffTime } from "./tools/diffTime.js";
+import { sort } from "./tools/sortByTime.js";
 
 const purchaseContainer = document.querySelector(".product-detail__purchase");
 const optionsContainer = purchaseContainer.querySelector(
@@ -27,6 +29,8 @@ function init() {
   loadAllDetail(product);
   createSku(product);
   sku = createSku(product);
+  details(product.description, product.features);
+  sorting(product);
 }
 function loadAllDetail(product) {
   const { dynamicOptions, sizes, colors } = getProductOptions(product);
@@ -186,6 +190,140 @@ function createSku(product) {
 
   return [cat, id, color, size].filter(Boolean).join("_");
 }
+function details(description, features) {
+  const container_detail = document.querySelector(".product-detail__detail");
+  const text_detail = container_detail.querySelector(
+    ".product-detail__detail-text",
+  );
+  const features_detail = container_detail.querySelector(
+    ".product-detail__detail-features",
+  );
+  text_detail.textContent = "";
+  features_detail.textContent = "";
 
+  text_detail.textContent = description;
+
+  features.forEach((feature) => {
+    const li = document.createElement("li");
+    li.textContent = feature;
+    features_detail.append(li);
+  });
+}
+function reviews(product, option) {
+  const containerReviews = document.querySelector(".product-detail__comments");
+  containerReviews.innerHTML = "";
+  sort(product.reviews, option).forEach((review) => {
+    createComment(review, containerReviews);
+  });
+  const tabContainer = document.querySelector(".product-detail__tabs");
+  const tabs = tabContainer.querySelectorAll("button");
+  const detailSection = document.querySelector(".product-detail__detail");
+  const reviewSection = document.querySelector(".product-detail__reviews");
+  tabs.forEach((tab) => {
+    if (tab.classList.contains("is-selected")) {
+      if (tab.dataset.option == "detail") {
+        detailSection.style.display = "flex";
+        reviewSection.style.display = "none";
+      } else if (tab.dataset.option == "review") {
+        reviewSection.style.display = "flex";
+        detailSection.style.display = "none";
+      }
+    }
+    tab.addEventListener("click", (e) => {
+      tabs.forEach((tab) => tab.classList.remove("is-selected"));
+      tab.classList.add("is-selected");
+      if (e.target.dataset.option == "detail") {
+        detailSection.style.display = "flex";
+        reviewSection.style.display = "none";
+      }
+      if (e.target.dataset.option == "review") {
+        reviewSection.style.display = "flex";
+        detailSection.style.display = "none";
+      }
+    });
+  });
+
+  const totalRankReviewProduct = document.querySelector(
+    ".product-detail__reviews-total-rank",
+  );
+  const totalRank = totalRankReviewProduct.querySelector("h2");
+  totalRank.textContent = product.rating;
+  const totalReviewe = totalRankReviewProduct.querySelector("p");
+  totalReviewe.textContent = `-${product.review} reviews`;
+}
+function createComment(review, container) {
+  // create elements
+  const comment = document.createElement("div");
+  comment.classList.add("comment");
+  const comment_info = document.createElement("div");
+  comment_info.classList.add("comment__info");
+  const person_info = document.createElement("div");
+  person_info.classList.add("person__info");
+  const person_profile = document.createElement("div");
+  person_profile.classList.add("person__profile");
+  const person_detail = document.createElement("div");
+  person_detail.classList.add("person__detail");
+  const person_name = document.createElement("div");
+  person_name.classList.add("person__name");
+  const person_date = document.createElement("div");
+  person_date.classList.add("person__date");
+  const comment_rank = document.createElement("div");
+  comment_rank.classList.add("comment__rank");
+  const comment_text = document.createElement("div");
+  comment_text.classList.add("comment__text");
+
+  // asign value and text
+  person_profile.textContent = review.name.slice(0, 2).toUpperCase();
+  person_name.textContent = review.name;
+  const date1 = new Date(review.date);
+  const date2 = new Date();
+  const { diffMinute, diffClock, diffDay, diffWeek, diffMonth, diffYear } =
+    diffTime(date1, date2);
+  const timeUnits = [
+    { value: diffMinute, max: 60, unit: "minute" },
+    { value: diffClock, max: 24, unit: "hour" },
+    { value: diffDay, max: 7, unit: "day" },
+    { value: diffWeek, max: 5, unit: "week" },
+    { value: diffMonth, max: 12, unit: "month" },
+    { value: diffYear, max: Infinity, unit: "year" },
+  ];
+
+  const time = timeUnits.find(({ value, max }) => value >= 1 && value < max);
+
+  if (time) {
+    person_date.textContent = `${time.value} ${time.unit}${time.value > 1 ? "s" : ""} ago`;
+  }
+
+  ////
+
+  for (let i = 0; i < review.rating; i++) {
+    const fullStart = document.createElement("img");
+    fullStart.src = "../icons/ui/Star.svg";
+    comment_rank.append(fullStart);
+  }
+  for (let i = 0; i < 5 - review.rating; i++) {
+    const emptyStar = document.createElement("img");
+    emptyStar.src = "../icons/ui/Empty Star.svg";
+    comment_rank.append(emptyStar);
+  }
+
+  ///////////
+  comment_text.textContent = review.comment;
+
+  //////// appending
+
+  person_detail.append(person_name, person_date);
+  person_info.append(person_profile, person_detail);
+  comment_info.append(person_info, comment_rank);
+  comment.append(comment_info, comment_text);
+  container.append(comment);
+}
+function sorting(product) {
+  const sortSelect = document.querySelector("#sort");
+  sortSelect.addEventListener("change", (e) => {
+    reviews(product, e.target.value);
+  });
+  reviews(product, sortSelect.value);
+}
 init();
 console.log(sku);

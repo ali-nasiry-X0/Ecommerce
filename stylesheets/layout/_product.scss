@@ -3,6 +3,7 @@
 @use "../abstracts/variables" as v;
 
 .product-detail {
+  margin-bottom: v.$spacing-xxl;
   .contianer {
     @include m.flex(column, center, center, nowrap);
   }
@@ -227,10 +228,16 @@
       color: v.$neutral-b500;
     }
   }
-
+  &-sorting {
+    @include m.flex(row, center, center, nowrap, 0.5rem);
+    align-self: flex-end;
+    label {
+      font-size: 1rem;
+    }
+  }
   &__reviews {
-    // display: none;
     @include m.flex(column, stretch, stretch, nowrap, 1rem);
+    // display: none;
     width: 100%;
     &__header {
       @include m.flex(column, start, start, nowrap, 1rem);

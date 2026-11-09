@@ -972,6 +972,9 @@ label {
     padding: 1rem;
   }
 }
+.product-detail {
+  margin-bottom: 6rem;
+}
 .product-detail .contianer {
   display: flex;
   flex-direction: column;
@@ -1255,6 +1258,18 @@ label {
 }
 .product-detail__detail > :not(h5) {
   color: #5c5f6a;
+}
+.product-detail-sorting {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  align-self: flex-end;
+}
+.product-detail-sorting label {
+  font-size: 1rem;
 }
 .product-detail__reviews {
   display: flex;

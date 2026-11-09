@@ -166,13 +166,18 @@
         </div>
         <div class="product-detail__information">
           <div class="product-detail__tabs">
-            <button class="product-detail__detailBtn btn" type="button">
+            <button
+              class="product-detail__detailBtn btn is-selected"
+              type="button"
+              data-option="detail"
+            >
               <img src="../icons/ui/More.svg" alt="" />
               Details
             </button>
             <button
-              class="product-detail__reviewsBtn btn is-selected"
+              class="product-detail__reviewsBtn btn"
               type="button"
+              data-option="review"
             >
               <img src="../icons/ui/Empty Star.svg" alt="" />
 
@@ -208,85 +213,21 @@
               <button class="product-detail__reviews-add btn btn--secondary">
                 writwe a review
               </button>
-              <select
-                class="product-detail__reviews-sorting btn btn--secondary"
-                name="sort"
-                id="sort"
-              >
-                <option value="newest">with newest</option>
-                <option value="oldest">with oldest</option>
-              </select>
+              <div class="product-detail-sorting">
+                <label for="sort">sort:</label>
+                <select
+                  class="product-detail__reviews-sorting btn btn--secondary"
+                  name="sort"
+                  id="sort"
+                >
+                  <option value="newest">with newest</option>
+                  <option value="oldest">with oldest</option>
+                </select>
+              </div>
             </div>
             <hr />
-            <div class="product-detail__comments">
-              <div class="comment">
-                <div class="comment__info">
-                  <div class="person__info">
-                    <div class="person__profile">ED</div>
-                    <div class="person__detail">
-                      <div class="person__name">edrak</div>
-                      <div class="person__date">2month ego</div>
-                    </div>
-                  </div>
-                  <div class="comment__rank">
-                    <img src="../icons/ui/Star.svg" alt="" />
-                    <img src="../icons/ui/Star.svg" alt="" />
-                    <img src="../icons/ui/Star.svg" alt="" />
-                    <img src="../icons/ui/Star.svg" alt="" />
-                    <img src="../icons/ui/Star.svg" alt="" />
-                  </div>
-                </div>
-                <div class="comment__text">
-                  This company always goes above and beyond to satisfy their
-                  customers.
-                </div>
-              </div>
-              <div class="comment">
-                <div class="comment__info">
-                  <div class="person__info">
-                    <div class="person__profile">ED</div>
-                    <div class="person__detail">
-                      <div class="person__name">edrak</div>
-                      <div class="person__date">2month ego</div>
-                    </div>
-                  </div>
-                  <div class="comment__rank">
-                    <img src="../icons/ui/Star.svg" alt="" />
-                    <img src="../icons/ui/Star.svg" alt="" />
-                    <img src="../icons/ui/Star.svg" alt="" />
-                    <img src="../icons/ui/Star.svg" alt="" />
-                    <img src="../icons/ui/Star.svg" alt="" />
-                  </div>
-                </div>
-                <div class="comment__text">
-                  This company always goes above and beyond to satisfy their
-                  customers.
-                </div>
-              </div>
-              <div class="comment">
-                <div class="comment__info">
-                  <div class="person__info">
-                    <div class="person__profile">ED</div>
-                    <div class="person__detail">
-                      <div class="person__name">edrak</div>
-                      <div class="person__date">2month ego</div>
-                    </div>
-                  </div>
-                  <div class="comment__rank">
-                    <img src="../icons/ui/Star.svg" alt="" />
-                    <img src="../icons/ui/Star.svg" alt="" />
-                    <img src="../icons/ui/Star.svg" alt="" />
-                    <img src="../icons/ui/Star.svg" alt="" />
-                    <img src="../icons/ui/Star.svg" alt="" />
-                  </div>
-                </div>
-                <div class="comment__text">
-                  This company always goes above and beyond to satisfy their
-                  customers.
-                </div>
-              </div>
-              <button class="btn btn--primary">loede more comments</button>
-            </div>
+            <div class="product-detail__comments"></div>
+            <button class="btn btn--primary">loede more comments</button>
           </div>
         </div>
       </div>
