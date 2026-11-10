@@ -300,6 +300,9 @@
       }
     }
   }
+  &__comment-index {
+    @include m.flex(row, center, center, nowrap, 0.5rem);
+  }
 }
 
 @include m.respond("port-tab") {

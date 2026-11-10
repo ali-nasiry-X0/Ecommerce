@@ -10,6 +10,7 @@ import {
 import { slider } from "./sliders.js";
 import { diffTime } from "./tools/diffTime.js";
 import { sort } from "./tools/sortByTime.js";
+import { chunkArray } from "./tools/chunkArray.js";
 
 const purchaseContainer = document.querySelector(".product-detail__purchase");
 const optionsContainer = purchaseContainer.querySelector(
@@ -27,10 +28,10 @@ function init() {
   slider(gallery, viewport, track, controlsBox);
   if (!product) return console.warn("Product not found");
   loadAllDetail(product);
-  createSku(product);
   sku = createSku(product);
   details(product.description, product.features);
   sorting(product);
+  test(product);
 }
 function loadAllDetail(product) {
   const { dynamicOptions, sizes, colors } = getProductOptions(product);
@@ -99,7 +100,7 @@ function renderColorOption(product, colors, container) {
     });
     btnElem.addEventListener("click", () => {
       selectable(btnElem, btnDiv);
-      createSku(product);
+      sku = createSku(product);
     });
     btnElem.dataset.color = formatTextDetaSet(colors[i]);
 
@@ -128,7 +129,7 @@ function renderSizeOption(product, sizes, container) {
     btnDiv.appendChild(btnElem);
     btnElem.addEventListener("click", () => {
       selectable(btnElem, btnDiv);
-      createSku(product);
+      sku = createSku(product);
     });
   }
   container.appendChild(sizeElement);
@@ -209,12 +210,52 @@ function details(description, features) {
     features_detail.append(li);
   });
 }
-function reviews(product, option) {
+function RenderReviews(product, option) {
   const containerReviews = document.querySelector(".product-detail__comments");
   containerReviews.innerHTML = "";
-  sort(product.reviews, option).forEach((review) => {
-    createComment(review, containerReviews);
+  /// i think we can set a condition and manage this section
+  const btnShowMore = document.querySelector(
+    ".product-detail__comment-showMore",
+  );
+  const containerCommentsBtn = document.querySelector(
+    ".product-detail__comment-index",
+  );
+  // this section for show more button
+  btnShowMore.addEventListener("click", () => {
+    btnShowMore.style.display = "none";
+    if (product.reviews.length < 6) {
+      containerReviews.innerHTML = "";
+      sort(product.reviews, option).forEach((review) => {
+        createComment(review, containerReviews);
+      });
+    } else {
+      chunkArray(sort(product.reviews, option)).forEach((reviews, index) => {
+        const btn = document.createElement("button");
+        btn.textContent = index + 1;
+        btn.classList.add("btn", "btn--secondary");
+        btn.addEventListener("click", () => {
+          containerReviews.innerHTML = "";
+          reviews.forEach((review) => {
+            createComment(review, containerReviews);
+          });
+        });
+        containerCommentsBtn.append(btn);
+      });
+    }
   });
+  if (product.reviews.length <= 3) {
+    sort(product.reviews, option).forEach((review) => {
+      createComment(review, containerReviews);
+    });
+
+    btnShowMore.style.display = "none";
+  } else {
+    btnShowMore.style.display = "flex";
+    for (let i = 0; i < 3; i++) {
+      createComment(sort(product.reviews, option)[i], containerReviews);
+    }
+  }
+
   const tabContainer = document.querySelector(".product-detail__tabs");
   const tabs = tabContainer.querySelectorAll("button");
   const detailSection = document.querySelector(".product-detail__detail");
@@ -321,9 +362,9 @@ function createComment(review, container) {
 function sorting(product) {
   const sortSelect = document.querySelector("#sort");
   sortSelect.addEventListener("change", (e) => {
-    reviews(product, e.target.value);
+    RenderReviews(product, e.target.value);
   });
-  reviews(product, sortSelect.value);
+  RenderReviews(product, sortSelect.value);
 }
 init();
 console.log(sku);
