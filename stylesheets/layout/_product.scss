@@ -316,6 +316,19 @@
     &__options {
       gap: 2rem;
     }
+    .comment__rank {
+      gap: 0.2rem;
+    }
+    &__information {
+      flex-direction: column;
+      align-items: start;
+      gap: 3rem;
+    }
+    .person {
+      &__info {
+        gap: 1rem;
+      }
+    }
   }
 }
 @include m.respond("phone") {

@@ -235,7 +235,10 @@ function RenderReviews(product, sortComments) {
         createComment(review, containerReviews);
       });
       chunkArray(sortComments).forEach((reviews, index) => {
+        const linkBtn = document.createElement("a");
+        linkBtn.href = "#header_reviews";
         const btn = document.createElement("button");
+        linkBtn.append(btn);
         btn.textContent = index + 1;
         btn.classList.add("btn", "btn--secondary");
         btn.addEventListener("click", () => {
@@ -244,7 +247,7 @@ function RenderReviews(product, sortComments) {
             createComment(review, containerReviews);
           });
         });
-        containerCommentsBtn.append(btn);
+        containerCommentsBtn.append(linkBtn);
       });
     }
   });
