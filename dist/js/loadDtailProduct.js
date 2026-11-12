@@ -31,7 +31,6 @@ function init() {
   sku = createSku(product);
   details(product.description, product.features);
   sorting(product);
-  test(product);
 }
 function loadAllDetail(product) {
   const { dynamicOptions, sizes, colors } = getProductOptions(product);
@@ -210,7 +209,33 @@ function details(description, features) {
     features_detail.append(li);
   });
 }
-function RenderReviews(product, option) {
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+function RenderReviews(product, sortcomments) {
   const containerReviews = document.querySelector(".product-detail__comments");
   containerReviews.innerHTML = "";
   /// i think we can set a condition and manage this section
@@ -220,16 +245,24 @@ function RenderReviews(product, option) {
   const containerCommentsBtn = document.querySelector(
     ".product-detail__comment-index",
   );
+  console.log(containerCommentsBtn);
+
+  containerCommentsBtn.innerHTML = "";
+  console.log(containerCommentsBtn);
   // this section for show more button
   btnShowMore.addEventListener("click", () => {
     btnShowMore.style.display = "none";
     if (product.reviews.length < 6) {
       containerReviews.innerHTML = "";
-      sort(product.reviews, option).forEach((review) => {
+      sortcomments.forEach((review) => {
         createComment(review, containerReviews);
       });
     } else {
-      chunkArray(sort(product.reviews, option)).forEach((reviews, index) => {
+      containerReviews.innerHTML = "";
+      containerCommentsBtn.innerHTML = "";
+
+      chunkArray(sortcomments).forEach((reviews, index) => {
+        createComment(reviews[0], containerReviews);
         const btn = document.createElement("button");
         btn.textContent = index + 1;
         btn.classList.add("btn", "btn--secondary");
@@ -244,7 +277,7 @@ function RenderReviews(product, option) {
     }
   });
   if (product.reviews.length <= 3) {
-    sort(product.reviews, option).forEach((review) => {
+    sortcomments.forEach((review) => {
       createComment(review, containerReviews);
     });
 
@@ -252,7 +285,7 @@ function RenderReviews(product, option) {
   } else {
     btnShowMore.style.display = "flex";
     for (let i = 0; i < 3; i++) {
-      createComment(sort(product.reviews, option)[i], containerReviews);
+      createComment(sortcomments[i], containerReviews);
     }
   }
 
@@ -292,6 +325,32 @@ function RenderReviews(product, option) {
   const totalReviewe = totalRankReviewProduct.querySelector("p");
   totalReviewe.textContent = `-${product.review} reviews`;
 }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 function createComment(review, container) {
   // create elements
   const comment = document.createElement("div");
@@ -361,10 +420,14 @@ function createComment(review, container) {
 }
 function sorting(product) {
   const sortSelect = document.querySelector("#sort");
+  let sortcomments = sort(product.reviews, sortSelect.value);
+  console.log(sortcomments);
+
   sortSelect.addEventListener("change", (e) => {
-    RenderReviews(product, e.target.value);
+    sortcomments = sort(product.reviews, e.target.value);
+    RenderReviews(product, sortcomments);
   });
-  RenderReviews(product, sortSelect.value);
+  RenderReviews(product, sortcomments);
 }
 init();
 console.log(sku);
