@@ -209,60 +209,32 @@ function details(description, features) {
     features_detail.append(li);
   });
 }
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
-function RenderReviews(product, sortcomments) {
+function RenderReviews(product, sortComments) {
   const containerReviews = document.querySelector(".product-detail__comments");
   containerReviews.innerHTML = "";
-  /// i think we can set a condition and manage this section
   const btnShowMore = document.querySelector(
     ".product-detail__comment-showMore",
   );
   const containerCommentsBtn = document.querySelector(
     ".product-detail__comment-index",
   );
-  console.log(containerCommentsBtn);
-
   containerCommentsBtn.innerHTML = "";
-  console.log(containerCommentsBtn);
-  // this section for show more button
+
   btnShowMore.addEventListener("click", () => {
     btnShowMore.style.display = "none";
     if (product.reviews.length < 6) {
       containerReviews.innerHTML = "";
-      sortcomments.forEach((review) => {
+      sortComments.forEach((review) => {
         createComment(review, containerReviews);
       });
     } else {
       containerReviews.innerHTML = "";
       containerCommentsBtn.innerHTML = "";
-
-      chunkArray(sortcomments).forEach((reviews, index) => {
-        createComment(reviews[0], containerReviews);
+      chunkArray(sortComments)[0].forEach((review) => {
+        createComment(review, containerReviews);
+      });
+      chunkArray(sortComments).forEach((reviews, index) => {
         const btn = document.createElement("button");
         btn.textContent = index + 1;
         btn.classList.add("btn", "btn--secondary");
@@ -277,7 +249,7 @@ function RenderReviews(product, sortcomments) {
     }
   });
   if (product.reviews.length <= 3) {
-    sortcomments.forEach((review) => {
+    sortComments.forEach((review) => {
       createComment(review, containerReviews);
     });
 
@@ -285,7 +257,7 @@ function RenderReviews(product, sortcomments) {
   } else {
     btnShowMore.style.display = "flex";
     for (let i = 0; i < 3; i++) {
-      createComment(sortcomments[i], containerReviews);
+      createComment(sortComments[i], containerReviews);
     }
   }
 
@@ -326,31 +298,6 @@ function RenderReviews(product, sortcomments) {
   totalReviewe.textContent = `-${product.review} reviews`;
 }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 function createComment(review, container) {
   // create elements
   const comment = document.createElement("div");
@@ -421,8 +368,6 @@ function createComment(review, container) {
 function sorting(product) {
   const sortSelect = document.querySelector("#sort");
   let sortcomments = sort(product.reviews, sortSelect.value);
-  console.log(sortcomments);
-
   sortSelect.addEventListener("change", (e) => {
     sortcomments = sort(product.reviews, e.target.value);
     RenderReviews(product, sortcomments);
