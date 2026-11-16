@@ -235,20 +235,28 @@ function RenderReviews(product, sortComments) {
         createComment(review, containerReviews);
       });
       chunkArray(sortComments).forEach((reviews, index) => {
-        const linkBtn = document.createElement("a");
-        linkBtn.href = "#header_reviews";
         const btn = document.createElement("button");
-        linkBtn.append(btn);
+        btn.classList.add("group_comments");
         btn.textContent = index + 1;
         btn.classList.add("btn", "btn--secondary");
         btn.addEventListener("click", () => {
+          document.querySelector("#header_reviews").scrollIntoView({
+            behavior: "smooth",
+          });
+          containerCommentsBtn.childNodes.forEach((btn) => {
+            btn.classList.remove("group_comments_selected");
+          });
+          btn.classList.add("group_comments_selected");
           containerReviews.innerHTML = "";
           reviews.forEach((review) => {
             createComment(review, containerReviews);
           });
         });
-        containerCommentsBtn.append(linkBtn);
+        containerCommentsBtn.append(btn);
       });
+      containerCommentsBtn.childNodes[0].classList.add(
+        "group_comments_selected",
+      );
     }
   });
   if (product.reviews.length <= 3) {

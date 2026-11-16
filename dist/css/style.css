@@ -1388,6 +1388,13 @@ label {
   flex-wrap: nowrap;
   gap: 0.5rem;
 }
+.product-detail .group_comments {
+  color: #71747e;
+}
+.product-detail .group_comments_selected {
+  color: #000000;
+  border-color: #000000;
+}
 
 @media only screen and (max-width: 56.25rem) {
   .product-detail__purchase {

@@ -303,6 +303,13 @@
   &__comment-index {
     @include m.flex(row, center, center, nowrap, 0.5rem);
   }
+  .group_comments {
+    color: v.$neutral-b400;
+    &_selected {
+      color: v.$neutral-black;
+      border-color: v.$neutral-black;
+    }
+  }
 }
 
 @include m.respond("port-tab") {
