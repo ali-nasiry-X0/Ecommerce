@@ -1,3 +1,5 @@
+"use strict";
+
 // import { getCategories } from "./getCategories.js";
 import { productsById } from "./products.js";
 import { stock } from "./stockProduct.js";
@@ -21,16 +23,55 @@ let sku;
 function init() {
   const id = Number(new URLSearchParams(location.search).get("id"));
   const product = productsById.get(id);
+  const btnShowMore = document.querySelector(
+    ".product-detail__comment-showMore",
+  );
+
+  if (!product) return console.warn("Product not found");
+
+  const reviewState = {
+    sortType: "newest",
+    activeGroup: 0,
+    expanded: false,
+  };
+  btnShowMore.addEventListener("click", () => {
+    reviewState.expanded = true;
+    renderReviews(product, reviewState);
+  });
+  const containerCommentsBtn = document.querySelector(
+    ".product-detail__comment-index",
+  );
+  const chunkedComments = chunkArray(product.reviews);
+  containerCommentsBtn.addEventListener("click", (e) => {
+    const btn = e.target.closest(".group_comments");
+    if (!btn) {
+      return;
+    }
+    const index = Number(btn.dataset.index);
+    if (
+      Number.isNaN(index) ||
+      !Number.isInteger(index) ||
+      index >= chunkedComments.length ||
+      index < 0
+    ) {
+      return;
+    }
+    reviewState.activeGroup = index;
+    renderReviews(product, reviewState);
+    document.querySelector("#header_reviews").scrollIntoView({
+      behavior: "smooth",
+    });
+  });
   const gallery = document.querySelector(".product-detail__gallery");
   const viewport = gallery.querySelector(".product-detail__pictures");
   const track = gallery.querySelector(".product-detail__track");
   let controlsBox = gallery.querySelector(".product-detail__controls");
   slider(gallery, viewport, track, controlsBox);
-  if (!product) return console.warn("Product not found");
   loadAllDetail(product);
   sku = createSku(product);
   details(product.description, product.features);
-  sorting(product);
+  sorting(product, reviewState);
+  manageTabs();
 }
 function loadAllDetail(product) {
   const { dynamicOptions, sizes, colors } = getProductOptions(product);
@@ -57,7 +98,7 @@ function loadBaseDetail(product) {
   title.dataset.category = formatTextDetaSet(product.category);
   title.dataset.id = formatNumber(product.id);
   nameProduct.textContent = product.title;
-  rankP.innerHTML = `${product.rating}&#8212;${product.review} Reviews`;
+  rankP.textContent = `${product.rating} — ${product.review} Reviews`;
   if (stock(product) > 0) {
     statusP.textContent = "IN STOCK";
   } else {
@@ -66,8 +107,8 @@ function loadBaseDetail(product) {
   costP.textContent = `$ ${product.price}.00`;
 }
 function renderPictureProduct(images) {
+  const containerSliders = document.querySelector(".product-detail__track");
   images.forEach((img) => {
-    const containerSliders = document.querySelector(".product-detail__track");
     const elemImg = document.createElement("img");
     elemImg.classList.add("product-detail__media");
     elemImg.src = img;
@@ -173,133 +214,87 @@ function createSku(product) {
   let size;
   const elemColor = optionsContainer.querySelector(".product-detail__colors");
   const elemSize = optionsContainer.querySelector(".product-detail__size");
+
   if (elemColor) {
-    elemColor.childNodes.forEach((option) => {
+    for (const option of elemColor.children) {
       if (option.classList.contains("is-selected")) {
         color = option.dataset.color;
       }
-    });
+    }
   }
   if (elemSize) {
-    elemSize.childNodes.forEach((option) => {
+    for (const option of elemSize.children) {
       if (option.classList.contains("is-selected")) {
         size = option.dataset.size;
       }
-    });
+    }
   }
 
   return [cat, id, color, size].filter(Boolean).join("_");
 }
 function details(description, features) {
-  const container_detail = document.querySelector(".product-detail__detail");
-  const text_detail = container_detail.querySelector(
+  const containerDetail = document.querySelector(".product-detail__detail");
+  const textDetail = containerDetail.querySelector(
     ".product-detail__detail-text",
   );
-  const features_detail = container_detail.querySelector(
+  const featuresDetail = containerDetail.querySelector(
     ".product-detail__detail-features",
   );
-  text_detail.textContent = "";
-  features_detail.textContent = "";
+  textDetail.textContent = "";
+  featuresDetail.textContent = "";
 
-  text_detail.textContent = description;
+  textDetail.textContent = description;
 
   features.forEach((feature) => {
     const li = document.createElement("li");
     li.textContent = feature;
-    features_detail.append(li);
+    featuresDetail.append(li);
   });
 }
 
-function RenderReviews(product, sortComments) {
+function renderReviews(product, reviewState) {
+  const sortedComments = sort(product.reviews, reviewState.sortType);
   const containerReviews = document.querySelector(".product-detail__comments");
-  containerReviews.innerHTML = "";
+  let chunkedComments = [];
+  containerReviews.replaceChildren();
   const btnShowMore = document.querySelector(
     ".product-detail__comment-showMore",
   );
   const containerCommentsBtn = document.querySelector(
     ".product-detail__comment-index",
   );
-  containerCommentsBtn.innerHTML = "";
+  containerCommentsBtn.replaceChildren();
 
-  btnShowMore.addEventListener("click", () => {
-    btnShowMore.style.display = "none";
-    if (product.reviews.length < 6) {
-      containerReviews.innerHTML = "";
-      sortComments.forEach((review) => {
-        createComment(review, containerReviews);
-      });
-    } else {
-      containerReviews.innerHTML = "";
-      containerCommentsBtn.innerHTML = "";
-      chunkArray(sortComments)[0].forEach((review) => {
-        createComment(review, containerReviews);
-      });
-      chunkArray(sortComments).forEach((reviews, index) => {
-        const btn = document.createElement("button");
-        btn.classList.add("group_comments");
-        btn.textContent = index + 1;
-        btn.classList.add("btn", "btn--secondary");
-        btn.addEventListener("click", () => {
-          document.querySelector("#header_reviews").scrollIntoView({
-            behavior: "smooth",
-          });
-          containerCommentsBtn.childNodes.forEach((btn) => {
-            btn.classList.remove("group_comments_selected");
-          });
-          btn.classList.add("group_comments_selected");
-          containerReviews.innerHTML = "";
-          reviews.forEach((review) => {
-            createComment(review, containerReviews);
-          });
-        });
-        containerCommentsBtn.append(btn);
-      });
-      containerCommentsBtn.childNodes[0].classList.add(
-        "group_comments_selected",
-      );
-    }
-  });
-  if (product.reviews.length <= 3) {
-    sortComments.forEach((review) => {
-      createComment(review, containerReviews);
-    });
+  let visibleComments;
 
-    btnShowMore.style.display = "none";
+  if (!reviewState.expanded) {
+    visibleComments = sortedComments.slice(0, 3);
+  } else if (sortedComments.length < 6) {
+    visibleComments = sortedComments;
   } else {
-    btnShowMore.style.display = "flex";
-    for (let i = 0; i < 3; i++) {
-      createComment(sortComments[i], containerReviews);
-    }
+    chunkedComments = chunkArray(sortedComments);
+    visibleComments = chunkedComments[reviewState.activeGroup];
   }
-
-  const tabContainer = document.querySelector(".product-detail__tabs");
-  const tabs = tabContainer.querySelectorAll("button");
-  const detailSection = document.querySelector(".product-detail__detail");
-  const reviewSection = document.querySelector(".product-detail__reviews");
-  tabs.forEach((tab) => {
-    if (tab.classList.contains("is-selected")) {
-      if (tab.dataset.option == "detail") {
-        detailSection.style.display = "flex";
-        reviewSection.style.display = "none";
-      } else if (tab.dataset.option == "review") {
-        reviewSection.style.display = "flex";
-        detailSection.style.display = "none";
-      }
-    }
-    tab.addEventListener("click", (e) => {
-      tabs.forEach((tab) => tab.classList.remove("is-selected"));
-      tab.classList.add("is-selected");
-      if (e.target.dataset.option == "detail") {
-        detailSection.style.display = "flex";
-        reviewSection.style.display = "none";
-      }
-      if (e.target.dataset.option == "review") {
-        reviewSection.style.display = "flex";
-        detailSection.style.display = "none";
-      }
-    });
+  visibleComments.forEach((review) => {
+    createComment(review, containerReviews);
   });
+  if (reviewState.expanded && sortedComments.length >= 6) {
+    chunkedComments.forEach((reviews, index) => {
+      const btn = document.createElement("button");
 
+      btn.classList.add("group_comments", "btn", "btn--secondary");
+      btn.textContent = index + 1;
+      btn.dataset.index = index;
+
+      if (index === reviewState.activeGroup) {
+        btn.classList.add("group_comments_selected");
+      }
+
+      containerCommentsBtn.append(btn);
+    });
+  }
+  btnShowMore.style.display =
+    reviewState.expanded || sortedComments.length <= 3 ? "none" : "flex";
   const totalRankReviewProduct = document.querySelector(
     ".product-detail__reviews-total-rank",
   );
@@ -376,14 +371,48 @@ function createComment(review, container) {
   comment.append(comment_info, comment_text);
   container.append(comment);
 }
-function sorting(product) {
+function sorting(product, reviewState) {
   const sortSelect = document.querySelector("#sort");
-  let sortcomments = sort(product.reviews, sortSelect.value);
+
+  reviewState.sortType = sortSelect.value;
+
   sortSelect.addEventListener("change", (e) => {
-    sortcomments = sort(product.reviews, e.target.value);
-    RenderReviews(product, sortcomments);
+    reviewState.sortType = e.target.value;
+    reviewState.activeGroup = 0;
+
+    renderReviews(product, reviewState);
   });
-  RenderReviews(product, sortcomments);
+
+  renderReviews(product, reviewState);
+}
+function manageTabs() {
+  const tabContainer = document.querySelector(".product-detail__tabs");
+  const tabs = tabContainer.querySelectorAll("button");
+  const detailSection = document.querySelector(".product-detail__detail");
+  const reviewSection = document.querySelector(".product-detail__reviews");
+  tabs.forEach((tab) => {
+    if (tab.classList.contains("is-selected")) {
+      if (tab.dataset.option == "detail") {
+        detailSection.style.display = "flex";
+        reviewSection.style.display = "none";
+      } else if (tab.dataset.option == "review") {
+        reviewSection.style.display = "flex";
+        detailSection.style.display = "none";
+      }
+    }
+    tab.addEventListener("click", (e) => {
+      tabs.forEach((tab) => tab.classList.remove("is-selected"));
+      tab.classList.add("is-selected");
+      if (tab.dataset.option == "detail") {
+        detailSection.style.display = "flex";
+        reviewSection.style.display = "none";
+      }
+      if (tab.dataset.option == "review") {
+        reviewSection.style.display = "flex";
+        detailSection.style.display = "none";
+      }
+    });
+  });
 }
 init();
 console.log(sku);
