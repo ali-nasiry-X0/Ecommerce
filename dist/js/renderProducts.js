@@ -2,8 +2,9 @@ import { listProducts } from "./products.js";
 import { sortProductRank, sortProductDate } from "./sortProduts.js";
 import { listPcategories } from "./seprateProductsByCategories.js";
 import { listPfeatured } from "./featuredProducts.js";
-import { productsById } from "./products.js";
+// import { productsById } from "./products.js";
 import { stock } from "./stockProduct.js";
+import { redirectToProductDetail } from "./openProduct.js";
 function bestSelling() {
   const bestProducts = sortProductRank(listProducts).slice(0, 4);
 
@@ -160,16 +161,7 @@ btnLatest.addEventListener("click", () => {
     redirectToProductDetail();
   }
 });
-
-function redirectToProductDetail() {
-  let domProducts = document.querySelectorAll(".product");
-  domProducts.forEach((domProduct) => {
-    domProduct.addEventListener("click", () => {
-      const baseUrl = "product.html";
-      window.location.href = `${baseUrl}?category=${productsById.get(Number(domProduct.id)).category}&product=${productsById.get(Number(domProduct.id)).title}&id=${productsById.get(Number(domProduct.id)).id}`;
-    });
-  });
-}
+redirectToProductDetail();
 bestSelling();
 ctaImg();
 featuredProducts();

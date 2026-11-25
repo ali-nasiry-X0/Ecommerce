@@ -1395,6 +1395,15 @@ label {
   color: #000000;
   border-color: #000000;
 }
+.product-detail_similarProducts {
+  margin-bottom: 6rem;
+}
+.product-detail_similarProducts .container {
+  align-items: start;
+}
+.product-detail_similarProducts_header p {
+  color: #5c5f6a;
+}
 
 @media only screen and (max-width: 56.25rem) {
   .product-detail__purchase {

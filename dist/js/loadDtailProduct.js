@@ -2,6 +2,7 @@
 
 // import { getCategories } from "./getCategories.js";
 import { productsById } from "./products.js";
+import { getProducts } from "./getProducts.js";
 import { stock } from "./stockProduct.js";
 import { operateQuantity } from "./productQuantity.js";
 import {
@@ -13,14 +14,14 @@ import { slider } from "./sliders.js";
 import { diffTime } from "./tools/diffTime.js";
 import { sort } from "./tools/sortByTime.js";
 import { chunkArray } from "./tools/chunkArray.js";
-
+import { redirectToProductDetail } from "./openProduct.js";
 const purchaseContainer = document.querySelector(".product-detail__purchase");
 const optionsContainer = purchaseContainer.querySelector(
   ".product-detail__optional",
 );
 let sku;
 
-function init() {
+async function init() {
   const id = Number(new URLSearchParams(location.search).get("id"));
   const product = productsById.get(id);
   const btnShowMore = document.querySelector(
@@ -72,6 +73,9 @@ function init() {
   details(product.description, product.features);
   sorting(product, reviewState);
   manageTabs();
+  redirectToProductDetail();
+  const allProduct = await getProducts();
+  similarProduct(allProduct);
 }
 function loadAllDetail(product) {
   const { dynamicOptions, sizes, colors } = getProductOptions(product);
@@ -412,6 +416,54 @@ function manageTabs() {
         detailSection.style.display = "none";
       }
     });
+  });
+}
+
+function similarProduct(allProduct) {
+  const category = new URLSearchParams(location.search).get("category");
+  const id = new URLSearchParams(location.search).get("id");
+
+  let similarProducts = allProduct.filter((product) => {
+    if (product.category == category) {
+      return product;
+    }
+  });
+  similarProducts.forEach((element, index) => {
+    if (element.id == id) {
+      similarProducts.splice(index, 1);
+    }
+  });
+  AddSimilarProduct(similarProducts);
+}
+
+function AddSimilarProduct(products) {
+  const containerSimilarProduct = document.querySelector(
+    ".product-detail_similarProducts_content",
+  );
+  console.log(products);
+  const productElems = containerSimilarProduct.querySelectorAll(".product");
+
+  let indexProducts = [...products.keys()];
+
+  for (let i = products.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [indexProducts[i], indexProducts[j]] = [indexProducts[j], indexProducts[i]];
+  }
+
+  productElems.forEach((productelem, i) => {
+    const productImg = productelem.querySelector("img");
+    productImg.src = products[indexProducts[i]].image[0];
+    const productName = productelem.querySelector(".product__name");
+    productName.textContent = products[indexProducts[i]].title;
+    const productStatus = productelem.querySelector(".product__status");
+    if (products[indexProducts[i]].stock != 0) {
+      productStatus.textContent = "IN STOCK";
+    } else {
+      productStatus.textContent = " SOLD OUT";
+    }
+    const productPrice = productelem.querySelector(".product__price");
+    productPrice.textContent = `${products[indexProducts[i]].price} $`;
+    productelem.id = products[indexProducts[i]].id;
   });
 }
 init();

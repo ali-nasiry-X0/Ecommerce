@@ -310,6 +310,17 @@
       border-color: v.$neutral-black;
     }
   }
+  &_similarProducts {
+    margin-bottom: v.$spacing-xxl;
+    .container {
+      align-items: start;
+    }
+    &_header {
+      p {
+        color: v.$neutral-b500;
+      }
+    }
+  }
 }
 
 @include m.respond("port-tab") {
@@ -338,6 +349,7 @@
     }
   }
 }
+
 @include m.respond("phone") {
   .product-detail {
     &__gallery {
